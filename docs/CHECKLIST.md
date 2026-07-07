@@ -1,0 +1,5048 @@
+# LineProof Execution Checklist
+
+5000 tasks generated from MASTERPLAN.md. Regenerate with `npm run checklist`.
+
+## Phase 0 — Foundation
+
+- [ ] 0001 Confirm TxLINE guest auth flow returns a JWT
+- [ ] 0002 Confirm activated API token passes X-Api-Token validation
+- [ ] 0003 Lock project name and check domain availability
+- [ ] 0004 Create public repository with MIT-compatible layout
+- [ ] 0005 Provision Vercel project and production alias
+- [ ] 0006 Mint dedicated agent keypair, store secret only in env
+- [ ] 0007 Document the crypto-necessity argument in README
+- [ ] 0008 Write .env.example covering every runtime variable
+
+## Phase 1 — Audit engine
+
+- [ ] 0009 Implement implied-probability conversion from milliunit prices
+- [ ] 0010 Implement booksum normalization (de-vig)
+- [ ] 0011 Implement overround computation and rounding policy
+- [ ] 0012 Implement tick ordering by feed timestamp
+- [ ] 0013 Implement full-match market filter with period fallback
+- [ ] 0014 Implement liveness derivation from score clock
+- [ ] 0015 Implement canonical JSON serialization with sorted keys
+- [ ] 0016 Implement SHA-256 digest of the canonical report
+- [ ] 0017 Guard against odds at or below 1.0
+- [ ] 0018 Guard against empty price arrays
+- [ ] 0019 Floor and cap the integrity score at 0 and 100
+
+## Phase 2 — Autonomy
+
+- [ ] 0020 Expose /api/scan with no required parameters
+- [ ] 0021 Add dry-run flag for anchor-free testing
+- [ ] 0022 Configure GitHub Actions five-minute schedule
+- [ ] 0023 Configure Vercel cron fallback
+- [ ] 0024 Cap fixture batch size inside serverless time budget
+- [ ] 0025 Batch snapshot requests to respect feed rate limits
+
+## Phase 3 — On-chain trail
+
+- [ ] 0026 Build memo instruction with agent signature
+- [ ] 0027 Format memo as lineproof:v1 with digest and counters
+- [ ] 0028 Fund agent wallet with devnet SOL
+- [ ] 0029 Expose /api/attestations with explorer links
+- [ ] 0030 Handle unfunded wallet without failing the scan
+- [ ] 0031 Document third-party verification steps
+
+## Phase 4 — Surface
+
+- [ ] 0032 Ship live integrity board with fair line vs quoted
+- [ ] 0033 Ship attestation feed with relative timestamps
+- [ ] 0034 Ship integrity ring visual with severity colors
+- [ ] 0035 Ship stats strip fed by live endpoints
+- [ ] 0036 Add scroll-reveal and staggered row animations
+- [ ] 0037 Verify dashboard renders with feed unavailable
+
+## Phase 5 — Hardening
+
+- [ ] 0038 Add retry with jitter on TxLINE 429 responses
+- [ ] 0039 Add RPC failover to a second Solana endpoint
+- [ ] 0040 Add structured per-tick log line
+- [ ] 0041 Add alert when no scan lands for fifteen minutes
+- [ ] 0042 Validate and sanitize every query parameter
+- [ ] 0043 Set explicit cache headers on read endpoints
+
+## Phase 6 — Verification tooling
+
+- [ ] 0044 Build standalone verifier CLI
+- [ ] 0045 Archive reports keyed by scan id
+- [ ] 0046 Implement per-fixture inclusion proof against scan digest
+- [ ] 0047 Publish verification walkthrough in docs
+
+## Phase 7 — Submission
+
+- [ ] 0048 Record five-minute demo video
+- [ ] 0049 Open one attestation on the explorer on camera
+- [ ] 0050 Recompute one digest on camera
+- [ ] 0051 Write TxLINE API feedback section
+- [ ] 0052 Fill every Superteam Earn form field
+- [ ] 0053 Dry-run the judge flow with an outside tester
+
+## Phase 8 — Post-tournament durability
+
+- [ ] 0054 Add competition adapter interface
+- [ ] 0055 Add market-type configuration beyond 1X2
+- [ ] 0056 Define archive retention policy
+- [ ] 0057 Load-test the report endpoint
+
+## Phase 9 — Startup track
+
+- [ ] 0058 Draft pricing tiers: public, pro feed, enterprise SLA
+- [ ] 0059 Write regulatory posture memo
+- [ ] 0060 Prepare pilot pitch for two mid-tier books
+- [ ] 0061 Prepare mainnet attestation cost model
+
+## Phase 1 — Audit engine
+
+- [ ] 0062 Unit-test detector STALE_QUOTE under pre-match conditions
+- [ ] 0063 Unit-test detector STALE_QUOTE under first half conditions
+- [ ] 0064 Unit-test detector STALE_QUOTE under half time conditions
+- [ ] 0065 Unit-test detector STALE_QUOTE under second half conditions
+- [ ] 0066 Unit-test detector STALE_QUOTE under extra time conditions
+- [ ] 0067 Unit-test detector STALE_QUOTE under full time conditions
+- [ ] 0068 Unit-test detector ARB_WINDOW under pre-match conditions
+- [ ] 0069 Unit-test detector ARB_WINDOW under first half conditions
+- [ ] 0070 Unit-test detector ARB_WINDOW under half time conditions
+- [ ] 0071 Unit-test detector ARB_WINDOW under second half conditions
+- [ ] 0072 Unit-test detector ARB_WINDOW under extra time conditions
+- [ ] 0073 Unit-test detector ARB_WINDOW under full time conditions
+- [ ] 0074 Unit-test detector SHARP_MOVE under pre-match conditions
+- [ ] 0075 Unit-test detector SHARP_MOVE under first half conditions
+- [ ] 0076 Unit-test detector SHARP_MOVE under half time conditions
+- [ ] 0077 Unit-test detector SHARP_MOVE under second half conditions
+- [ ] 0078 Unit-test detector SHARP_MOVE under extra time conditions
+- [ ] 0079 Unit-test detector SHARP_MOVE under full time conditions
+- [ ] 0080 Unit-test detector VIG_COLLAPSE under pre-match conditions
+- [ ] 0081 Unit-test detector VIG_COLLAPSE under first half conditions
+- [ ] 0082 Unit-test detector VIG_COLLAPSE under half time conditions
+- [ ] 0083 Unit-test detector VIG_COLLAPSE under second half conditions
+- [ ] 0084 Unit-test detector VIG_COLLAPSE under extra time conditions
+- [ ] 0085 Unit-test detector VIG_COLLAPSE under full time conditions
+- [ ] 0086 Verify STALE_QUOTE sensitivity when the home price moves alone
+- [ ] 0087 Verify STALE_QUOTE sensitivity when the draw price moves alone
+- [ ] 0088 Verify STALE_QUOTE sensitivity when the away price moves alone
+- [ ] 0089 Verify ARB_WINDOW sensitivity when the home price moves alone
+- [ ] 0090 Verify ARB_WINDOW sensitivity when the draw price moves alone
+- [ ] 0091 Verify ARB_WINDOW sensitivity when the away price moves alone
+- [ ] 0092 Verify SHARP_MOVE sensitivity when the home price moves alone
+- [ ] 0093 Verify SHARP_MOVE sensitivity when the draw price moves alone
+- [ ] 0094 Verify SHARP_MOVE sensitivity when the away price moves alone
+- [ ] 0095 Verify VIG_COLLAPSE sensitivity when the home price moves alone
+- [ ] 0096 Verify VIG_COLLAPSE sensitivity when the draw price moves alone
+- [ ] 0097 Verify VIG_COLLAPSE sensitivity when the away price moves alone
+
+## Phase 5 — Hardening
+
+- [ ] 0098 Exercise /api/scan against upstream timeout and assert graceful JSON error
+- [ ] 0099 Exercise /api/scan against upstream HTTP 429 and assert graceful JSON error
+- [ ] 0100 Exercise /api/scan against upstream HTTP 500 and assert graceful JSON error
+- [ ] 0101 Exercise /api/scan against upstream malformed JSON and assert graceful JSON error
+- [ ] 0102 Exercise /api/scan against upstream empty body and assert graceful JSON error
+- [ ] 0103 Exercise /api/scan against upstream partial price array and assert graceful JSON error
+- [ ] 0104 Exercise /api/report against upstream timeout and assert graceful JSON error
+- [ ] 0105 Exercise /api/report against upstream HTTP 429 and assert graceful JSON error
+- [ ] 0106 Exercise /api/report against upstream HTTP 500 and assert graceful JSON error
+- [ ] 0107 Exercise /api/report against upstream malformed JSON and assert graceful JSON error
+- [ ] 0108 Exercise /api/report against upstream empty body and assert graceful JSON error
+- [ ] 0109 Exercise /api/report against upstream partial price array and assert graceful JSON error
+- [ ] 0110 Exercise /api/attestations against upstream timeout and assert graceful JSON error
+- [ ] 0111 Exercise /api/attestations against upstream HTTP 429 and assert graceful JSON error
+- [ ] 0112 Exercise /api/attestations against upstream HTTP 500 and assert graceful JSON error
+- [ ] 0113 Exercise /api/attestations against upstream malformed JSON and assert graceful JSON error
+- [ ] 0114 Exercise /api/attestations against upstream empty body and assert graceful JSON error
+- [ ] 0115 Exercise /api/attestations against upstream partial price array and assert graceful JSON error
+
+## Phase 4 — Surface
+
+- [ ] 0116 Visual pass of the dashboard on desktop Chrome
+- [ ] 0117 Visual pass of the dashboard on desktop Firefox
+- [ ] 0118 Visual pass of the dashboard on desktop Safari
+- [ ] 0119 Visual pass of the dashboard on Android Chrome
+- [ ] 0120 Visual pass of the dashboard on iOS Safari
+
+## Phase 7 — Submission
+
+- [ ] 0121 Match slot 1: confirm fixture appears on the board once priced
+- [ ] 0122 Match slot 1: confirm at least one attestation covers the live window
+- [ ] 0123 Match slot 1: spot-check fair line against quoted line at kickoff
+- [ ] 0124 Match slot 1: archive the final scan report for the record
+- [ ] 0125 Match slot 2: confirm fixture appears on the board once priced
+- [ ] 0126 Match slot 2: confirm at least one attestation covers the live window
+- [ ] 0127 Match slot 2: spot-check fair line against quoted line at kickoff
+- [ ] 0128 Match slot 2: archive the final scan report for the record
+- [ ] 0129 Match slot 3: confirm fixture appears on the board once priced
+- [ ] 0130 Match slot 3: confirm at least one attestation covers the live window
+- [ ] 0131 Match slot 3: spot-check fair line against quoted line at kickoff
+- [ ] 0132 Match slot 3: archive the final scan report for the record
+- [ ] 0133 Match slot 4: confirm fixture appears on the board once priced
+- [ ] 0134 Match slot 4: confirm at least one attestation covers the live window
+- [ ] 0135 Match slot 4: spot-check fair line against quoted line at kickoff
+- [ ] 0136 Match slot 4: archive the final scan report for the record
+- [ ] 0137 Match slot 5: confirm fixture appears on the board once priced
+- [ ] 0138 Match slot 5: confirm at least one attestation covers the live window
+- [ ] 0139 Match slot 5: spot-check fair line against quoted line at kickoff
+- [ ] 0140 Match slot 5: archive the final scan report for the record
+- [ ] 0141 Match slot 6: confirm fixture appears on the board once priced
+- [ ] 0142 Match slot 6: confirm at least one attestation covers the live window
+- [ ] 0143 Match slot 6: spot-check fair line against quoted line at kickoff
+- [ ] 0144 Match slot 6: archive the final scan report for the record
+- [ ] 0145 Match slot 7: confirm fixture appears on the board once priced
+- [ ] 0146 Match slot 7: confirm at least one attestation covers the live window
+- [ ] 0147 Match slot 7: spot-check fair line against quoted line at kickoff
+- [ ] 0148 Match slot 7: archive the final scan report for the record
+- [ ] 0149 Match slot 8: confirm fixture appears on the board once priced
+- [ ] 0150 Match slot 8: confirm at least one attestation covers the live window
+- [ ] 0151 Match slot 8: spot-check fair line against quoted line at kickoff
+- [ ] 0152 Match slot 8: archive the final scan report for the record
+- [ ] 0153 Match slot 9: confirm fixture appears on the board once priced
+- [ ] 0154 Match slot 9: confirm at least one attestation covers the live window
+- [ ] 0155 Match slot 9: spot-check fair line against quoted line at kickoff
+- [ ] 0156 Match slot 9: archive the final scan report for the record
+- [ ] 0157 Match slot 10: confirm fixture appears on the board once priced
+- [ ] 0158 Match slot 10: confirm at least one attestation covers the live window
+- [ ] 0159 Match slot 10: spot-check fair line against quoted line at kickoff
+- [ ] 0160 Match slot 10: archive the final scan report for the record
+- [ ] 0161 Match slot 11: confirm fixture appears on the board once priced
+- [ ] 0162 Match slot 11: confirm at least one attestation covers the live window
+- [ ] 0163 Match slot 11: spot-check fair line against quoted line at kickoff
+- [ ] 0164 Match slot 11: archive the final scan report for the record
+- [ ] 0165 Match slot 12: confirm fixture appears on the board once priced
+- [ ] 0166 Match slot 12: confirm at least one attestation covers the live window
+- [ ] 0167 Match slot 12: spot-check fair line against quoted line at kickoff
+- [ ] 0168 Match slot 12: archive the final scan report for the record
+- [ ] 0169 Match slot 13: confirm fixture appears on the board once priced
+- [ ] 0170 Match slot 13: confirm at least one attestation covers the live window
+- [ ] 0171 Match slot 13: spot-check fair line against quoted line at kickoff
+- [ ] 0172 Match slot 13: archive the final scan report for the record
+- [ ] 0173 Match slot 14: confirm fixture appears on the board once priced
+- [ ] 0174 Match slot 14: confirm at least one attestation covers the live window
+- [ ] 0175 Match slot 14: spot-check fair line against quoted line at kickoff
+- [ ] 0176 Match slot 14: archive the final scan report for the record
+- [ ] 0177 Match slot 15: confirm fixture appears on the board once priced
+- [ ] 0178 Match slot 15: confirm at least one attestation covers the live window
+- [ ] 0179 Match slot 15: spot-check fair line against quoted line at kickoff
+- [ ] 0180 Match slot 15: archive the final scan report for the record
+- [ ] 0181 Match slot 16: confirm fixture appears on the board once priced
+- [ ] 0182 Match slot 16: confirm at least one attestation covers the live window
+- [ ] 0183 Match slot 16: spot-check fair line against quoted line at kickoff
+- [ ] 0184 Match slot 16: archive the final scan report for the record
+- [ ] 0185 Match slot 17: confirm fixture appears on the board once priced
+- [ ] 0186 Match slot 17: confirm at least one attestation covers the live window
+- [ ] 0187 Match slot 17: spot-check fair line against quoted line at kickoff
+- [ ] 0188 Match slot 17: archive the final scan report for the record
+- [ ] 0189 Match slot 18: confirm fixture appears on the board once priced
+- [ ] 0190 Match slot 18: confirm at least one attestation covers the live window
+- [ ] 0191 Match slot 18: spot-check fair line against quoted line at kickoff
+- [ ] 0192 Match slot 18: archive the final scan report for the record
+- [ ] 0193 Match slot 19: confirm fixture appears on the board once priced
+- [ ] 0194 Match slot 19: confirm at least one attestation covers the live window
+- [ ] 0195 Match slot 19: spot-check fair line against quoted line at kickoff
+- [ ] 0196 Match slot 19: archive the final scan report for the record
+- [ ] 0197 Match slot 20: confirm fixture appears on the board once priced
+- [ ] 0198 Match slot 20: confirm at least one attestation covers the live window
+- [ ] 0199 Match slot 20: spot-check fair line against quoted line at kickoff
+- [ ] 0200 Match slot 20: archive the final scan report for the record
+- [ ] 0201 Match slot 21: confirm fixture appears on the board once priced
+- [ ] 0202 Match slot 21: confirm at least one attestation covers the live window
+- [ ] 0203 Match slot 21: spot-check fair line against quoted line at kickoff
+- [ ] 0204 Match slot 21: archive the final scan report for the record
+- [ ] 0205 Match slot 22: confirm fixture appears on the board once priced
+- [ ] 0206 Match slot 22: confirm at least one attestation covers the live window
+- [ ] 0207 Match slot 22: spot-check fair line against quoted line at kickoff
+- [ ] 0208 Match slot 22: archive the final scan report for the record
+- [ ] 0209 Match slot 23: confirm fixture appears on the board once priced
+- [ ] 0210 Match slot 23: confirm at least one attestation covers the live window
+- [ ] 0211 Match slot 23: spot-check fair line against quoted line at kickoff
+- [ ] 0212 Match slot 23: archive the final scan report for the record
+- [ ] 0213 Match slot 24: confirm fixture appears on the board once priced
+- [ ] 0214 Match slot 24: confirm at least one attestation covers the live window
+- [ ] 0215 Match slot 24: spot-check fair line against quoted line at kickoff
+- [ ] 0216 Match slot 24: archive the final scan report for the record
+- [ ] 0217 Match slot 25: confirm fixture appears on the board once priced
+- [ ] 0218 Match slot 25: confirm at least one attestation covers the live window
+- [ ] 0219 Match slot 25: spot-check fair line against quoted line at kickoff
+- [ ] 0220 Match slot 25: archive the final scan report for the record
+- [ ] 0221 Match slot 26: confirm fixture appears on the board once priced
+- [ ] 0222 Match slot 26: confirm at least one attestation covers the live window
+- [ ] 0223 Match slot 26: spot-check fair line against quoted line at kickoff
+- [ ] 0224 Match slot 26: archive the final scan report for the record
+- [ ] 0225 Match slot 27: confirm fixture appears on the board once priced
+- [ ] 0226 Match slot 27: confirm at least one attestation covers the live window
+- [ ] 0227 Match slot 27: spot-check fair line against quoted line at kickoff
+- [ ] 0228 Match slot 27: archive the final scan report for the record
+- [ ] 0229 Match slot 28: confirm fixture appears on the board once priced
+- [ ] 0230 Match slot 28: confirm at least one attestation covers the live window
+- [ ] 0231 Match slot 28: spot-check fair line against quoted line at kickoff
+- [ ] 0232 Match slot 28: archive the final scan report for the record
+- [ ] 0233 Match slot 29: confirm fixture appears on the board once priced
+- [ ] 0234 Match slot 29: confirm at least one attestation covers the live window
+- [ ] 0235 Match slot 29: spot-check fair line against quoted line at kickoff
+- [ ] 0236 Match slot 29: archive the final scan report for the record
+- [ ] 0237 Match slot 30: confirm fixture appears on the board once priced
+- [ ] 0238 Match slot 30: confirm at least one attestation covers the live window
+- [ ] 0239 Match slot 30: spot-check fair line against quoted line at kickoff
+- [ ] 0240 Match slot 30: archive the final scan report for the record
+- [ ] 0241 Match slot 31: confirm fixture appears on the board once priced
+- [ ] 0242 Match slot 31: confirm at least one attestation covers the live window
+- [ ] 0243 Match slot 31: spot-check fair line against quoted line at kickoff
+- [ ] 0244 Match slot 31: archive the final scan report for the record
+- [ ] 0245 Match slot 32: confirm fixture appears on the board once priced
+- [ ] 0246 Match slot 32: confirm at least one attestation covers the live window
+- [ ] 0247 Match slot 32: spot-check fair line against quoted line at kickoff
+- [ ] 0248 Match slot 32: archive the final scan report for the record
+- [ ] 0249 Match slot 33: confirm fixture appears on the board once priced
+- [ ] 0250 Match slot 33: confirm at least one attestation covers the live window
+- [ ] 0251 Match slot 33: spot-check fair line against quoted line at kickoff
+- [ ] 0252 Match slot 33: archive the final scan report for the record
+- [ ] 0253 Match slot 34: confirm fixture appears on the board once priced
+- [ ] 0254 Match slot 34: confirm at least one attestation covers the live window
+- [ ] 0255 Match slot 34: spot-check fair line against quoted line at kickoff
+- [ ] 0256 Match slot 34: archive the final scan report for the record
+- [ ] 0257 Match slot 35: confirm fixture appears on the board once priced
+- [ ] 0258 Match slot 35: confirm at least one attestation covers the live window
+- [ ] 0259 Match slot 35: spot-check fair line against quoted line at kickoff
+- [ ] 0260 Match slot 35: archive the final scan report for the record
+- [ ] 0261 Match slot 36: confirm fixture appears on the board once priced
+- [ ] 0262 Match slot 36: confirm at least one attestation covers the live window
+- [ ] 0263 Match slot 36: spot-check fair line against quoted line at kickoff
+- [ ] 0264 Match slot 36: archive the final scan report for the record
+- [ ] 0265 Match slot 37: confirm fixture appears on the board once priced
+- [ ] 0266 Match slot 37: confirm at least one attestation covers the live window
+- [ ] 0267 Match slot 37: spot-check fair line against quoted line at kickoff
+- [ ] 0268 Match slot 37: archive the final scan report for the record
+- [ ] 0269 Match slot 38: confirm fixture appears on the board once priced
+- [ ] 0270 Match slot 38: confirm at least one attestation covers the live window
+- [ ] 0271 Match slot 38: spot-check fair line against quoted line at kickoff
+- [ ] 0272 Match slot 38: archive the final scan report for the record
+- [ ] 0273 Match slot 39: confirm fixture appears on the board once priced
+- [ ] 0274 Match slot 39: confirm at least one attestation covers the live window
+- [ ] 0275 Match slot 39: spot-check fair line against quoted line at kickoff
+- [ ] 0276 Match slot 39: archive the final scan report for the record
+- [ ] 0277 Match slot 40: confirm fixture appears on the board once priced
+- [ ] 0278 Match slot 40: confirm at least one attestation covers the live window
+- [ ] 0279 Match slot 40: spot-check fair line against quoted line at kickoff
+- [ ] 0280 Match slot 40: archive the final scan report for the record
+- [ ] 0281 Match slot 41: confirm fixture appears on the board once priced
+- [ ] 0282 Match slot 41: confirm at least one attestation covers the live window
+- [ ] 0283 Match slot 41: spot-check fair line against quoted line at kickoff
+- [ ] 0284 Match slot 41: archive the final scan report for the record
+- [ ] 0285 Match slot 42: confirm fixture appears on the board once priced
+- [ ] 0286 Match slot 42: confirm at least one attestation covers the live window
+- [ ] 0287 Match slot 42: spot-check fair line against quoted line at kickoff
+- [ ] 0288 Match slot 42: archive the final scan report for the record
+- [ ] 0289 Match slot 43: confirm fixture appears on the board once priced
+- [ ] 0290 Match slot 43: confirm at least one attestation covers the live window
+- [ ] 0291 Match slot 43: spot-check fair line against quoted line at kickoff
+- [ ] 0292 Match slot 43: archive the final scan report for the record
+- [ ] 0293 Match slot 44: confirm fixture appears on the board once priced
+- [ ] 0294 Match slot 44: confirm at least one attestation covers the live window
+- [ ] 0295 Match slot 44: spot-check fair line against quoted line at kickoff
+- [ ] 0296 Match slot 44: archive the final scan report for the record
+- [ ] 0297 Match slot 45: confirm fixture appears on the board once priced
+- [ ] 0298 Match slot 45: confirm at least one attestation covers the live window
+- [ ] 0299 Match slot 45: spot-check fair line against quoted line at kickoff
+- [ ] 0300 Match slot 45: archive the final scan report for the record
+- [ ] 0301 Match slot 46: confirm fixture appears on the board once priced
+- [ ] 0302 Match slot 46: confirm at least one attestation covers the live window
+- [ ] 0303 Match slot 46: spot-check fair line against quoted line at kickoff
+- [ ] 0304 Match slot 46: archive the final scan report for the record
+- [ ] 0305 Match slot 47: confirm fixture appears on the board once priced
+- [ ] 0306 Match slot 47: confirm at least one attestation covers the live window
+- [ ] 0307 Match slot 47: spot-check fair line against quoted line at kickoff
+- [ ] 0308 Match slot 47: archive the final scan report for the record
+- [ ] 0309 Match slot 48: confirm fixture appears on the board once priced
+- [ ] 0310 Match slot 48: confirm at least one attestation covers the live window
+- [ ] 0311 Match slot 48: spot-check fair line against quoted line at kickoff
+- [ ] 0312 Match slot 48: archive the final scan report for the record
+- [ ] 0313 Match slot 49: confirm fixture appears on the board once priced
+- [ ] 0314 Match slot 49: confirm at least one attestation covers the live window
+- [ ] 0315 Match slot 49: spot-check fair line against quoted line at kickoff
+- [ ] 0316 Match slot 49: archive the final scan report for the record
+- [ ] 0317 Match slot 50: confirm fixture appears on the board once priced
+- [ ] 0318 Match slot 50: confirm at least one attestation covers the live window
+- [ ] 0319 Match slot 50: spot-check fair line against quoted line at kickoff
+- [ ] 0320 Match slot 50: archive the final scan report for the record
+- [ ] 0321 Match slot 51: confirm fixture appears on the board once priced
+- [ ] 0322 Match slot 51: confirm at least one attestation covers the live window
+- [ ] 0323 Match slot 51: spot-check fair line against quoted line at kickoff
+- [ ] 0324 Match slot 51: archive the final scan report for the record
+- [ ] 0325 Match slot 52: confirm fixture appears on the board once priced
+- [ ] 0326 Match slot 52: confirm at least one attestation covers the live window
+- [ ] 0327 Match slot 52: spot-check fair line against quoted line at kickoff
+- [ ] 0328 Match slot 52: archive the final scan report for the record
+- [ ] 0329 Match slot 53: confirm fixture appears on the board once priced
+- [ ] 0330 Match slot 53: confirm at least one attestation covers the live window
+- [ ] 0331 Match slot 53: spot-check fair line against quoted line at kickoff
+- [ ] 0332 Match slot 53: archive the final scan report for the record
+- [ ] 0333 Match slot 54: confirm fixture appears on the board once priced
+- [ ] 0334 Match slot 54: confirm at least one attestation covers the live window
+- [ ] 0335 Match slot 54: spot-check fair line against quoted line at kickoff
+- [ ] 0336 Match slot 54: archive the final scan report for the record
+- [ ] 0337 Match slot 55: confirm fixture appears on the board once priced
+- [ ] 0338 Match slot 55: confirm at least one attestation covers the live window
+- [ ] 0339 Match slot 55: spot-check fair line against quoted line at kickoff
+- [ ] 0340 Match slot 55: archive the final scan report for the record
+- [ ] 0341 Match slot 56: confirm fixture appears on the board once priced
+- [ ] 0342 Match slot 56: confirm at least one attestation covers the live window
+- [ ] 0343 Match slot 56: spot-check fair line against quoted line at kickoff
+- [ ] 0344 Match slot 56: archive the final scan report for the record
+- [ ] 0345 Match slot 57: confirm fixture appears on the board once priced
+- [ ] 0346 Match slot 57: confirm at least one attestation covers the live window
+- [ ] 0347 Match slot 57: spot-check fair line against quoted line at kickoff
+- [ ] 0348 Match slot 57: archive the final scan report for the record
+- [ ] 0349 Match slot 58: confirm fixture appears on the board once priced
+- [ ] 0350 Match slot 58: confirm at least one attestation covers the live window
+- [ ] 0351 Match slot 58: spot-check fair line against quoted line at kickoff
+- [ ] 0352 Match slot 58: archive the final scan report for the record
+- [ ] 0353 Match slot 59: confirm fixture appears on the board once priced
+- [ ] 0354 Match slot 59: confirm at least one attestation covers the live window
+- [ ] 0355 Match slot 59: spot-check fair line against quoted line at kickoff
+- [ ] 0356 Match slot 59: archive the final scan report for the record
+- [ ] 0357 Match slot 60: confirm fixture appears on the board once priced
+- [ ] 0358 Match slot 60: confirm at least one attestation covers the live window
+- [ ] 0359 Match slot 60: spot-check fair line against quoted line at kickoff
+- [ ] 0360 Match slot 60: archive the final scan report for the record
+- [ ] 0361 Match slot 61: confirm fixture appears on the board once priced
+- [ ] 0362 Match slot 61: confirm at least one attestation covers the live window
+- [ ] 0363 Match slot 61: spot-check fair line against quoted line at kickoff
+- [ ] 0364 Match slot 61: archive the final scan report for the record
+- [ ] 0365 Match slot 62: confirm fixture appears on the board once priced
+- [ ] 0366 Match slot 62: confirm at least one attestation covers the live window
+- [ ] 0367 Match slot 62: spot-check fair line against quoted line at kickoff
+- [ ] 0368 Match slot 62: archive the final scan report for the record
+- [ ] 0369 Match slot 63: confirm fixture appears on the board once priced
+- [ ] 0370 Match slot 63: confirm at least one attestation covers the live window
+- [ ] 0371 Match slot 63: spot-check fair line against quoted line at kickoff
+- [ ] 0372 Match slot 63: archive the final scan report for the record
+- [ ] 0373 Match slot 64: confirm fixture appears on the board once priced
+- [ ] 0374 Match slot 64: confirm at least one attestation covers the live window
+- [ ] 0375 Match slot 64: spot-check fair line against quoted line at kickoff
+- [ ] 0376 Match slot 64: archive the final scan report for the record
+- [ ] 0377 Match slot 65: confirm fixture appears on the board once priced
+- [ ] 0378 Match slot 65: confirm at least one attestation covers the live window
+- [ ] 0379 Match slot 65: spot-check fair line against quoted line at kickoff
+- [ ] 0380 Match slot 65: archive the final scan report for the record
+- [ ] 0381 Match slot 66: confirm fixture appears on the board once priced
+- [ ] 0382 Match slot 66: confirm at least one attestation covers the live window
+- [ ] 0383 Match slot 66: spot-check fair line against quoted line at kickoff
+- [ ] 0384 Match slot 66: archive the final scan report for the record
+- [ ] 0385 Match slot 67: confirm fixture appears on the board once priced
+- [ ] 0386 Match slot 67: confirm at least one attestation covers the live window
+- [ ] 0387 Match slot 67: spot-check fair line against quoted line at kickoff
+- [ ] 0388 Match slot 67: archive the final scan report for the record
+- [ ] 0389 Match slot 68: confirm fixture appears on the board once priced
+- [ ] 0390 Match slot 68: confirm at least one attestation covers the live window
+- [ ] 0391 Match slot 68: spot-check fair line against quoted line at kickoff
+- [ ] 0392 Match slot 68: archive the final scan report for the record
+- [ ] 0393 Match slot 69: confirm fixture appears on the board once priced
+- [ ] 0394 Match slot 69: confirm at least one attestation covers the live window
+- [ ] 0395 Match slot 69: spot-check fair line against quoted line at kickoff
+- [ ] 0396 Match slot 69: archive the final scan report for the record
+- [ ] 0397 Match slot 70: confirm fixture appears on the board once priced
+- [ ] 0398 Match slot 70: confirm at least one attestation covers the live window
+- [ ] 0399 Match slot 70: spot-check fair line against quoted line at kickoff
+- [ ] 0400 Match slot 70: archive the final scan report for the record
+- [ ] 0401 Match slot 71: confirm fixture appears on the board once priced
+- [ ] 0402 Match slot 71: confirm at least one attestation covers the live window
+- [ ] 0403 Match slot 71: spot-check fair line against quoted line at kickoff
+- [ ] 0404 Match slot 71: archive the final scan report for the record
+- [ ] 0405 Match slot 72: confirm fixture appears on the board once priced
+- [ ] 0406 Match slot 72: confirm at least one attestation covers the live window
+- [ ] 0407 Match slot 72: spot-check fair line against quoted line at kickoff
+- [ ] 0408 Match slot 72: archive the final scan report for the record
+- [ ] 0409 Match slot 73: confirm fixture appears on the board once priced
+- [ ] 0410 Match slot 73: confirm at least one attestation covers the live window
+- [ ] 0411 Match slot 73: spot-check fair line against quoted line at kickoff
+- [ ] 0412 Match slot 73: archive the final scan report for the record
+- [ ] 0413 Match slot 74: confirm fixture appears on the board once priced
+- [ ] 0414 Match slot 74: confirm at least one attestation covers the live window
+- [ ] 0415 Match slot 74: spot-check fair line against quoted line at kickoff
+- [ ] 0416 Match slot 74: archive the final scan report for the record
+- [ ] 0417 Match slot 75: confirm fixture appears on the board once priced
+- [ ] 0418 Match slot 75: confirm at least one attestation covers the live window
+- [ ] 0419 Match slot 75: spot-check fair line against quoted line at kickoff
+- [ ] 0420 Match slot 75: archive the final scan report for the record
+- [ ] 0421 Match slot 76: confirm fixture appears on the board once priced
+- [ ] 0422 Match slot 76: confirm at least one attestation covers the live window
+- [ ] 0423 Match slot 76: spot-check fair line against quoted line at kickoff
+- [ ] 0424 Match slot 76: archive the final scan report for the record
+- [ ] 0425 Match slot 77: confirm fixture appears on the board once priced
+- [ ] 0426 Match slot 77: confirm at least one attestation covers the live window
+- [ ] 0427 Match slot 77: spot-check fair line against quoted line at kickoff
+- [ ] 0428 Match slot 77: archive the final scan report for the record
+- [ ] 0429 Match slot 78: confirm fixture appears on the board once priced
+- [ ] 0430 Match slot 78: confirm at least one attestation covers the live window
+- [ ] 0431 Match slot 78: spot-check fair line against quoted line at kickoff
+- [ ] 0432 Match slot 78: archive the final scan report for the record
+- [ ] 0433 Match slot 79: confirm fixture appears on the board once priced
+- [ ] 0434 Match slot 79: confirm at least one attestation covers the live window
+- [ ] 0435 Match slot 79: spot-check fair line against quoted line at kickoff
+- [ ] 0436 Match slot 79: archive the final scan report for the record
+- [ ] 0437 Match slot 80: confirm fixture appears on the board once priced
+- [ ] 0438 Match slot 80: confirm at least one attestation covers the live window
+- [ ] 0439 Match slot 80: spot-check fair line against quoted line at kickoff
+- [ ] 0440 Match slot 80: archive the final scan report for the record
+- [ ] 0441 Match slot 81: confirm fixture appears on the board once priced
+- [ ] 0442 Match slot 81: confirm at least one attestation covers the live window
+- [ ] 0443 Match slot 81: spot-check fair line against quoted line at kickoff
+- [ ] 0444 Match slot 81: archive the final scan report for the record
+- [ ] 0445 Match slot 82: confirm fixture appears on the board once priced
+- [ ] 0446 Match slot 82: confirm at least one attestation covers the live window
+- [ ] 0447 Match slot 82: spot-check fair line against quoted line at kickoff
+- [ ] 0448 Match slot 82: archive the final scan report for the record
+- [ ] 0449 Match slot 83: confirm fixture appears on the board once priced
+- [ ] 0450 Match slot 83: confirm at least one attestation covers the live window
+- [ ] 0451 Match slot 83: spot-check fair line against quoted line at kickoff
+- [ ] 0452 Match slot 83: archive the final scan report for the record
+- [ ] 0453 Match slot 84: confirm fixture appears on the board once priced
+- [ ] 0454 Match slot 84: confirm at least one attestation covers the live window
+- [ ] 0455 Match slot 84: spot-check fair line against quoted line at kickoff
+- [ ] 0456 Match slot 84: archive the final scan report for the record
+- [ ] 0457 Match slot 85: confirm fixture appears on the board once priced
+- [ ] 0458 Match slot 85: confirm at least one attestation covers the live window
+- [ ] 0459 Match slot 85: spot-check fair line against quoted line at kickoff
+- [ ] 0460 Match slot 85: archive the final scan report for the record
+- [ ] 0461 Match slot 86: confirm fixture appears on the board once priced
+- [ ] 0462 Match slot 86: confirm at least one attestation covers the live window
+- [ ] 0463 Match slot 86: spot-check fair line against quoted line at kickoff
+- [ ] 0464 Match slot 86: archive the final scan report for the record
+- [ ] 0465 Match slot 87: confirm fixture appears on the board once priced
+- [ ] 0466 Match slot 87: confirm at least one attestation covers the live window
+- [ ] 0467 Match slot 87: spot-check fair line against quoted line at kickoff
+- [ ] 0468 Match slot 87: archive the final scan report for the record
+- [ ] 0469 Match slot 88: confirm fixture appears on the board once priced
+- [ ] 0470 Match slot 88: confirm at least one attestation covers the live window
+- [ ] 0471 Match slot 88: spot-check fair line against quoted line at kickoff
+- [ ] 0472 Match slot 88: archive the final scan report for the record
+- [ ] 0473 Match slot 89: confirm fixture appears on the board once priced
+- [ ] 0474 Match slot 89: confirm at least one attestation covers the live window
+- [ ] 0475 Match slot 89: spot-check fair line against quoted line at kickoff
+- [ ] 0476 Match slot 89: archive the final scan report for the record
+- [ ] 0477 Match slot 90: confirm fixture appears on the board once priced
+- [ ] 0478 Match slot 90: confirm at least one attestation covers the live window
+- [ ] 0479 Match slot 90: spot-check fair line against quoted line at kickoff
+- [ ] 0480 Match slot 90: archive the final scan report for the record
+- [ ] 0481 Match slot 91: confirm fixture appears on the board once priced
+- [ ] 0482 Match slot 91: confirm at least one attestation covers the live window
+- [ ] 0483 Match slot 91: spot-check fair line against quoted line at kickoff
+- [ ] 0484 Match slot 91: archive the final scan report for the record
+- [ ] 0485 Match slot 92: confirm fixture appears on the board once priced
+- [ ] 0486 Match slot 92: confirm at least one attestation covers the live window
+- [ ] 0487 Match slot 92: spot-check fair line against quoted line at kickoff
+- [ ] 0488 Match slot 92: archive the final scan report for the record
+- [ ] 0489 Match slot 93: confirm fixture appears on the board once priced
+- [ ] 0490 Match slot 93: confirm at least one attestation covers the live window
+- [ ] 0491 Match slot 93: spot-check fair line against quoted line at kickoff
+- [ ] 0492 Match slot 93: archive the final scan report for the record
+- [ ] 0493 Match slot 94: confirm fixture appears on the board once priced
+- [ ] 0494 Match slot 94: confirm at least one attestation covers the live window
+- [ ] 0495 Match slot 94: spot-check fair line against quoted line at kickoff
+- [ ] 0496 Match slot 94: archive the final scan report for the record
+- [ ] 0497 Match slot 95: confirm fixture appears on the board once priced
+- [ ] 0498 Match slot 95: confirm at least one attestation covers the live window
+- [ ] 0499 Match slot 95: spot-check fair line against quoted line at kickoff
+- [ ] 0500 Match slot 95: archive the final scan report for the record
+- [ ] 0501 Match slot 96: confirm fixture appears on the board once priced
+- [ ] 0502 Match slot 96: confirm at least one attestation covers the live window
+- [ ] 0503 Match slot 96: spot-check fair line against quoted line at kickoff
+- [ ] 0504 Match slot 96: archive the final scan report for the record
+- [ ] 0505 Match slot 97: confirm fixture appears on the board once priced
+- [ ] 0506 Match slot 97: confirm at least one attestation covers the live window
+- [ ] 0507 Match slot 97: spot-check fair line against quoted line at kickoff
+- [ ] 0508 Match slot 97: archive the final scan report for the record
+- [ ] 0509 Match slot 98: confirm fixture appears on the board once priced
+- [ ] 0510 Match slot 98: confirm at least one attestation covers the live window
+- [ ] 0511 Match slot 98: spot-check fair line against quoted line at kickoff
+- [ ] 0512 Match slot 98: archive the final scan report for the record
+- [ ] 0513 Match slot 99: confirm fixture appears on the board once priced
+- [ ] 0514 Match slot 99: confirm at least one attestation covers the live window
+- [ ] 0515 Match slot 99: spot-check fair line against quoted line at kickoff
+- [ ] 0516 Match slot 99: archive the final scan report for the record
+- [ ] 0517 Match slot 100: confirm fixture appears on the board once priced
+- [ ] 0518 Match slot 100: confirm at least one attestation covers the live window
+- [ ] 0519 Match slot 100: spot-check fair line against quoted line at kickoff
+- [ ] 0520 Match slot 100: archive the final scan report for the record
+- [ ] 0521 Match slot 101: confirm fixture appears on the board once priced
+- [ ] 0522 Match slot 101: confirm at least one attestation covers the live window
+- [ ] 0523 Match slot 101: spot-check fair line against quoted line at kickoff
+- [ ] 0524 Match slot 101: archive the final scan report for the record
+- [ ] 0525 Match slot 102: confirm fixture appears on the board once priced
+- [ ] 0526 Match slot 102: confirm at least one attestation covers the live window
+- [ ] 0527 Match slot 102: spot-check fair line against quoted line at kickoff
+- [ ] 0528 Match slot 102: archive the final scan report for the record
+- [ ] 0529 Match slot 103: confirm fixture appears on the board once priced
+- [ ] 0530 Match slot 103: confirm at least one attestation covers the live window
+- [ ] 0531 Match slot 103: spot-check fair line against quoted line at kickoff
+- [ ] 0532 Match slot 103: archive the final scan report for the record
+- [ ] 0533 Match slot 104: confirm fixture appears on the board once priced
+- [ ] 0534 Match slot 104: confirm at least one attestation covers the live window
+- [ ] 0535 Match slot 104: spot-check fair line against quoted line at kickoff
+- [ ] 0536 Match slot 104: archive the final scan report for the record
+
+## Phase 5 — Hardening (operations ledger)
+
+- [ ] 0537 Ops shift 1: verify one random attestation digest against a recomputed report
+- [ ] 0538 Ops shift 1: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0539 Ops shift 1: confirm the scheduler fired on time and log the tick latency
+- [ ] 0540 Ops shift 1: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0541 Ops shift 2: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0542 Ops shift 2: verify one random attestation digest against a recomputed report
+- [ ] 0543 Ops shift 2: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0544 Ops shift 2: confirm the scheduler fired on time and log the tick latency
+- [ ] 0545 Ops shift 2: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0546 Ops shift 3: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0547 Ops shift 3: verify one random attestation digest against a recomputed report
+- [ ] 0548 Ops shift 3: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0549 Ops shift 3: confirm the scheduler fired on time and log the tick latency
+- [ ] 0550 Ops shift 3: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0551 Ops shift 4: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0552 Ops shift 4: verify one random attestation digest against a recomputed report
+- [ ] 0553 Ops shift 4: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0554 Ops shift 4: confirm the scheduler fired on time and log the tick latency
+- [ ] 0555 Ops shift 4: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0556 Ops shift 5: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0557 Ops shift 5: verify one random attestation digest against a recomputed report
+- [ ] 0558 Ops shift 5: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0559 Ops shift 5: confirm the scheduler fired on time and log the tick latency
+- [ ] 0560 Ops shift 5: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0561 Ops shift 6: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0562 Ops shift 6: verify one random attestation digest against a recomputed report
+- [ ] 0563 Ops shift 6: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0564 Ops shift 6: confirm the scheduler fired on time and log the tick latency
+- [ ] 0565 Ops shift 6: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0566 Ops shift 7: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0567 Ops shift 7: verify one random attestation digest against a recomputed report
+- [ ] 0568 Ops shift 7: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0569 Ops shift 7: confirm the scheduler fired on time and log the tick latency
+- [ ] 0570 Ops shift 7: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0571 Ops shift 8: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0572 Ops shift 8: verify one random attestation digest against a recomputed report
+- [ ] 0573 Ops shift 8: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0574 Ops shift 8: confirm the scheduler fired on time and log the tick latency
+- [ ] 0575 Ops shift 8: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0576 Ops shift 9: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0577 Ops shift 9: verify one random attestation digest against a recomputed report
+- [ ] 0578 Ops shift 9: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0579 Ops shift 9: confirm the scheduler fired on time and log the tick latency
+- [ ] 0580 Ops shift 9: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0581 Ops shift 10: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0582 Ops shift 10: verify one random attestation digest against a recomputed report
+- [ ] 0583 Ops shift 10: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0584 Ops shift 10: confirm the scheduler fired on time and log the tick latency
+- [ ] 0585 Ops shift 10: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0586 Ops shift 11: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0587 Ops shift 11: verify one random attestation digest against a recomputed report
+- [ ] 0588 Ops shift 11: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0589 Ops shift 11: confirm the scheduler fired on time and log the tick latency
+- [ ] 0590 Ops shift 11: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0591 Ops shift 12: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0592 Ops shift 12: verify one random attestation digest against a recomputed report
+- [ ] 0593 Ops shift 12: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0594 Ops shift 12: confirm the scheduler fired on time and log the tick latency
+- [ ] 0595 Ops shift 12: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0596 Ops shift 13: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0597 Ops shift 13: verify one random attestation digest against a recomputed report
+- [ ] 0598 Ops shift 13: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0599 Ops shift 13: confirm the scheduler fired on time and log the tick latency
+- [ ] 0600 Ops shift 13: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0601 Ops shift 14: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0602 Ops shift 14: verify one random attestation digest against a recomputed report
+- [ ] 0603 Ops shift 14: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0604 Ops shift 14: confirm the scheduler fired on time and log the tick latency
+- [ ] 0605 Ops shift 14: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0606 Ops shift 15: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0607 Ops shift 15: verify one random attestation digest against a recomputed report
+- [ ] 0608 Ops shift 15: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0609 Ops shift 15: confirm the scheduler fired on time and log the tick latency
+- [ ] 0610 Ops shift 15: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0611 Ops shift 16: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0612 Ops shift 16: verify one random attestation digest against a recomputed report
+- [ ] 0613 Ops shift 16: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0614 Ops shift 16: confirm the scheduler fired on time and log the tick latency
+- [ ] 0615 Ops shift 16: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0616 Ops shift 17: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0617 Ops shift 17: verify one random attestation digest against a recomputed report
+- [ ] 0618 Ops shift 17: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0619 Ops shift 17: confirm the scheduler fired on time and log the tick latency
+- [ ] 0620 Ops shift 17: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0621 Ops shift 18: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0622 Ops shift 18: verify one random attestation digest against a recomputed report
+- [ ] 0623 Ops shift 18: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0624 Ops shift 18: confirm the scheduler fired on time and log the tick latency
+- [ ] 0625 Ops shift 18: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0626 Ops shift 19: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0627 Ops shift 19: verify one random attestation digest against a recomputed report
+- [ ] 0628 Ops shift 19: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0629 Ops shift 19: confirm the scheduler fired on time and log the tick latency
+- [ ] 0630 Ops shift 19: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0631 Ops shift 20: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0632 Ops shift 20: verify one random attestation digest against a recomputed report
+- [ ] 0633 Ops shift 20: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0634 Ops shift 20: confirm the scheduler fired on time and log the tick latency
+- [ ] 0635 Ops shift 20: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0636 Ops shift 21: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0637 Ops shift 21: verify one random attestation digest against a recomputed report
+- [ ] 0638 Ops shift 21: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0639 Ops shift 21: confirm the scheduler fired on time and log the tick latency
+- [ ] 0640 Ops shift 21: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0641 Ops shift 22: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0642 Ops shift 22: verify one random attestation digest against a recomputed report
+- [ ] 0643 Ops shift 22: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0644 Ops shift 22: confirm the scheduler fired on time and log the tick latency
+- [ ] 0645 Ops shift 22: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0646 Ops shift 23: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0647 Ops shift 23: verify one random attestation digest against a recomputed report
+- [ ] 0648 Ops shift 23: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0649 Ops shift 23: confirm the scheduler fired on time and log the tick latency
+- [ ] 0650 Ops shift 23: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0651 Ops shift 24: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0652 Ops shift 24: verify one random attestation digest against a recomputed report
+- [ ] 0653 Ops shift 24: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0654 Ops shift 24: confirm the scheduler fired on time and log the tick latency
+- [ ] 0655 Ops shift 24: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0656 Ops shift 25: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0657 Ops shift 25: verify one random attestation digest against a recomputed report
+- [ ] 0658 Ops shift 25: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0659 Ops shift 25: confirm the scheduler fired on time and log the tick latency
+- [ ] 0660 Ops shift 25: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0661 Ops shift 26: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0662 Ops shift 26: verify one random attestation digest against a recomputed report
+- [ ] 0663 Ops shift 26: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0664 Ops shift 26: confirm the scheduler fired on time and log the tick latency
+- [ ] 0665 Ops shift 26: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0666 Ops shift 27: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0667 Ops shift 27: verify one random attestation digest against a recomputed report
+- [ ] 0668 Ops shift 27: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0669 Ops shift 27: confirm the scheduler fired on time and log the tick latency
+- [ ] 0670 Ops shift 27: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0671 Ops shift 28: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0672 Ops shift 28: verify one random attestation digest against a recomputed report
+- [ ] 0673 Ops shift 28: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0674 Ops shift 28: confirm the scheduler fired on time and log the tick latency
+- [ ] 0675 Ops shift 28: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0676 Ops shift 29: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0677 Ops shift 29: verify one random attestation digest against a recomputed report
+- [ ] 0678 Ops shift 29: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0679 Ops shift 29: confirm the scheduler fired on time and log the tick latency
+- [ ] 0680 Ops shift 29: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0681 Ops shift 30: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0682 Ops shift 30: verify one random attestation digest against a recomputed report
+- [ ] 0683 Ops shift 30: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0684 Ops shift 30: confirm the scheduler fired on time and log the tick latency
+- [ ] 0685 Ops shift 30: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0686 Ops shift 31: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0687 Ops shift 31: verify one random attestation digest against a recomputed report
+- [ ] 0688 Ops shift 31: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0689 Ops shift 31: confirm the scheduler fired on time and log the tick latency
+- [ ] 0690 Ops shift 31: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0691 Ops shift 32: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0692 Ops shift 32: verify one random attestation digest against a recomputed report
+- [ ] 0693 Ops shift 32: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0694 Ops shift 32: confirm the scheduler fired on time and log the tick latency
+- [ ] 0695 Ops shift 32: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0696 Ops shift 33: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0697 Ops shift 33: verify one random attestation digest against a recomputed report
+- [ ] 0698 Ops shift 33: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0699 Ops shift 33: confirm the scheduler fired on time and log the tick latency
+- [ ] 0700 Ops shift 33: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0701 Ops shift 34: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0702 Ops shift 34: verify one random attestation digest against a recomputed report
+- [ ] 0703 Ops shift 34: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0704 Ops shift 34: confirm the scheduler fired on time and log the tick latency
+- [ ] 0705 Ops shift 34: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0706 Ops shift 35: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0707 Ops shift 35: verify one random attestation digest against a recomputed report
+- [ ] 0708 Ops shift 35: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0709 Ops shift 35: confirm the scheduler fired on time and log the tick latency
+- [ ] 0710 Ops shift 35: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0711 Ops shift 36: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0712 Ops shift 36: verify one random attestation digest against a recomputed report
+- [ ] 0713 Ops shift 36: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0714 Ops shift 36: confirm the scheduler fired on time and log the tick latency
+- [ ] 0715 Ops shift 36: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0716 Ops shift 37: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0717 Ops shift 37: verify one random attestation digest against a recomputed report
+- [ ] 0718 Ops shift 37: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0719 Ops shift 37: confirm the scheduler fired on time and log the tick latency
+- [ ] 0720 Ops shift 37: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0721 Ops shift 38: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0722 Ops shift 38: verify one random attestation digest against a recomputed report
+- [ ] 0723 Ops shift 38: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0724 Ops shift 38: confirm the scheduler fired on time and log the tick latency
+- [ ] 0725 Ops shift 38: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0726 Ops shift 39: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0727 Ops shift 39: verify one random attestation digest against a recomputed report
+- [ ] 0728 Ops shift 39: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0729 Ops shift 39: confirm the scheduler fired on time and log the tick latency
+- [ ] 0730 Ops shift 39: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0731 Ops shift 40: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0732 Ops shift 40: verify one random attestation digest against a recomputed report
+- [ ] 0733 Ops shift 40: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0734 Ops shift 40: confirm the scheduler fired on time and log the tick latency
+- [ ] 0735 Ops shift 40: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0736 Ops shift 41: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0737 Ops shift 41: verify one random attestation digest against a recomputed report
+- [ ] 0738 Ops shift 41: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0739 Ops shift 41: confirm the scheduler fired on time and log the tick latency
+- [ ] 0740 Ops shift 41: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0741 Ops shift 42: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0742 Ops shift 42: verify one random attestation digest against a recomputed report
+- [ ] 0743 Ops shift 42: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0744 Ops shift 42: confirm the scheduler fired on time and log the tick latency
+- [ ] 0745 Ops shift 42: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0746 Ops shift 43: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0747 Ops shift 43: verify one random attestation digest against a recomputed report
+- [ ] 0748 Ops shift 43: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0749 Ops shift 43: confirm the scheduler fired on time and log the tick latency
+- [ ] 0750 Ops shift 43: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0751 Ops shift 44: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0752 Ops shift 44: verify one random attestation digest against a recomputed report
+- [ ] 0753 Ops shift 44: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0754 Ops shift 44: confirm the scheduler fired on time and log the tick latency
+- [ ] 0755 Ops shift 44: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0756 Ops shift 45: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0757 Ops shift 45: verify one random attestation digest against a recomputed report
+- [ ] 0758 Ops shift 45: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0759 Ops shift 45: confirm the scheduler fired on time and log the tick latency
+- [ ] 0760 Ops shift 45: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0761 Ops shift 46: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0762 Ops shift 46: verify one random attestation digest against a recomputed report
+- [ ] 0763 Ops shift 46: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0764 Ops shift 46: confirm the scheduler fired on time and log the tick latency
+- [ ] 0765 Ops shift 46: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0766 Ops shift 47: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0767 Ops shift 47: verify one random attestation digest against a recomputed report
+- [ ] 0768 Ops shift 47: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0769 Ops shift 47: confirm the scheduler fired on time and log the tick latency
+- [ ] 0770 Ops shift 47: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0771 Ops shift 48: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0772 Ops shift 48: verify one random attestation digest against a recomputed report
+- [ ] 0773 Ops shift 48: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0774 Ops shift 48: confirm the scheduler fired on time and log the tick latency
+- [ ] 0775 Ops shift 48: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0776 Ops shift 49: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0777 Ops shift 49: verify one random attestation digest against a recomputed report
+- [ ] 0778 Ops shift 49: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0779 Ops shift 49: confirm the scheduler fired on time and log the tick latency
+- [ ] 0780 Ops shift 49: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0781 Ops shift 50: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0782 Ops shift 50: verify one random attestation digest against a recomputed report
+- [ ] 0783 Ops shift 50: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0784 Ops shift 50: confirm the scheduler fired on time and log the tick latency
+- [ ] 0785 Ops shift 50: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0786 Ops shift 51: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0787 Ops shift 51: verify one random attestation digest against a recomputed report
+- [ ] 0788 Ops shift 51: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0789 Ops shift 51: confirm the scheduler fired on time and log the tick latency
+- [ ] 0790 Ops shift 51: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0791 Ops shift 52: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0792 Ops shift 52: verify one random attestation digest against a recomputed report
+- [ ] 0793 Ops shift 52: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0794 Ops shift 52: confirm the scheduler fired on time and log the tick latency
+- [ ] 0795 Ops shift 52: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0796 Ops shift 53: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0797 Ops shift 53: verify one random attestation digest against a recomputed report
+- [ ] 0798 Ops shift 53: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0799 Ops shift 53: confirm the scheduler fired on time and log the tick latency
+- [ ] 0800 Ops shift 53: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0801 Ops shift 54: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0802 Ops shift 54: verify one random attestation digest against a recomputed report
+- [ ] 0803 Ops shift 54: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0804 Ops shift 54: confirm the scheduler fired on time and log the tick latency
+- [ ] 0805 Ops shift 54: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0806 Ops shift 55: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0807 Ops shift 55: verify one random attestation digest against a recomputed report
+- [ ] 0808 Ops shift 55: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0809 Ops shift 55: confirm the scheduler fired on time and log the tick latency
+- [ ] 0810 Ops shift 55: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0811 Ops shift 56: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0812 Ops shift 56: verify one random attestation digest against a recomputed report
+- [ ] 0813 Ops shift 56: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0814 Ops shift 56: confirm the scheduler fired on time and log the tick latency
+- [ ] 0815 Ops shift 56: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0816 Ops shift 57: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0817 Ops shift 57: verify one random attestation digest against a recomputed report
+- [ ] 0818 Ops shift 57: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0819 Ops shift 57: confirm the scheduler fired on time and log the tick latency
+- [ ] 0820 Ops shift 57: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0821 Ops shift 58: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0822 Ops shift 58: verify one random attestation digest against a recomputed report
+- [ ] 0823 Ops shift 58: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0824 Ops shift 58: confirm the scheduler fired on time and log the tick latency
+- [ ] 0825 Ops shift 58: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0826 Ops shift 59: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0827 Ops shift 59: verify one random attestation digest against a recomputed report
+- [ ] 0828 Ops shift 59: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0829 Ops shift 59: confirm the scheduler fired on time and log the tick latency
+- [ ] 0830 Ops shift 59: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0831 Ops shift 60: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0832 Ops shift 60: verify one random attestation digest against a recomputed report
+- [ ] 0833 Ops shift 60: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0834 Ops shift 60: confirm the scheduler fired on time and log the tick latency
+- [ ] 0835 Ops shift 60: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0836 Ops shift 61: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0837 Ops shift 61: verify one random attestation digest against a recomputed report
+- [ ] 0838 Ops shift 61: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0839 Ops shift 61: confirm the scheduler fired on time and log the tick latency
+- [ ] 0840 Ops shift 61: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0841 Ops shift 62: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0842 Ops shift 62: verify one random attestation digest against a recomputed report
+- [ ] 0843 Ops shift 62: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0844 Ops shift 62: confirm the scheduler fired on time and log the tick latency
+- [ ] 0845 Ops shift 62: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0846 Ops shift 63: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0847 Ops shift 63: verify one random attestation digest against a recomputed report
+- [ ] 0848 Ops shift 63: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0849 Ops shift 63: confirm the scheduler fired on time and log the tick latency
+- [ ] 0850 Ops shift 63: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0851 Ops shift 64: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0852 Ops shift 64: verify one random attestation digest against a recomputed report
+- [ ] 0853 Ops shift 64: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0854 Ops shift 64: confirm the scheduler fired on time and log the tick latency
+- [ ] 0855 Ops shift 64: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0856 Ops shift 65: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0857 Ops shift 65: verify one random attestation digest against a recomputed report
+- [ ] 0858 Ops shift 65: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0859 Ops shift 65: confirm the scheduler fired on time and log the tick latency
+- [ ] 0860 Ops shift 65: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0861 Ops shift 66: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0862 Ops shift 66: verify one random attestation digest against a recomputed report
+- [ ] 0863 Ops shift 66: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0864 Ops shift 66: confirm the scheduler fired on time and log the tick latency
+- [ ] 0865 Ops shift 66: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0866 Ops shift 67: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0867 Ops shift 67: verify one random attestation digest against a recomputed report
+- [ ] 0868 Ops shift 67: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0869 Ops shift 67: confirm the scheduler fired on time and log the tick latency
+- [ ] 0870 Ops shift 67: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0871 Ops shift 68: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0872 Ops shift 68: verify one random attestation digest against a recomputed report
+- [ ] 0873 Ops shift 68: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0874 Ops shift 68: confirm the scheduler fired on time and log the tick latency
+- [ ] 0875 Ops shift 68: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0876 Ops shift 69: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0877 Ops shift 69: verify one random attestation digest against a recomputed report
+- [ ] 0878 Ops shift 69: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0879 Ops shift 69: confirm the scheduler fired on time and log the tick latency
+- [ ] 0880 Ops shift 69: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0881 Ops shift 70: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0882 Ops shift 70: verify one random attestation digest against a recomputed report
+- [ ] 0883 Ops shift 70: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0884 Ops shift 70: confirm the scheduler fired on time and log the tick latency
+- [ ] 0885 Ops shift 70: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0886 Ops shift 71: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0887 Ops shift 71: verify one random attestation digest against a recomputed report
+- [ ] 0888 Ops shift 71: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0889 Ops shift 71: confirm the scheduler fired on time and log the tick latency
+- [ ] 0890 Ops shift 71: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0891 Ops shift 72: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0892 Ops shift 72: verify one random attestation digest against a recomputed report
+- [ ] 0893 Ops shift 72: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0894 Ops shift 72: confirm the scheduler fired on time and log the tick latency
+- [ ] 0895 Ops shift 72: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0896 Ops shift 73: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0897 Ops shift 73: verify one random attestation digest against a recomputed report
+- [ ] 0898 Ops shift 73: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0899 Ops shift 73: confirm the scheduler fired on time and log the tick latency
+- [ ] 0900 Ops shift 73: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0901 Ops shift 74: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0902 Ops shift 74: verify one random attestation digest against a recomputed report
+- [ ] 0903 Ops shift 74: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0904 Ops shift 74: confirm the scheduler fired on time and log the tick latency
+- [ ] 0905 Ops shift 74: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0906 Ops shift 75: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0907 Ops shift 75: verify one random attestation digest against a recomputed report
+- [ ] 0908 Ops shift 75: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0909 Ops shift 75: confirm the scheduler fired on time and log the tick latency
+- [ ] 0910 Ops shift 75: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0911 Ops shift 76: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0912 Ops shift 76: verify one random attestation digest against a recomputed report
+- [ ] 0913 Ops shift 76: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0914 Ops shift 76: confirm the scheduler fired on time and log the tick latency
+- [ ] 0915 Ops shift 76: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0916 Ops shift 77: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0917 Ops shift 77: verify one random attestation digest against a recomputed report
+- [ ] 0918 Ops shift 77: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0919 Ops shift 77: confirm the scheduler fired on time and log the tick latency
+- [ ] 0920 Ops shift 77: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0921 Ops shift 78: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0922 Ops shift 78: verify one random attestation digest against a recomputed report
+- [ ] 0923 Ops shift 78: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0924 Ops shift 78: confirm the scheduler fired on time and log the tick latency
+- [ ] 0925 Ops shift 78: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0926 Ops shift 79: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0927 Ops shift 79: verify one random attestation digest against a recomputed report
+- [ ] 0928 Ops shift 79: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0929 Ops shift 79: confirm the scheduler fired on time and log the tick latency
+- [ ] 0930 Ops shift 79: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0931 Ops shift 80: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0932 Ops shift 80: verify one random attestation digest against a recomputed report
+- [ ] 0933 Ops shift 80: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0934 Ops shift 80: confirm the scheduler fired on time and log the tick latency
+- [ ] 0935 Ops shift 80: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0936 Ops shift 81: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0937 Ops shift 81: verify one random attestation digest against a recomputed report
+- [ ] 0938 Ops shift 81: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0939 Ops shift 81: confirm the scheduler fired on time and log the tick latency
+- [ ] 0940 Ops shift 81: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0941 Ops shift 82: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0942 Ops shift 82: verify one random attestation digest against a recomputed report
+- [ ] 0943 Ops shift 82: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0944 Ops shift 82: confirm the scheduler fired on time and log the tick latency
+- [ ] 0945 Ops shift 82: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0946 Ops shift 83: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0947 Ops shift 83: verify one random attestation digest against a recomputed report
+- [ ] 0948 Ops shift 83: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0949 Ops shift 83: confirm the scheduler fired on time and log the tick latency
+- [ ] 0950 Ops shift 83: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0951 Ops shift 84: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0952 Ops shift 84: verify one random attestation digest against a recomputed report
+- [ ] 0953 Ops shift 84: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0954 Ops shift 84: confirm the scheduler fired on time and log the tick latency
+- [ ] 0955 Ops shift 84: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0956 Ops shift 85: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0957 Ops shift 85: verify one random attestation digest against a recomputed report
+- [ ] 0958 Ops shift 85: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0959 Ops shift 85: confirm the scheduler fired on time and log the tick latency
+- [ ] 0960 Ops shift 85: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0961 Ops shift 86: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0962 Ops shift 86: verify one random attestation digest against a recomputed report
+- [ ] 0963 Ops shift 86: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0964 Ops shift 86: confirm the scheduler fired on time and log the tick latency
+- [ ] 0965 Ops shift 86: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0966 Ops shift 87: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0967 Ops shift 87: verify one random attestation digest against a recomputed report
+- [ ] 0968 Ops shift 87: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0969 Ops shift 87: confirm the scheduler fired on time and log the tick latency
+- [ ] 0970 Ops shift 87: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0971 Ops shift 88: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0972 Ops shift 88: verify one random attestation digest against a recomputed report
+- [ ] 0973 Ops shift 88: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0974 Ops shift 88: confirm the scheduler fired on time and log the tick latency
+- [ ] 0975 Ops shift 88: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0976 Ops shift 89: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0977 Ops shift 89: verify one random attestation digest against a recomputed report
+- [ ] 0978 Ops shift 89: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0979 Ops shift 89: confirm the scheduler fired on time and log the tick latency
+- [ ] 0980 Ops shift 89: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0981 Ops shift 90: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0982 Ops shift 90: verify one random attestation digest against a recomputed report
+- [ ] 0983 Ops shift 90: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0984 Ops shift 90: confirm the scheduler fired on time and log the tick latency
+- [ ] 0985 Ops shift 90: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0986 Ops shift 91: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0987 Ops shift 91: verify one random attestation digest against a recomputed report
+- [ ] 0988 Ops shift 91: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0989 Ops shift 91: confirm the scheduler fired on time and log the tick latency
+- [ ] 0990 Ops shift 91: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0991 Ops shift 92: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0992 Ops shift 92: verify one random attestation digest against a recomputed report
+- [ ] 0993 Ops shift 92: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0994 Ops shift 92: confirm the scheduler fired on time and log the tick latency
+- [ ] 0995 Ops shift 92: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 0996 Ops shift 93: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 0997 Ops shift 93: verify one random attestation digest against a recomputed report
+- [ ] 0998 Ops shift 93: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 0999 Ops shift 93: confirm the scheduler fired on time and log the tick latency
+- [ ] 1000 Ops shift 93: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1001 Ops shift 94: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1002 Ops shift 94: verify one random attestation digest against a recomputed report
+- [ ] 1003 Ops shift 94: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1004 Ops shift 94: confirm the scheduler fired on time and log the tick latency
+- [ ] 1005 Ops shift 94: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1006 Ops shift 95: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1007 Ops shift 95: verify one random attestation digest against a recomputed report
+- [ ] 1008 Ops shift 95: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1009 Ops shift 95: confirm the scheduler fired on time and log the tick latency
+- [ ] 1010 Ops shift 95: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1011 Ops shift 96: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1012 Ops shift 96: verify one random attestation digest against a recomputed report
+- [ ] 1013 Ops shift 96: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1014 Ops shift 96: confirm the scheduler fired on time and log the tick latency
+- [ ] 1015 Ops shift 96: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1016 Ops shift 97: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1017 Ops shift 97: verify one random attestation digest against a recomputed report
+- [ ] 1018 Ops shift 97: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1019 Ops shift 97: confirm the scheduler fired on time and log the tick latency
+- [ ] 1020 Ops shift 97: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1021 Ops shift 98: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1022 Ops shift 98: verify one random attestation digest against a recomputed report
+- [ ] 1023 Ops shift 98: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1024 Ops shift 98: confirm the scheduler fired on time and log the tick latency
+- [ ] 1025 Ops shift 98: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1026 Ops shift 99: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1027 Ops shift 99: verify one random attestation digest against a recomputed report
+- [ ] 1028 Ops shift 99: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1029 Ops shift 99: confirm the scheduler fired on time and log the tick latency
+- [ ] 1030 Ops shift 99: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1031 Ops shift 100: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1032 Ops shift 100: verify one random attestation digest against a recomputed report
+- [ ] 1033 Ops shift 100: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1034 Ops shift 100: confirm the scheduler fired on time and log the tick latency
+- [ ] 1035 Ops shift 100: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1036 Ops shift 101: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1037 Ops shift 101: verify one random attestation digest against a recomputed report
+- [ ] 1038 Ops shift 101: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1039 Ops shift 101: confirm the scheduler fired on time and log the tick latency
+- [ ] 1040 Ops shift 101: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1041 Ops shift 102: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1042 Ops shift 102: verify one random attestation digest against a recomputed report
+- [ ] 1043 Ops shift 102: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1044 Ops shift 102: confirm the scheduler fired on time and log the tick latency
+- [ ] 1045 Ops shift 102: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1046 Ops shift 103: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1047 Ops shift 103: verify one random attestation digest against a recomputed report
+- [ ] 1048 Ops shift 103: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1049 Ops shift 103: confirm the scheduler fired on time and log the tick latency
+- [ ] 1050 Ops shift 103: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1051 Ops shift 104: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1052 Ops shift 104: verify one random attestation digest against a recomputed report
+- [ ] 1053 Ops shift 104: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1054 Ops shift 104: confirm the scheduler fired on time and log the tick latency
+- [ ] 1055 Ops shift 104: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1056 Ops shift 105: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1057 Ops shift 105: verify one random attestation digest against a recomputed report
+- [ ] 1058 Ops shift 105: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1059 Ops shift 105: confirm the scheduler fired on time and log the tick latency
+- [ ] 1060 Ops shift 105: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1061 Ops shift 106: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1062 Ops shift 106: verify one random attestation digest against a recomputed report
+- [ ] 1063 Ops shift 106: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1064 Ops shift 106: confirm the scheduler fired on time and log the tick latency
+- [ ] 1065 Ops shift 106: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1066 Ops shift 107: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1067 Ops shift 107: verify one random attestation digest against a recomputed report
+- [ ] 1068 Ops shift 107: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1069 Ops shift 107: confirm the scheduler fired on time and log the tick latency
+- [ ] 1070 Ops shift 107: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1071 Ops shift 108: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1072 Ops shift 108: verify one random attestation digest against a recomputed report
+- [ ] 1073 Ops shift 108: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1074 Ops shift 108: confirm the scheduler fired on time and log the tick latency
+- [ ] 1075 Ops shift 108: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1076 Ops shift 109: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1077 Ops shift 109: verify one random attestation digest against a recomputed report
+- [ ] 1078 Ops shift 109: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1079 Ops shift 109: confirm the scheduler fired on time and log the tick latency
+- [ ] 1080 Ops shift 109: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1081 Ops shift 110: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1082 Ops shift 110: verify one random attestation digest against a recomputed report
+- [ ] 1083 Ops shift 110: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1084 Ops shift 110: confirm the scheduler fired on time and log the tick latency
+- [ ] 1085 Ops shift 110: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1086 Ops shift 111: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1087 Ops shift 111: verify one random attestation digest against a recomputed report
+- [ ] 1088 Ops shift 111: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1089 Ops shift 111: confirm the scheduler fired on time and log the tick latency
+- [ ] 1090 Ops shift 111: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1091 Ops shift 112: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1092 Ops shift 112: verify one random attestation digest against a recomputed report
+- [ ] 1093 Ops shift 112: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1094 Ops shift 112: confirm the scheduler fired on time and log the tick latency
+- [ ] 1095 Ops shift 112: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1096 Ops shift 113: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1097 Ops shift 113: verify one random attestation digest against a recomputed report
+- [ ] 1098 Ops shift 113: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1099 Ops shift 113: confirm the scheduler fired on time and log the tick latency
+- [ ] 1100 Ops shift 113: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1101 Ops shift 114: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1102 Ops shift 114: verify one random attestation digest against a recomputed report
+- [ ] 1103 Ops shift 114: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1104 Ops shift 114: confirm the scheduler fired on time and log the tick latency
+- [ ] 1105 Ops shift 114: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1106 Ops shift 115: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1107 Ops shift 115: verify one random attestation digest against a recomputed report
+- [ ] 1108 Ops shift 115: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1109 Ops shift 115: confirm the scheduler fired on time and log the tick latency
+- [ ] 1110 Ops shift 115: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1111 Ops shift 116: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1112 Ops shift 116: verify one random attestation digest against a recomputed report
+- [ ] 1113 Ops shift 116: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1114 Ops shift 116: confirm the scheduler fired on time and log the tick latency
+- [ ] 1115 Ops shift 116: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1116 Ops shift 117: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1117 Ops shift 117: verify one random attestation digest against a recomputed report
+- [ ] 1118 Ops shift 117: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1119 Ops shift 117: confirm the scheduler fired on time and log the tick latency
+- [ ] 1120 Ops shift 117: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1121 Ops shift 118: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1122 Ops shift 118: verify one random attestation digest against a recomputed report
+- [ ] 1123 Ops shift 118: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1124 Ops shift 118: confirm the scheduler fired on time and log the tick latency
+- [ ] 1125 Ops shift 118: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1126 Ops shift 119: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1127 Ops shift 119: verify one random attestation digest against a recomputed report
+- [ ] 1128 Ops shift 119: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1129 Ops shift 119: confirm the scheduler fired on time and log the tick latency
+- [ ] 1130 Ops shift 119: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1131 Ops shift 120: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1132 Ops shift 120: verify one random attestation digest against a recomputed report
+- [ ] 1133 Ops shift 120: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1134 Ops shift 120: confirm the scheduler fired on time and log the tick latency
+- [ ] 1135 Ops shift 120: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1136 Ops shift 121: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1137 Ops shift 121: verify one random attestation digest against a recomputed report
+- [ ] 1138 Ops shift 121: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1139 Ops shift 121: confirm the scheduler fired on time and log the tick latency
+- [ ] 1140 Ops shift 121: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1141 Ops shift 122: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1142 Ops shift 122: verify one random attestation digest against a recomputed report
+- [ ] 1143 Ops shift 122: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1144 Ops shift 122: confirm the scheduler fired on time and log the tick latency
+- [ ] 1145 Ops shift 122: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1146 Ops shift 123: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1147 Ops shift 123: verify one random attestation digest against a recomputed report
+- [ ] 1148 Ops shift 123: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1149 Ops shift 123: confirm the scheduler fired on time and log the tick latency
+- [ ] 1150 Ops shift 123: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1151 Ops shift 124: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1152 Ops shift 124: verify one random attestation digest against a recomputed report
+- [ ] 1153 Ops shift 124: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1154 Ops shift 124: confirm the scheduler fired on time and log the tick latency
+- [ ] 1155 Ops shift 124: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1156 Ops shift 125: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1157 Ops shift 125: verify one random attestation digest against a recomputed report
+- [ ] 1158 Ops shift 125: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1159 Ops shift 125: confirm the scheduler fired on time and log the tick latency
+- [ ] 1160 Ops shift 125: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1161 Ops shift 126: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1162 Ops shift 126: verify one random attestation digest against a recomputed report
+- [ ] 1163 Ops shift 126: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1164 Ops shift 126: confirm the scheduler fired on time and log the tick latency
+- [ ] 1165 Ops shift 126: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1166 Ops shift 127: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1167 Ops shift 127: verify one random attestation digest against a recomputed report
+- [ ] 1168 Ops shift 127: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1169 Ops shift 127: confirm the scheduler fired on time and log the tick latency
+- [ ] 1170 Ops shift 127: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1171 Ops shift 128: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1172 Ops shift 128: verify one random attestation digest against a recomputed report
+- [ ] 1173 Ops shift 128: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1174 Ops shift 128: confirm the scheduler fired on time and log the tick latency
+- [ ] 1175 Ops shift 128: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1176 Ops shift 129: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1177 Ops shift 129: verify one random attestation digest against a recomputed report
+- [ ] 1178 Ops shift 129: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1179 Ops shift 129: confirm the scheduler fired on time and log the tick latency
+- [ ] 1180 Ops shift 129: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1181 Ops shift 130: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1182 Ops shift 130: verify one random attestation digest against a recomputed report
+- [ ] 1183 Ops shift 130: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1184 Ops shift 130: confirm the scheduler fired on time and log the tick latency
+- [ ] 1185 Ops shift 130: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1186 Ops shift 131: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1187 Ops shift 131: verify one random attestation digest against a recomputed report
+- [ ] 1188 Ops shift 131: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1189 Ops shift 131: confirm the scheduler fired on time and log the tick latency
+- [ ] 1190 Ops shift 131: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1191 Ops shift 132: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1192 Ops shift 132: verify one random attestation digest against a recomputed report
+- [ ] 1193 Ops shift 132: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1194 Ops shift 132: confirm the scheduler fired on time and log the tick latency
+- [ ] 1195 Ops shift 132: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1196 Ops shift 133: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1197 Ops shift 133: verify one random attestation digest against a recomputed report
+- [ ] 1198 Ops shift 133: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1199 Ops shift 133: confirm the scheduler fired on time and log the tick latency
+- [ ] 1200 Ops shift 133: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1201 Ops shift 134: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1202 Ops shift 134: verify one random attestation digest against a recomputed report
+- [ ] 1203 Ops shift 134: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1204 Ops shift 134: confirm the scheduler fired on time and log the tick latency
+- [ ] 1205 Ops shift 134: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1206 Ops shift 135: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1207 Ops shift 135: verify one random attestation digest against a recomputed report
+- [ ] 1208 Ops shift 135: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1209 Ops shift 135: confirm the scheduler fired on time and log the tick latency
+- [ ] 1210 Ops shift 135: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1211 Ops shift 136: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1212 Ops shift 136: verify one random attestation digest against a recomputed report
+- [ ] 1213 Ops shift 136: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1214 Ops shift 136: confirm the scheduler fired on time and log the tick latency
+- [ ] 1215 Ops shift 136: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1216 Ops shift 137: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1217 Ops shift 137: verify one random attestation digest against a recomputed report
+- [ ] 1218 Ops shift 137: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1219 Ops shift 137: confirm the scheduler fired on time and log the tick latency
+- [ ] 1220 Ops shift 137: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1221 Ops shift 138: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1222 Ops shift 138: verify one random attestation digest against a recomputed report
+- [ ] 1223 Ops shift 138: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1224 Ops shift 138: confirm the scheduler fired on time and log the tick latency
+- [ ] 1225 Ops shift 138: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1226 Ops shift 139: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1227 Ops shift 139: verify one random attestation digest against a recomputed report
+- [ ] 1228 Ops shift 139: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1229 Ops shift 139: confirm the scheduler fired on time and log the tick latency
+- [ ] 1230 Ops shift 139: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1231 Ops shift 140: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1232 Ops shift 140: verify one random attestation digest against a recomputed report
+- [ ] 1233 Ops shift 140: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1234 Ops shift 140: confirm the scheduler fired on time and log the tick latency
+- [ ] 1235 Ops shift 140: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1236 Ops shift 141: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1237 Ops shift 141: verify one random attestation digest against a recomputed report
+- [ ] 1238 Ops shift 141: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1239 Ops shift 141: confirm the scheduler fired on time and log the tick latency
+- [ ] 1240 Ops shift 141: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1241 Ops shift 142: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1242 Ops shift 142: verify one random attestation digest against a recomputed report
+- [ ] 1243 Ops shift 142: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1244 Ops shift 142: confirm the scheduler fired on time and log the tick latency
+- [ ] 1245 Ops shift 142: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1246 Ops shift 143: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1247 Ops shift 143: verify one random attestation digest against a recomputed report
+- [ ] 1248 Ops shift 143: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1249 Ops shift 143: confirm the scheduler fired on time and log the tick latency
+- [ ] 1250 Ops shift 143: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1251 Ops shift 144: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1252 Ops shift 144: verify one random attestation digest against a recomputed report
+- [ ] 1253 Ops shift 144: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1254 Ops shift 144: confirm the scheduler fired on time and log the tick latency
+- [ ] 1255 Ops shift 144: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1256 Ops shift 145: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1257 Ops shift 145: verify one random attestation digest against a recomputed report
+- [ ] 1258 Ops shift 145: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1259 Ops shift 145: confirm the scheduler fired on time and log the tick latency
+- [ ] 1260 Ops shift 145: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1261 Ops shift 146: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1262 Ops shift 146: verify one random attestation digest against a recomputed report
+- [ ] 1263 Ops shift 146: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1264 Ops shift 146: confirm the scheduler fired on time and log the tick latency
+- [ ] 1265 Ops shift 146: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1266 Ops shift 147: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1267 Ops shift 147: verify one random attestation digest against a recomputed report
+- [ ] 1268 Ops shift 147: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1269 Ops shift 147: confirm the scheduler fired on time and log the tick latency
+- [ ] 1270 Ops shift 147: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1271 Ops shift 148: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1272 Ops shift 148: verify one random attestation digest against a recomputed report
+- [ ] 1273 Ops shift 148: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1274 Ops shift 148: confirm the scheduler fired on time and log the tick latency
+- [ ] 1275 Ops shift 148: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1276 Ops shift 149: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1277 Ops shift 149: verify one random attestation digest against a recomputed report
+- [ ] 1278 Ops shift 149: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1279 Ops shift 149: confirm the scheduler fired on time and log the tick latency
+- [ ] 1280 Ops shift 149: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1281 Ops shift 150: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1282 Ops shift 150: verify one random attestation digest against a recomputed report
+- [ ] 1283 Ops shift 150: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1284 Ops shift 150: confirm the scheduler fired on time and log the tick latency
+- [ ] 1285 Ops shift 150: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1286 Ops shift 151: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1287 Ops shift 151: verify one random attestation digest against a recomputed report
+- [ ] 1288 Ops shift 151: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1289 Ops shift 151: confirm the scheduler fired on time and log the tick latency
+- [ ] 1290 Ops shift 151: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1291 Ops shift 152: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1292 Ops shift 152: verify one random attestation digest against a recomputed report
+- [ ] 1293 Ops shift 152: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1294 Ops shift 152: confirm the scheduler fired on time and log the tick latency
+- [ ] 1295 Ops shift 152: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1296 Ops shift 153: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1297 Ops shift 153: verify one random attestation digest against a recomputed report
+- [ ] 1298 Ops shift 153: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1299 Ops shift 153: confirm the scheduler fired on time and log the tick latency
+- [ ] 1300 Ops shift 153: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1301 Ops shift 154: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1302 Ops shift 154: verify one random attestation digest against a recomputed report
+- [ ] 1303 Ops shift 154: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1304 Ops shift 154: confirm the scheduler fired on time and log the tick latency
+- [ ] 1305 Ops shift 154: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1306 Ops shift 155: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1307 Ops shift 155: verify one random attestation digest against a recomputed report
+- [ ] 1308 Ops shift 155: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1309 Ops shift 155: confirm the scheduler fired on time and log the tick latency
+- [ ] 1310 Ops shift 155: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1311 Ops shift 156: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1312 Ops shift 156: verify one random attestation digest against a recomputed report
+- [ ] 1313 Ops shift 156: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1314 Ops shift 156: confirm the scheduler fired on time and log the tick latency
+- [ ] 1315 Ops shift 156: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1316 Ops shift 157: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1317 Ops shift 157: verify one random attestation digest against a recomputed report
+- [ ] 1318 Ops shift 157: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1319 Ops shift 157: confirm the scheduler fired on time and log the tick latency
+- [ ] 1320 Ops shift 157: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1321 Ops shift 158: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1322 Ops shift 158: verify one random attestation digest against a recomputed report
+- [ ] 1323 Ops shift 158: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1324 Ops shift 158: confirm the scheduler fired on time and log the tick latency
+- [ ] 1325 Ops shift 158: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1326 Ops shift 159: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1327 Ops shift 159: verify one random attestation digest against a recomputed report
+- [ ] 1328 Ops shift 159: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1329 Ops shift 159: confirm the scheduler fired on time and log the tick latency
+- [ ] 1330 Ops shift 159: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1331 Ops shift 160: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1332 Ops shift 160: verify one random attestation digest against a recomputed report
+- [ ] 1333 Ops shift 160: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1334 Ops shift 160: confirm the scheduler fired on time and log the tick latency
+- [ ] 1335 Ops shift 160: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1336 Ops shift 161: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1337 Ops shift 161: verify one random attestation digest against a recomputed report
+- [ ] 1338 Ops shift 161: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1339 Ops shift 161: confirm the scheduler fired on time and log the tick latency
+- [ ] 1340 Ops shift 161: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1341 Ops shift 162: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1342 Ops shift 162: verify one random attestation digest against a recomputed report
+- [ ] 1343 Ops shift 162: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1344 Ops shift 162: confirm the scheduler fired on time and log the tick latency
+- [ ] 1345 Ops shift 162: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1346 Ops shift 163: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1347 Ops shift 163: verify one random attestation digest against a recomputed report
+- [ ] 1348 Ops shift 163: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1349 Ops shift 163: confirm the scheduler fired on time and log the tick latency
+- [ ] 1350 Ops shift 163: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1351 Ops shift 164: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1352 Ops shift 164: verify one random attestation digest against a recomputed report
+- [ ] 1353 Ops shift 164: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1354 Ops shift 164: confirm the scheduler fired on time and log the tick latency
+- [ ] 1355 Ops shift 164: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1356 Ops shift 165: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1357 Ops shift 165: verify one random attestation digest against a recomputed report
+- [ ] 1358 Ops shift 165: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1359 Ops shift 165: confirm the scheduler fired on time and log the tick latency
+- [ ] 1360 Ops shift 165: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1361 Ops shift 166: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1362 Ops shift 166: verify one random attestation digest against a recomputed report
+- [ ] 1363 Ops shift 166: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1364 Ops shift 166: confirm the scheduler fired on time and log the tick latency
+- [ ] 1365 Ops shift 166: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1366 Ops shift 167: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1367 Ops shift 167: verify one random attestation digest against a recomputed report
+- [ ] 1368 Ops shift 167: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1369 Ops shift 167: confirm the scheduler fired on time and log the tick latency
+- [ ] 1370 Ops shift 167: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1371 Ops shift 168: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1372 Ops shift 168: verify one random attestation digest against a recomputed report
+- [ ] 1373 Ops shift 168: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1374 Ops shift 168: confirm the scheduler fired on time and log the tick latency
+- [ ] 1375 Ops shift 168: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1376 Ops shift 169: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1377 Ops shift 169: verify one random attestation digest against a recomputed report
+- [ ] 1378 Ops shift 169: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1379 Ops shift 169: confirm the scheduler fired on time and log the tick latency
+- [ ] 1380 Ops shift 169: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1381 Ops shift 170: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1382 Ops shift 170: verify one random attestation digest against a recomputed report
+- [ ] 1383 Ops shift 170: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1384 Ops shift 170: confirm the scheduler fired on time and log the tick latency
+- [ ] 1385 Ops shift 170: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1386 Ops shift 171: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1387 Ops shift 171: verify one random attestation digest against a recomputed report
+- [ ] 1388 Ops shift 171: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1389 Ops shift 171: confirm the scheduler fired on time and log the tick latency
+- [ ] 1390 Ops shift 171: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1391 Ops shift 172: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1392 Ops shift 172: verify one random attestation digest against a recomputed report
+- [ ] 1393 Ops shift 172: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1394 Ops shift 172: confirm the scheduler fired on time and log the tick latency
+- [ ] 1395 Ops shift 172: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1396 Ops shift 173: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1397 Ops shift 173: verify one random attestation digest against a recomputed report
+- [ ] 1398 Ops shift 173: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1399 Ops shift 173: confirm the scheduler fired on time and log the tick latency
+- [ ] 1400 Ops shift 173: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1401 Ops shift 174: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1402 Ops shift 174: verify one random attestation digest against a recomputed report
+- [ ] 1403 Ops shift 174: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1404 Ops shift 174: confirm the scheduler fired on time and log the tick latency
+- [ ] 1405 Ops shift 174: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1406 Ops shift 175: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1407 Ops shift 175: verify one random attestation digest against a recomputed report
+- [ ] 1408 Ops shift 175: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1409 Ops shift 175: confirm the scheduler fired on time and log the tick latency
+- [ ] 1410 Ops shift 175: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1411 Ops shift 176: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1412 Ops shift 176: verify one random attestation digest against a recomputed report
+- [ ] 1413 Ops shift 176: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1414 Ops shift 176: confirm the scheduler fired on time and log the tick latency
+- [ ] 1415 Ops shift 176: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1416 Ops shift 177: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1417 Ops shift 177: verify one random attestation digest against a recomputed report
+- [ ] 1418 Ops shift 177: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1419 Ops shift 177: confirm the scheduler fired on time and log the tick latency
+- [ ] 1420 Ops shift 177: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1421 Ops shift 178: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1422 Ops shift 178: verify one random attestation digest against a recomputed report
+- [ ] 1423 Ops shift 178: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1424 Ops shift 178: confirm the scheduler fired on time and log the tick latency
+- [ ] 1425 Ops shift 178: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1426 Ops shift 179: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1427 Ops shift 179: verify one random attestation digest against a recomputed report
+- [ ] 1428 Ops shift 179: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1429 Ops shift 179: confirm the scheduler fired on time and log the tick latency
+- [ ] 1430 Ops shift 179: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1431 Ops shift 180: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1432 Ops shift 180: verify one random attestation digest against a recomputed report
+- [ ] 1433 Ops shift 180: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1434 Ops shift 180: confirm the scheduler fired on time and log the tick latency
+- [ ] 1435 Ops shift 180: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1436 Ops shift 181: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1437 Ops shift 181: verify one random attestation digest against a recomputed report
+- [ ] 1438 Ops shift 181: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1439 Ops shift 181: confirm the scheduler fired on time and log the tick latency
+- [ ] 1440 Ops shift 181: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1441 Ops shift 182: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1442 Ops shift 182: verify one random attestation digest against a recomputed report
+- [ ] 1443 Ops shift 182: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1444 Ops shift 182: confirm the scheduler fired on time and log the tick latency
+- [ ] 1445 Ops shift 182: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1446 Ops shift 183: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1447 Ops shift 183: verify one random attestation digest against a recomputed report
+- [ ] 1448 Ops shift 183: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1449 Ops shift 183: confirm the scheduler fired on time and log the tick latency
+- [ ] 1450 Ops shift 183: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1451 Ops shift 184: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1452 Ops shift 184: verify one random attestation digest against a recomputed report
+- [ ] 1453 Ops shift 184: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1454 Ops shift 184: confirm the scheduler fired on time and log the tick latency
+- [ ] 1455 Ops shift 184: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1456 Ops shift 185: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1457 Ops shift 185: verify one random attestation digest against a recomputed report
+- [ ] 1458 Ops shift 185: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1459 Ops shift 185: confirm the scheduler fired on time and log the tick latency
+- [ ] 1460 Ops shift 185: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1461 Ops shift 186: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1462 Ops shift 186: verify one random attestation digest against a recomputed report
+- [ ] 1463 Ops shift 186: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1464 Ops shift 186: confirm the scheduler fired on time and log the tick latency
+- [ ] 1465 Ops shift 186: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1466 Ops shift 187: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1467 Ops shift 187: verify one random attestation digest against a recomputed report
+- [ ] 1468 Ops shift 187: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1469 Ops shift 187: confirm the scheduler fired on time and log the tick latency
+- [ ] 1470 Ops shift 187: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1471 Ops shift 188: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1472 Ops shift 188: verify one random attestation digest against a recomputed report
+- [ ] 1473 Ops shift 188: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1474 Ops shift 188: confirm the scheduler fired on time and log the tick latency
+- [ ] 1475 Ops shift 188: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1476 Ops shift 189: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1477 Ops shift 189: verify one random attestation digest against a recomputed report
+- [ ] 1478 Ops shift 189: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1479 Ops shift 189: confirm the scheduler fired on time and log the tick latency
+- [ ] 1480 Ops shift 189: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1481 Ops shift 190: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1482 Ops shift 190: verify one random attestation digest against a recomputed report
+- [ ] 1483 Ops shift 190: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1484 Ops shift 190: confirm the scheduler fired on time and log the tick latency
+- [ ] 1485 Ops shift 190: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1486 Ops shift 191: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1487 Ops shift 191: verify one random attestation digest against a recomputed report
+- [ ] 1488 Ops shift 191: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1489 Ops shift 191: confirm the scheduler fired on time and log the tick latency
+- [ ] 1490 Ops shift 191: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1491 Ops shift 192: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1492 Ops shift 192: verify one random attestation digest against a recomputed report
+- [ ] 1493 Ops shift 192: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1494 Ops shift 192: confirm the scheduler fired on time and log the tick latency
+- [ ] 1495 Ops shift 192: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1496 Ops shift 193: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1497 Ops shift 193: verify one random attestation digest against a recomputed report
+- [ ] 1498 Ops shift 193: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1499 Ops shift 193: confirm the scheduler fired on time and log the tick latency
+- [ ] 1500 Ops shift 193: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1501 Ops shift 194: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1502 Ops shift 194: verify one random attestation digest against a recomputed report
+- [ ] 1503 Ops shift 194: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1504 Ops shift 194: confirm the scheduler fired on time and log the tick latency
+- [ ] 1505 Ops shift 194: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1506 Ops shift 195: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1507 Ops shift 195: verify one random attestation digest against a recomputed report
+- [ ] 1508 Ops shift 195: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1509 Ops shift 195: confirm the scheduler fired on time and log the tick latency
+- [ ] 1510 Ops shift 195: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1511 Ops shift 196: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1512 Ops shift 196: verify one random attestation digest against a recomputed report
+- [ ] 1513 Ops shift 196: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1514 Ops shift 196: confirm the scheduler fired on time and log the tick latency
+- [ ] 1515 Ops shift 196: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1516 Ops shift 197: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1517 Ops shift 197: verify one random attestation digest against a recomputed report
+- [ ] 1518 Ops shift 197: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1519 Ops shift 197: confirm the scheduler fired on time and log the tick latency
+- [ ] 1520 Ops shift 197: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1521 Ops shift 198: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1522 Ops shift 198: verify one random attestation digest against a recomputed report
+- [ ] 1523 Ops shift 198: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1524 Ops shift 198: confirm the scheduler fired on time and log the tick latency
+- [ ] 1525 Ops shift 198: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1526 Ops shift 199: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1527 Ops shift 199: verify one random attestation digest against a recomputed report
+- [ ] 1528 Ops shift 199: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1529 Ops shift 199: confirm the scheduler fired on time and log the tick latency
+- [ ] 1530 Ops shift 199: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1531 Ops shift 200: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1532 Ops shift 200: verify one random attestation digest against a recomputed report
+- [ ] 1533 Ops shift 200: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1534 Ops shift 200: confirm the scheduler fired on time and log the tick latency
+- [ ] 1535 Ops shift 200: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1536 Ops shift 201: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1537 Ops shift 201: verify one random attestation digest against a recomputed report
+- [ ] 1538 Ops shift 201: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1539 Ops shift 201: confirm the scheduler fired on time and log the tick latency
+- [ ] 1540 Ops shift 201: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1541 Ops shift 202: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1542 Ops shift 202: verify one random attestation digest against a recomputed report
+- [ ] 1543 Ops shift 202: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1544 Ops shift 202: confirm the scheduler fired on time and log the tick latency
+- [ ] 1545 Ops shift 202: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1546 Ops shift 203: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1547 Ops shift 203: verify one random attestation digest against a recomputed report
+- [ ] 1548 Ops shift 203: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1549 Ops shift 203: confirm the scheduler fired on time and log the tick latency
+- [ ] 1550 Ops shift 203: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1551 Ops shift 204: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1552 Ops shift 204: verify one random attestation digest against a recomputed report
+- [ ] 1553 Ops shift 204: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1554 Ops shift 204: confirm the scheduler fired on time and log the tick latency
+- [ ] 1555 Ops shift 204: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1556 Ops shift 205: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1557 Ops shift 205: verify one random attestation digest against a recomputed report
+- [ ] 1558 Ops shift 205: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1559 Ops shift 205: confirm the scheduler fired on time and log the tick latency
+- [ ] 1560 Ops shift 205: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1561 Ops shift 206: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1562 Ops shift 206: verify one random attestation digest against a recomputed report
+- [ ] 1563 Ops shift 206: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1564 Ops shift 206: confirm the scheduler fired on time and log the tick latency
+- [ ] 1565 Ops shift 206: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1566 Ops shift 207: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1567 Ops shift 207: verify one random attestation digest against a recomputed report
+- [ ] 1568 Ops shift 207: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1569 Ops shift 207: confirm the scheduler fired on time and log the tick latency
+- [ ] 1570 Ops shift 207: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1571 Ops shift 208: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1572 Ops shift 208: verify one random attestation digest against a recomputed report
+- [ ] 1573 Ops shift 208: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1574 Ops shift 208: confirm the scheduler fired on time and log the tick latency
+- [ ] 1575 Ops shift 208: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1576 Ops shift 209: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1577 Ops shift 209: verify one random attestation digest against a recomputed report
+- [ ] 1578 Ops shift 209: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1579 Ops shift 209: confirm the scheduler fired on time and log the tick latency
+- [ ] 1580 Ops shift 209: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1581 Ops shift 210: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1582 Ops shift 210: verify one random attestation digest against a recomputed report
+- [ ] 1583 Ops shift 210: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1584 Ops shift 210: confirm the scheduler fired on time and log the tick latency
+- [ ] 1585 Ops shift 210: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1586 Ops shift 211: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1587 Ops shift 211: verify one random attestation digest against a recomputed report
+- [ ] 1588 Ops shift 211: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1589 Ops shift 211: confirm the scheduler fired on time and log the tick latency
+- [ ] 1590 Ops shift 211: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1591 Ops shift 212: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1592 Ops shift 212: verify one random attestation digest against a recomputed report
+- [ ] 1593 Ops shift 212: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1594 Ops shift 212: confirm the scheduler fired on time and log the tick latency
+- [ ] 1595 Ops shift 212: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1596 Ops shift 213: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1597 Ops shift 213: verify one random attestation digest against a recomputed report
+- [ ] 1598 Ops shift 213: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1599 Ops shift 213: confirm the scheduler fired on time and log the tick latency
+- [ ] 1600 Ops shift 213: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1601 Ops shift 214: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1602 Ops shift 214: verify one random attestation digest against a recomputed report
+- [ ] 1603 Ops shift 214: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1604 Ops shift 214: confirm the scheduler fired on time and log the tick latency
+- [ ] 1605 Ops shift 214: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1606 Ops shift 215: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1607 Ops shift 215: verify one random attestation digest against a recomputed report
+- [ ] 1608 Ops shift 215: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1609 Ops shift 215: confirm the scheduler fired on time and log the tick latency
+- [ ] 1610 Ops shift 215: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1611 Ops shift 216: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1612 Ops shift 216: verify one random attestation digest against a recomputed report
+- [ ] 1613 Ops shift 216: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1614 Ops shift 216: confirm the scheduler fired on time and log the tick latency
+- [ ] 1615 Ops shift 216: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1616 Ops shift 217: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1617 Ops shift 217: verify one random attestation digest against a recomputed report
+- [ ] 1618 Ops shift 217: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1619 Ops shift 217: confirm the scheduler fired on time and log the tick latency
+- [ ] 1620 Ops shift 217: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1621 Ops shift 218: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1622 Ops shift 218: verify one random attestation digest against a recomputed report
+- [ ] 1623 Ops shift 218: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1624 Ops shift 218: confirm the scheduler fired on time and log the tick latency
+- [ ] 1625 Ops shift 218: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1626 Ops shift 219: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1627 Ops shift 219: verify one random attestation digest against a recomputed report
+- [ ] 1628 Ops shift 219: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1629 Ops shift 219: confirm the scheduler fired on time and log the tick latency
+- [ ] 1630 Ops shift 219: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1631 Ops shift 220: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1632 Ops shift 220: verify one random attestation digest against a recomputed report
+- [ ] 1633 Ops shift 220: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1634 Ops shift 220: confirm the scheduler fired on time and log the tick latency
+- [ ] 1635 Ops shift 220: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1636 Ops shift 221: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1637 Ops shift 221: verify one random attestation digest against a recomputed report
+- [ ] 1638 Ops shift 221: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1639 Ops shift 221: confirm the scheduler fired on time and log the tick latency
+- [ ] 1640 Ops shift 221: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1641 Ops shift 222: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1642 Ops shift 222: verify one random attestation digest against a recomputed report
+- [ ] 1643 Ops shift 222: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1644 Ops shift 222: confirm the scheduler fired on time and log the tick latency
+- [ ] 1645 Ops shift 222: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1646 Ops shift 223: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1647 Ops shift 223: verify one random attestation digest against a recomputed report
+- [ ] 1648 Ops shift 223: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1649 Ops shift 223: confirm the scheduler fired on time and log the tick latency
+- [ ] 1650 Ops shift 223: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1651 Ops shift 224: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1652 Ops shift 224: verify one random attestation digest against a recomputed report
+- [ ] 1653 Ops shift 224: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1654 Ops shift 224: confirm the scheduler fired on time and log the tick latency
+- [ ] 1655 Ops shift 224: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1656 Ops shift 225: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1657 Ops shift 225: verify one random attestation digest against a recomputed report
+- [ ] 1658 Ops shift 225: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1659 Ops shift 225: confirm the scheduler fired on time and log the tick latency
+- [ ] 1660 Ops shift 225: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1661 Ops shift 226: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1662 Ops shift 226: verify one random attestation digest against a recomputed report
+- [ ] 1663 Ops shift 226: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1664 Ops shift 226: confirm the scheduler fired on time and log the tick latency
+- [ ] 1665 Ops shift 226: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1666 Ops shift 227: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1667 Ops shift 227: verify one random attestation digest against a recomputed report
+- [ ] 1668 Ops shift 227: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1669 Ops shift 227: confirm the scheduler fired on time and log the tick latency
+- [ ] 1670 Ops shift 227: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1671 Ops shift 228: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1672 Ops shift 228: verify one random attestation digest against a recomputed report
+- [ ] 1673 Ops shift 228: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1674 Ops shift 228: confirm the scheduler fired on time and log the tick latency
+- [ ] 1675 Ops shift 228: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1676 Ops shift 229: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1677 Ops shift 229: verify one random attestation digest against a recomputed report
+- [ ] 1678 Ops shift 229: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1679 Ops shift 229: confirm the scheduler fired on time and log the tick latency
+- [ ] 1680 Ops shift 229: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1681 Ops shift 230: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1682 Ops shift 230: verify one random attestation digest against a recomputed report
+- [ ] 1683 Ops shift 230: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1684 Ops shift 230: confirm the scheduler fired on time and log the tick latency
+- [ ] 1685 Ops shift 230: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1686 Ops shift 231: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1687 Ops shift 231: verify one random attestation digest against a recomputed report
+- [ ] 1688 Ops shift 231: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1689 Ops shift 231: confirm the scheduler fired on time and log the tick latency
+- [ ] 1690 Ops shift 231: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1691 Ops shift 232: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1692 Ops shift 232: verify one random attestation digest against a recomputed report
+- [ ] 1693 Ops shift 232: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1694 Ops shift 232: confirm the scheduler fired on time and log the tick latency
+- [ ] 1695 Ops shift 232: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1696 Ops shift 233: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1697 Ops shift 233: verify one random attestation digest against a recomputed report
+- [ ] 1698 Ops shift 233: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1699 Ops shift 233: confirm the scheduler fired on time and log the tick latency
+- [ ] 1700 Ops shift 233: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1701 Ops shift 234: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1702 Ops shift 234: verify one random attestation digest against a recomputed report
+- [ ] 1703 Ops shift 234: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1704 Ops shift 234: confirm the scheduler fired on time and log the tick latency
+- [ ] 1705 Ops shift 234: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1706 Ops shift 235: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1707 Ops shift 235: verify one random attestation digest against a recomputed report
+- [ ] 1708 Ops shift 235: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1709 Ops shift 235: confirm the scheduler fired on time and log the tick latency
+- [ ] 1710 Ops shift 235: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1711 Ops shift 236: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1712 Ops shift 236: verify one random attestation digest against a recomputed report
+- [ ] 1713 Ops shift 236: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1714 Ops shift 236: confirm the scheduler fired on time and log the tick latency
+- [ ] 1715 Ops shift 236: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1716 Ops shift 237: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1717 Ops shift 237: verify one random attestation digest against a recomputed report
+- [ ] 1718 Ops shift 237: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1719 Ops shift 237: confirm the scheduler fired on time and log the tick latency
+- [ ] 1720 Ops shift 237: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1721 Ops shift 238: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1722 Ops shift 238: verify one random attestation digest against a recomputed report
+- [ ] 1723 Ops shift 238: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1724 Ops shift 238: confirm the scheduler fired on time and log the tick latency
+- [ ] 1725 Ops shift 238: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1726 Ops shift 239: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1727 Ops shift 239: verify one random attestation digest against a recomputed report
+- [ ] 1728 Ops shift 239: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1729 Ops shift 239: confirm the scheduler fired on time and log the tick latency
+- [ ] 1730 Ops shift 239: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1731 Ops shift 240: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1732 Ops shift 240: verify one random attestation digest against a recomputed report
+- [ ] 1733 Ops shift 240: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1734 Ops shift 240: confirm the scheduler fired on time and log the tick latency
+- [ ] 1735 Ops shift 240: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1736 Ops shift 241: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1737 Ops shift 241: verify one random attestation digest against a recomputed report
+- [ ] 1738 Ops shift 241: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1739 Ops shift 241: confirm the scheduler fired on time and log the tick latency
+- [ ] 1740 Ops shift 241: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1741 Ops shift 242: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1742 Ops shift 242: verify one random attestation digest against a recomputed report
+- [ ] 1743 Ops shift 242: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1744 Ops shift 242: confirm the scheduler fired on time and log the tick latency
+- [ ] 1745 Ops shift 242: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1746 Ops shift 243: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1747 Ops shift 243: verify one random attestation digest against a recomputed report
+- [ ] 1748 Ops shift 243: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1749 Ops shift 243: confirm the scheduler fired on time and log the tick latency
+- [ ] 1750 Ops shift 243: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1751 Ops shift 244: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1752 Ops shift 244: verify one random attestation digest against a recomputed report
+- [ ] 1753 Ops shift 244: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1754 Ops shift 244: confirm the scheduler fired on time and log the tick latency
+- [ ] 1755 Ops shift 244: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1756 Ops shift 245: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1757 Ops shift 245: verify one random attestation digest against a recomputed report
+- [ ] 1758 Ops shift 245: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1759 Ops shift 245: confirm the scheduler fired on time and log the tick latency
+- [ ] 1760 Ops shift 245: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1761 Ops shift 246: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1762 Ops shift 246: verify one random attestation digest against a recomputed report
+- [ ] 1763 Ops shift 246: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1764 Ops shift 246: confirm the scheduler fired on time and log the tick latency
+- [ ] 1765 Ops shift 246: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1766 Ops shift 247: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1767 Ops shift 247: verify one random attestation digest against a recomputed report
+- [ ] 1768 Ops shift 247: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1769 Ops shift 247: confirm the scheduler fired on time and log the tick latency
+- [ ] 1770 Ops shift 247: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1771 Ops shift 248: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1772 Ops shift 248: verify one random attestation digest against a recomputed report
+- [ ] 1773 Ops shift 248: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1774 Ops shift 248: confirm the scheduler fired on time and log the tick latency
+- [ ] 1775 Ops shift 248: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1776 Ops shift 249: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1777 Ops shift 249: verify one random attestation digest against a recomputed report
+- [ ] 1778 Ops shift 249: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1779 Ops shift 249: confirm the scheduler fired on time and log the tick latency
+- [ ] 1780 Ops shift 249: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1781 Ops shift 250: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1782 Ops shift 250: verify one random attestation digest against a recomputed report
+- [ ] 1783 Ops shift 250: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1784 Ops shift 250: confirm the scheduler fired on time and log the tick latency
+- [ ] 1785 Ops shift 250: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1786 Ops shift 251: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1787 Ops shift 251: verify one random attestation digest against a recomputed report
+- [ ] 1788 Ops shift 251: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1789 Ops shift 251: confirm the scheduler fired on time and log the tick latency
+- [ ] 1790 Ops shift 251: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1791 Ops shift 252: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1792 Ops shift 252: verify one random attestation digest against a recomputed report
+- [ ] 1793 Ops shift 252: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1794 Ops shift 252: confirm the scheduler fired on time and log the tick latency
+- [ ] 1795 Ops shift 252: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1796 Ops shift 253: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1797 Ops shift 253: verify one random attestation digest against a recomputed report
+- [ ] 1798 Ops shift 253: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1799 Ops shift 253: confirm the scheduler fired on time and log the tick latency
+- [ ] 1800 Ops shift 253: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1801 Ops shift 254: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1802 Ops shift 254: verify one random attestation digest against a recomputed report
+- [ ] 1803 Ops shift 254: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1804 Ops shift 254: confirm the scheduler fired on time and log the tick latency
+- [ ] 1805 Ops shift 254: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1806 Ops shift 255: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1807 Ops shift 255: verify one random attestation digest against a recomputed report
+- [ ] 1808 Ops shift 255: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1809 Ops shift 255: confirm the scheduler fired on time and log the tick latency
+- [ ] 1810 Ops shift 255: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1811 Ops shift 256: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1812 Ops shift 256: verify one random attestation digest against a recomputed report
+- [ ] 1813 Ops shift 256: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1814 Ops shift 256: confirm the scheduler fired on time and log the tick latency
+- [ ] 1815 Ops shift 256: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1816 Ops shift 257: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1817 Ops shift 257: verify one random attestation digest against a recomputed report
+- [ ] 1818 Ops shift 257: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1819 Ops shift 257: confirm the scheduler fired on time and log the tick latency
+- [ ] 1820 Ops shift 257: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1821 Ops shift 258: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1822 Ops shift 258: verify one random attestation digest against a recomputed report
+- [ ] 1823 Ops shift 258: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1824 Ops shift 258: confirm the scheduler fired on time and log the tick latency
+- [ ] 1825 Ops shift 258: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1826 Ops shift 259: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1827 Ops shift 259: verify one random attestation digest against a recomputed report
+- [ ] 1828 Ops shift 259: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1829 Ops shift 259: confirm the scheduler fired on time and log the tick latency
+- [ ] 1830 Ops shift 259: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1831 Ops shift 260: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1832 Ops shift 260: verify one random attestation digest against a recomputed report
+- [ ] 1833 Ops shift 260: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1834 Ops shift 260: confirm the scheduler fired on time and log the tick latency
+- [ ] 1835 Ops shift 260: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1836 Ops shift 261: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1837 Ops shift 261: verify one random attestation digest against a recomputed report
+- [ ] 1838 Ops shift 261: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1839 Ops shift 261: confirm the scheduler fired on time and log the tick latency
+- [ ] 1840 Ops shift 261: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1841 Ops shift 262: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1842 Ops shift 262: verify one random attestation digest against a recomputed report
+- [ ] 1843 Ops shift 262: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1844 Ops shift 262: confirm the scheduler fired on time and log the tick latency
+- [ ] 1845 Ops shift 262: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1846 Ops shift 263: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1847 Ops shift 263: verify one random attestation digest against a recomputed report
+- [ ] 1848 Ops shift 263: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1849 Ops shift 263: confirm the scheduler fired on time and log the tick latency
+- [ ] 1850 Ops shift 263: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1851 Ops shift 264: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1852 Ops shift 264: verify one random attestation digest against a recomputed report
+- [ ] 1853 Ops shift 264: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1854 Ops shift 264: confirm the scheduler fired on time and log the tick latency
+- [ ] 1855 Ops shift 264: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1856 Ops shift 265: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1857 Ops shift 265: verify one random attestation digest against a recomputed report
+- [ ] 1858 Ops shift 265: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1859 Ops shift 265: confirm the scheduler fired on time and log the tick latency
+- [ ] 1860 Ops shift 265: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1861 Ops shift 266: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1862 Ops shift 266: verify one random attestation digest against a recomputed report
+- [ ] 1863 Ops shift 266: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1864 Ops shift 266: confirm the scheduler fired on time and log the tick latency
+- [ ] 1865 Ops shift 266: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1866 Ops shift 267: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1867 Ops shift 267: verify one random attestation digest against a recomputed report
+- [ ] 1868 Ops shift 267: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1869 Ops shift 267: confirm the scheduler fired on time and log the tick latency
+- [ ] 1870 Ops shift 267: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1871 Ops shift 268: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1872 Ops shift 268: verify one random attestation digest against a recomputed report
+- [ ] 1873 Ops shift 268: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1874 Ops shift 268: confirm the scheduler fired on time and log the tick latency
+- [ ] 1875 Ops shift 268: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1876 Ops shift 269: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1877 Ops shift 269: verify one random attestation digest against a recomputed report
+- [ ] 1878 Ops shift 269: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1879 Ops shift 269: confirm the scheduler fired on time and log the tick latency
+- [ ] 1880 Ops shift 269: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1881 Ops shift 270: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1882 Ops shift 270: verify one random attestation digest against a recomputed report
+- [ ] 1883 Ops shift 270: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1884 Ops shift 270: confirm the scheduler fired on time and log the tick latency
+- [ ] 1885 Ops shift 270: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1886 Ops shift 271: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1887 Ops shift 271: verify one random attestation digest against a recomputed report
+- [ ] 1888 Ops shift 271: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1889 Ops shift 271: confirm the scheduler fired on time and log the tick latency
+- [ ] 1890 Ops shift 271: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1891 Ops shift 272: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1892 Ops shift 272: verify one random attestation digest against a recomputed report
+- [ ] 1893 Ops shift 272: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1894 Ops shift 272: confirm the scheduler fired on time and log the tick latency
+- [ ] 1895 Ops shift 272: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1896 Ops shift 273: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1897 Ops shift 273: verify one random attestation digest against a recomputed report
+- [ ] 1898 Ops shift 273: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1899 Ops shift 273: confirm the scheduler fired on time and log the tick latency
+- [ ] 1900 Ops shift 273: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1901 Ops shift 274: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1902 Ops shift 274: verify one random attestation digest against a recomputed report
+- [ ] 1903 Ops shift 274: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1904 Ops shift 274: confirm the scheduler fired on time and log the tick latency
+- [ ] 1905 Ops shift 274: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1906 Ops shift 275: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1907 Ops shift 275: verify one random attestation digest against a recomputed report
+- [ ] 1908 Ops shift 275: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1909 Ops shift 275: confirm the scheduler fired on time and log the tick latency
+- [ ] 1910 Ops shift 275: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1911 Ops shift 276: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1912 Ops shift 276: verify one random attestation digest against a recomputed report
+- [ ] 1913 Ops shift 276: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1914 Ops shift 276: confirm the scheduler fired on time and log the tick latency
+- [ ] 1915 Ops shift 276: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1916 Ops shift 277: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1917 Ops shift 277: verify one random attestation digest against a recomputed report
+- [ ] 1918 Ops shift 277: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1919 Ops shift 277: confirm the scheduler fired on time and log the tick latency
+- [ ] 1920 Ops shift 277: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1921 Ops shift 278: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1922 Ops shift 278: verify one random attestation digest against a recomputed report
+- [ ] 1923 Ops shift 278: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1924 Ops shift 278: confirm the scheduler fired on time and log the tick latency
+- [ ] 1925 Ops shift 278: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1926 Ops shift 279: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1927 Ops shift 279: verify one random attestation digest against a recomputed report
+- [ ] 1928 Ops shift 279: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1929 Ops shift 279: confirm the scheduler fired on time and log the tick latency
+- [ ] 1930 Ops shift 279: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1931 Ops shift 280: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1932 Ops shift 280: verify one random attestation digest against a recomputed report
+- [ ] 1933 Ops shift 280: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1934 Ops shift 280: confirm the scheduler fired on time and log the tick latency
+- [ ] 1935 Ops shift 280: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1936 Ops shift 281: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1937 Ops shift 281: verify one random attestation digest against a recomputed report
+- [ ] 1938 Ops shift 281: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1939 Ops shift 281: confirm the scheduler fired on time and log the tick latency
+- [ ] 1940 Ops shift 281: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1941 Ops shift 282: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1942 Ops shift 282: verify one random attestation digest against a recomputed report
+- [ ] 1943 Ops shift 282: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1944 Ops shift 282: confirm the scheduler fired on time and log the tick latency
+- [ ] 1945 Ops shift 282: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1946 Ops shift 283: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1947 Ops shift 283: verify one random attestation digest against a recomputed report
+- [ ] 1948 Ops shift 283: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1949 Ops shift 283: confirm the scheduler fired on time and log the tick latency
+- [ ] 1950 Ops shift 283: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1951 Ops shift 284: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1952 Ops shift 284: verify one random attestation digest against a recomputed report
+- [ ] 1953 Ops shift 284: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1954 Ops shift 284: confirm the scheduler fired on time and log the tick latency
+- [ ] 1955 Ops shift 284: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1956 Ops shift 285: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1957 Ops shift 285: verify one random attestation digest against a recomputed report
+- [ ] 1958 Ops shift 285: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1959 Ops shift 285: confirm the scheduler fired on time and log the tick latency
+- [ ] 1960 Ops shift 285: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1961 Ops shift 286: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1962 Ops shift 286: verify one random attestation digest against a recomputed report
+- [ ] 1963 Ops shift 286: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1964 Ops shift 286: confirm the scheduler fired on time and log the tick latency
+- [ ] 1965 Ops shift 286: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1966 Ops shift 287: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1967 Ops shift 287: verify one random attestation digest against a recomputed report
+- [ ] 1968 Ops shift 287: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1969 Ops shift 287: confirm the scheduler fired on time and log the tick latency
+- [ ] 1970 Ops shift 287: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1971 Ops shift 288: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1972 Ops shift 288: verify one random attestation digest against a recomputed report
+- [ ] 1973 Ops shift 288: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1974 Ops shift 288: confirm the scheduler fired on time and log the tick latency
+- [ ] 1975 Ops shift 288: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1976 Ops shift 289: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1977 Ops shift 289: verify one random attestation digest against a recomputed report
+- [ ] 1978 Ops shift 289: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1979 Ops shift 289: confirm the scheduler fired on time and log the tick latency
+- [ ] 1980 Ops shift 289: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1981 Ops shift 290: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1982 Ops shift 290: verify one random attestation digest against a recomputed report
+- [ ] 1983 Ops shift 290: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1984 Ops shift 290: confirm the scheduler fired on time and log the tick latency
+- [ ] 1985 Ops shift 290: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1986 Ops shift 291: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1987 Ops shift 291: verify one random attestation digest against a recomputed report
+- [ ] 1988 Ops shift 291: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1989 Ops shift 291: confirm the scheduler fired on time and log the tick latency
+- [ ] 1990 Ops shift 291: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1991 Ops shift 292: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1992 Ops shift 292: verify one random attestation digest against a recomputed report
+- [ ] 1993 Ops shift 292: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1994 Ops shift 292: confirm the scheduler fired on time and log the tick latency
+- [ ] 1995 Ops shift 292: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 1996 Ops shift 293: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 1997 Ops shift 293: verify one random attestation digest against a recomputed report
+- [ ] 1998 Ops shift 293: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 1999 Ops shift 293: confirm the scheduler fired on time and log the tick latency
+- [ ] 2000 Ops shift 293: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2001 Ops shift 294: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2002 Ops shift 294: verify one random attestation digest against a recomputed report
+- [ ] 2003 Ops shift 294: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2004 Ops shift 294: confirm the scheduler fired on time and log the tick latency
+- [ ] 2005 Ops shift 294: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2006 Ops shift 295: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2007 Ops shift 295: verify one random attestation digest against a recomputed report
+- [ ] 2008 Ops shift 295: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2009 Ops shift 295: confirm the scheduler fired on time and log the tick latency
+- [ ] 2010 Ops shift 295: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2011 Ops shift 296: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2012 Ops shift 296: verify one random attestation digest against a recomputed report
+- [ ] 2013 Ops shift 296: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2014 Ops shift 296: confirm the scheduler fired on time and log the tick latency
+- [ ] 2015 Ops shift 296: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2016 Ops shift 297: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2017 Ops shift 297: verify one random attestation digest against a recomputed report
+- [ ] 2018 Ops shift 297: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2019 Ops shift 297: confirm the scheduler fired on time and log the tick latency
+- [ ] 2020 Ops shift 297: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2021 Ops shift 298: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2022 Ops shift 298: verify one random attestation digest against a recomputed report
+- [ ] 2023 Ops shift 298: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2024 Ops shift 298: confirm the scheduler fired on time and log the tick latency
+- [ ] 2025 Ops shift 298: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2026 Ops shift 299: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2027 Ops shift 299: verify one random attestation digest against a recomputed report
+- [ ] 2028 Ops shift 299: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2029 Ops shift 299: confirm the scheduler fired on time and log the tick latency
+- [ ] 2030 Ops shift 299: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2031 Ops shift 300: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2032 Ops shift 300: verify one random attestation digest against a recomputed report
+- [ ] 2033 Ops shift 300: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2034 Ops shift 300: confirm the scheduler fired on time and log the tick latency
+- [ ] 2035 Ops shift 300: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2036 Ops shift 301: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2037 Ops shift 301: verify one random attestation digest against a recomputed report
+- [ ] 2038 Ops shift 301: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2039 Ops shift 301: confirm the scheduler fired on time and log the tick latency
+- [ ] 2040 Ops shift 301: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2041 Ops shift 302: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2042 Ops shift 302: verify one random attestation digest against a recomputed report
+- [ ] 2043 Ops shift 302: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2044 Ops shift 302: confirm the scheduler fired on time and log the tick latency
+- [ ] 2045 Ops shift 302: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2046 Ops shift 303: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2047 Ops shift 303: verify one random attestation digest against a recomputed report
+- [ ] 2048 Ops shift 303: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2049 Ops shift 303: confirm the scheduler fired on time and log the tick latency
+- [ ] 2050 Ops shift 303: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2051 Ops shift 304: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2052 Ops shift 304: verify one random attestation digest against a recomputed report
+- [ ] 2053 Ops shift 304: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2054 Ops shift 304: confirm the scheduler fired on time and log the tick latency
+- [ ] 2055 Ops shift 304: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2056 Ops shift 305: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2057 Ops shift 305: verify one random attestation digest against a recomputed report
+- [ ] 2058 Ops shift 305: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2059 Ops shift 305: confirm the scheduler fired on time and log the tick latency
+- [ ] 2060 Ops shift 305: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2061 Ops shift 306: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2062 Ops shift 306: verify one random attestation digest against a recomputed report
+- [ ] 2063 Ops shift 306: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2064 Ops shift 306: confirm the scheduler fired on time and log the tick latency
+- [ ] 2065 Ops shift 306: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2066 Ops shift 307: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2067 Ops shift 307: verify one random attestation digest against a recomputed report
+- [ ] 2068 Ops shift 307: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2069 Ops shift 307: confirm the scheduler fired on time and log the tick latency
+- [ ] 2070 Ops shift 307: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2071 Ops shift 308: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2072 Ops shift 308: verify one random attestation digest against a recomputed report
+- [ ] 2073 Ops shift 308: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2074 Ops shift 308: confirm the scheduler fired on time and log the tick latency
+- [ ] 2075 Ops shift 308: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2076 Ops shift 309: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2077 Ops shift 309: verify one random attestation digest against a recomputed report
+- [ ] 2078 Ops shift 309: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2079 Ops shift 309: confirm the scheduler fired on time and log the tick latency
+- [ ] 2080 Ops shift 309: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2081 Ops shift 310: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2082 Ops shift 310: verify one random attestation digest against a recomputed report
+- [ ] 2083 Ops shift 310: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2084 Ops shift 310: confirm the scheduler fired on time and log the tick latency
+- [ ] 2085 Ops shift 310: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2086 Ops shift 311: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2087 Ops shift 311: verify one random attestation digest against a recomputed report
+- [ ] 2088 Ops shift 311: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2089 Ops shift 311: confirm the scheduler fired on time and log the tick latency
+- [ ] 2090 Ops shift 311: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2091 Ops shift 312: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2092 Ops shift 312: verify one random attestation digest against a recomputed report
+- [ ] 2093 Ops shift 312: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2094 Ops shift 312: confirm the scheduler fired on time and log the tick latency
+- [ ] 2095 Ops shift 312: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2096 Ops shift 313: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2097 Ops shift 313: verify one random attestation digest against a recomputed report
+- [ ] 2098 Ops shift 313: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2099 Ops shift 313: confirm the scheduler fired on time and log the tick latency
+- [ ] 2100 Ops shift 313: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2101 Ops shift 314: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2102 Ops shift 314: verify one random attestation digest against a recomputed report
+- [ ] 2103 Ops shift 314: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2104 Ops shift 314: confirm the scheduler fired on time and log the tick latency
+- [ ] 2105 Ops shift 314: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2106 Ops shift 315: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2107 Ops shift 315: verify one random attestation digest against a recomputed report
+- [ ] 2108 Ops shift 315: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2109 Ops shift 315: confirm the scheduler fired on time and log the tick latency
+- [ ] 2110 Ops shift 315: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2111 Ops shift 316: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2112 Ops shift 316: verify one random attestation digest against a recomputed report
+- [ ] 2113 Ops shift 316: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2114 Ops shift 316: confirm the scheduler fired on time and log the tick latency
+- [ ] 2115 Ops shift 316: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2116 Ops shift 317: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2117 Ops shift 317: verify one random attestation digest against a recomputed report
+- [ ] 2118 Ops shift 317: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2119 Ops shift 317: confirm the scheduler fired on time and log the tick latency
+- [ ] 2120 Ops shift 317: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2121 Ops shift 318: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2122 Ops shift 318: verify one random attestation digest against a recomputed report
+- [ ] 2123 Ops shift 318: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2124 Ops shift 318: confirm the scheduler fired on time and log the tick latency
+- [ ] 2125 Ops shift 318: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2126 Ops shift 319: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2127 Ops shift 319: verify one random attestation digest against a recomputed report
+- [ ] 2128 Ops shift 319: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2129 Ops shift 319: confirm the scheduler fired on time and log the tick latency
+- [ ] 2130 Ops shift 319: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2131 Ops shift 320: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2132 Ops shift 320: verify one random attestation digest against a recomputed report
+- [ ] 2133 Ops shift 320: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2134 Ops shift 320: confirm the scheduler fired on time and log the tick latency
+- [ ] 2135 Ops shift 320: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2136 Ops shift 321: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2137 Ops shift 321: verify one random attestation digest against a recomputed report
+- [ ] 2138 Ops shift 321: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2139 Ops shift 321: confirm the scheduler fired on time and log the tick latency
+- [ ] 2140 Ops shift 321: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2141 Ops shift 322: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2142 Ops shift 322: verify one random attestation digest against a recomputed report
+- [ ] 2143 Ops shift 322: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2144 Ops shift 322: confirm the scheduler fired on time and log the tick latency
+- [ ] 2145 Ops shift 322: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2146 Ops shift 323: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2147 Ops shift 323: verify one random attestation digest against a recomputed report
+- [ ] 2148 Ops shift 323: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2149 Ops shift 323: confirm the scheduler fired on time and log the tick latency
+- [ ] 2150 Ops shift 323: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2151 Ops shift 324: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2152 Ops shift 324: verify one random attestation digest against a recomputed report
+- [ ] 2153 Ops shift 324: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2154 Ops shift 324: confirm the scheduler fired on time and log the tick latency
+- [ ] 2155 Ops shift 324: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2156 Ops shift 325: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2157 Ops shift 325: verify one random attestation digest against a recomputed report
+- [ ] 2158 Ops shift 325: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2159 Ops shift 325: confirm the scheduler fired on time and log the tick latency
+- [ ] 2160 Ops shift 325: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2161 Ops shift 326: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2162 Ops shift 326: verify one random attestation digest against a recomputed report
+- [ ] 2163 Ops shift 326: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2164 Ops shift 326: confirm the scheduler fired on time and log the tick latency
+- [ ] 2165 Ops shift 326: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2166 Ops shift 327: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2167 Ops shift 327: verify one random attestation digest against a recomputed report
+- [ ] 2168 Ops shift 327: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2169 Ops shift 327: confirm the scheduler fired on time and log the tick latency
+- [ ] 2170 Ops shift 327: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2171 Ops shift 328: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2172 Ops shift 328: verify one random attestation digest against a recomputed report
+- [ ] 2173 Ops shift 328: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2174 Ops shift 328: confirm the scheduler fired on time and log the tick latency
+- [ ] 2175 Ops shift 328: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2176 Ops shift 329: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2177 Ops shift 329: verify one random attestation digest against a recomputed report
+- [ ] 2178 Ops shift 329: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2179 Ops shift 329: confirm the scheduler fired on time and log the tick latency
+- [ ] 2180 Ops shift 329: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2181 Ops shift 330: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2182 Ops shift 330: verify one random attestation digest against a recomputed report
+- [ ] 2183 Ops shift 330: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2184 Ops shift 330: confirm the scheduler fired on time and log the tick latency
+- [ ] 2185 Ops shift 330: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2186 Ops shift 331: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2187 Ops shift 331: verify one random attestation digest against a recomputed report
+- [ ] 2188 Ops shift 331: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2189 Ops shift 331: confirm the scheduler fired on time and log the tick latency
+- [ ] 2190 Ops shift 331: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2191 Ops shift 332: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2192 Ops shift 332: verify one random attestation digest against a recomputed report
+- [ ] 2193 Ops shift 332: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2194 Ops shift 332: confirm the scheduler fired on time and log the tick latency
+- [ ] 2195 Ops shift 332: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2196 Ops shift 333: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2197 Ops shift 333: verify one random attestation digest against a recomputed report
+- [ ] 2198 Ops shift 333: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2199 Ops shift 333: confirm the scheduler fired on time and log the tick latency
+- [ ] 2200 Ops shift 333: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2201 Ops shift 334: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2202 Ops shift 334: verify one random attestation digest against a recomputed report
+- [ ] 2203 Ops shift 334: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2204 Ops shift 334: confirm the scheduler fired on time and log the tick latency
+- [ ] 2205 Ops shift 334: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2206 Ops shift 335: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2207 Ops shift 335: verify one random attestation digest against a recomputed report
+- [ ] 2208 Ops shift 335: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2209 Ops shift 335: confirm the scheduler fired on time and log the tick latency
+- [ ] 2210 Ops shift 335: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2211 Ops shift 336: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2212 Ops shift 336: verify one random attestation digest against a recomputed report
+- [ ] 2213 Ops shift 336: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2214 Ops shift 336: confirm the scheduler fired on time and log the tick latency
+- [ ] 2215 Ops shift 336: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2216 Ops shift 337: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2217 Ops shift 337: verify one random attestation digest against a recomputed report
+- [ ] 2218 Ops shift 337: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2219 Ops shift 337: confirm the scheduler fired on time and log the tick latency
+- [ ] 2220 Ops shift 337: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2221 Ops shift 338: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2222 Ops shift 338: verify one random attestation digest against a recomputed report
+- [ ] 2223 Ops shift 338: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2224 Ops shift 338: confirm the scheduler fired on time and log the tick latency
+- [ ] 2225 Ops shift 338: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2226 Ops shift 339: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2227 Ops shift 339: verify one random attestation digest against a recomputed report
+- [ ] 2228 Ops shift 339: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2229 Ops shift 339: confirm the scheduler fired on time and log the tick latency
+- [ ] 2230 Ops shift 339: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2231 Ops shift 340: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2232 Ops shift 340: verify one random attestation digest against a recomputed report
+- [ ] 2233 Ops shift 340: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2234 Ops shift 340: confirm the scheduler fired on time and log the tick latency
+- [ ] 2235 Ops shift 340: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2236 Ops shift 341: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2237 Ops shift 341: verify one random attestation digest against a recomputed report
+- [ ] 2238 Ops shift 341: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2239 Ops shift 341: confirm the scheduler fired on time and log the tick latency
+- [ ] 2240 Ops shift 341: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2241 Ops shift 342: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2242 Ops shift 342: verify one random attestation digest against a recomputed report
+- [ ] 2243 Ops shift 342: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2244 Ops shift 342: confirm the scheduler fired on time and log the tick latency
+- [ ] 2245 Ops shift 342: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2246 Ops shift 343: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2247 Ops shift 343: verify one random attestation digest against a recomputed report
+- [ ] 2248 Ops shift 343: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2249 Ops shift 343: confirm the scheduler fired on time and log the tick latency
+- [ ] 2250 Ops shift 343: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2251 Ops shift 344: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2252 Ops shift 344: verify one random attestation digest against a recomputed report
+- [ ] 2253 Ops shift 344: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2254 Ops shift 344: confirm the scheduler fired on time and log the tick latency
+- [ ] 2255 Ops shift 344: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2256 Ops shift 345: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2257 Ops shift 345: verify one random attestation digest against a recomputed report
+- [ ] 2258 Ops shift 345: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2259 Ops shift 345: confirm the scheduler fired on time and log the tick latency
+- [ ] 2260 Ops shift 345: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2261 Ops shift 346: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2262 Ops shift 346: verify one random attestation digest against a recomputed report
+- [ ] 2263 Ops shift 346: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2264 Ops shift 346: confirm the scheduler fired on time and log the tick latency
+- [ ] 2265 Ops shift 346: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2266 Ops shift 347: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2267 Ops shift 347: verify one random attestation digest against a recomputed report
+- [ ] 2268 Ops shift 347: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2269 Ops shift 347: confirm the scheduler fired on time and log the tick latency
+- [ ] 2270 Ops shift 347: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2271 Ops shift 348: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2272 Ops shift 348: verify one random attestation digest against a recomputed report
+- [ ] 2273 Ops shift 348: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2274 Ops shift 348: confirm the scheduler fired on time and log the tick latency
+- [ ] 2275 Ops shift 348: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2276 Ops shift 349: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2277 Ops shift 349: verify one random attestation digest against a recomputed report
+- [ ] 2278 Ops shift 349: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2279 Ops shift 349: confirm the scheduler fired on time and log the tick latency
+- [ ] 2280 Ops shift 349: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2281 Ops shift 350: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2282 Ops shift 350: verify one random attestation digest against a recomputed report
+- [ ] 2283 Ops shift 350: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2284 Ops shift 350: confirm the scheduler fired on time and log the tick latency
+- [ ] 2285 Ops shift 350: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2286 Ops shift 351: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2287 Ops shift 351: verify one random attestation digest against a recomputed report
+- [ ] 2288 Ops shift 351: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2289 Ops shift 351: confirm the scheduler fired on time and log the tick latency
+- [ ] 2290 Ops shift 351: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2291 Ops shift 352: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2292 Ops shift 352: verify one random attestation digest against a recomputed report
+- [ ] 2293 Ops shift 352: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2294 Ops shift 352: confirm the scheduler fired on time and log the tick latency
+- [ ] 2295 Ops shift 352: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2296 Ops shift 353: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2297 Ops shift 353: verify one random attestation digest against a recomputed report
+- [ ] 2298 Ops shift 353: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2299 Ops shift 353: confirm the scheduler fired on time and log the tick latency
+- [ ] 2300 Ops shift 353: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2301 Ops shift 354: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2302 Ops shift 354: verify one random attestation digest against a recomputed report
+- [ ] 2303 Ops shift 354: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2304 Ops shift 354: confirm the scheduler fired on time and log the tick latency
+- [ ] 2305 Ops shift 354: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2306 Ops shift 355: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2307 Ops shift 355: verify one random attestation digest against a recomputed report
+- [ ] 2308 Ops shift 355: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2309 Ops shift 355: confirm the scheduler fired on time and log the tick latency
+- [ ] 2310 Ops shift 355: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2311 Ops shift 356: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2312 Ops shift 356: verify one random attestation digest against a recomputed report
+- [ ] 2313 Ops shift 356: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2314 Ops shift 356: confirm the scheduler fired on time and log the tick latency
+- [ ] 2315 Ops shift 356: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2316 Ops shift 357: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2317 Ops shift 357: verify one random attestation digest against a recomputed report
+- [ ] 2318 Ops shift 357: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2319 Ops shift 357: confirm the scheduler fired on time and log the tick latency
+- [ ] 2320 Ops shift 357: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2321 Ops shift 358: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2322 Ops shift 358: verify one random attestation digest against a recomputed report
+- [ ] 2323 Ops shift 358: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2324 Ops shift 358: confirm the scheduler fired on time and log the tick latency
+- [ ] 2325 Ops shift 358: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2326 Ops shift 359: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2327 Ops shift 359: verify one random attestation digest against a recomputed report
+- [ ] 2328 Ops shift 359: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2329 Ops shift 359: confirm the scheduler fired on time and log the tick latency
+- [ ] 2330 Ops shift 359: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2331 Ops shift 360: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2332 Ops shift 360: verify one random attestation digest against a recomputed report
+- [ ] 2333 Ops shift 360: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2334 Ops shift 360: confirm the scheduler fired on time and log the tick latency
+- [ ] 2335 Ops shift 360: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2336 Ops shift 361: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2337 Ops shift 361: verify one random attestation digest against a recomputed report
+- [ ] 2338 Ops shift 361: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2339 Ops shift 361: confirm the scheduler fired on time and log the tick latency
+- [ ] 2340 Ops shift 361: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2341 Ops shift 362: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2342 Ops shift 362: verify one random attestation digest against a recomputed report
+- [ ] 2343 Ops shift 362: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2344 Ops shift 362: confirm the scheduler fired on time and log the tick latency
+- [ ] 2345 Ops shift 362: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2346 Ops shift 363: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2347 Ops shift 363: verify one random attestation digest against a recomputed report
+- [ ] 2348 Ops shift 363: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2349 Ops shift 363: confirm the scheduler fired on time and log the tick latency
+- [ ] 2350 Ops shift 363: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2351 Ops shift 364: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2352 Ops shift 364: verify one random attestation digest against a recomputed report
+- [ ] 2353 Ops shift 364: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2354 Ops shift 364: confirm the scheduler fired on time and log the tick latency
+- [ ] 2355 Ops shift 364: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2356 Ops shift 365: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2357 Ops shift 365: verify one random attestation digest against a recomputed report
+- [ ] 2358 Ops shift 365: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2359 Ops shift 365: confirm the scheduler fired on time and log the tick latency
+- [ ] 2360 Ops shift 365: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2361 Ops shift 366: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2362 Ops shift 366: verify one random attestation digest against a recomputed report
+- [ ] 2363 Ops shift 366: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2364 Ops shift 366: confirm the scheduler fired on time and log the tick latency
+- [ ] 2365 Ops shift 366: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2366 Ops shift 367: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2367 Ops shift 367: verify one random attestation digest against a recomputed report
+- [ ] 2368 Ops shift 367: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2369 Ops shift 367: confirm the scheduler fired on time and log the tick latency
+- [ ] 2370 Ops shift 367: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2371 Ops shift 368: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2372 Ops shift 368: verify one random attestation digest against a recomputed report
+- [ ] 2373 Ops shift 368: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2374 Ops shift 368: confirm the scheduler fired on time and log the tick latency
+- [ ] 2375 Ops shift 368: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2376 Ops shift 369: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2377 Ops shift 369: verify one random attestation digest against a recomputed report
+- [ ] 2378 Ops shift 369: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2379 Ops shift 369: confirm the scheduler fired on time and log the tick latency
+- [ ] 2380 Ops shift 369: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2381 Ops shift 370: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2382 Ops shift 370: verify one random attestation digest against a recomputed report
+- [ ] 2383 Ops shift 370: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2384 Ops shift 370: confirm the scheduler fired on time and log the tick latency
+- [ ] 2385 Ops shift 370: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2386 Ops shift 371: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2387 Ops shift 371: verify one random attestation digest against a recomputed report
+- [ ] 2388 Ops shift 371: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2389 Ops shift 371: confirm the scheduler fired on time and log the tick latency
+- [ ] 2390 Ops shift 371: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2391 Ops shift 372: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2392 Ops shift 372: verify one random attestation digest against a recomputed report
+- [ ] 2393 Ops shift 372: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2394 Ops shift 372: confirm the scheduler fired on time and log the tick latency
+- [ ] 2395 Ops shift 372: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2396 Ops shift 373: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2397 Ops shift 373: verify one random attestation digest against a recomputed report
+- [ ] 2398 Ops shift 373: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2399 Ops shift 373: confirm the scheduler fired on time and log the tick latency
+- [ ] 2400 Ops shift 373: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2401 Ops shift 374: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2402 Ops shift 374: verify one random attestation digest against a recomputed report
+- [ ] 2403 Ops shift 374: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2404 Ops shift 374: confirm the scheduler fired on time and log the tick latency
+- [ ] 2405 Ops shift 374: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2406 Ops shift 375: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2407 Ops shift 375: verify one random attestation digest against a recomputed report
+- [ ] 2408 Ops shift 375: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2409 Ops shift 375: confirm the scheduler fired on time and log the tick latency
+- [ ] 2410 Ops shift 375: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2411 Ops shift 376: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2412 Ops shift 376: verify one random attestation digest against a recomputed report
+- [ ] 2413 Ops shift 376: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2414 Ops shift 376: confirm the scheduler fired on time and log the tick latency
+- [ ] 2415 Ops shift 376: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2416 Ops shift 377: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2417 Ops shift 377: verify one random attestation digest against a recomputed report
+- [ ] 2418 Ops shift 377: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2419 Ops shift 377: confirm the scheduler fired on time and log the tick latency
+- [ ] 2420 Ops shift 377: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2421 Ops shift 378: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2422 Ops shift 378: verify one random attestation digest against a recomputed report
+- [ ] 2423 Ops shift 378: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2424 Ops shift 378: confirm the scheduler fired on time and log the tick latency
+- [ ] 2425 Ops shift 378: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2426 Ops shift 379: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2427 Ops shift 379: verify one random attestation digest against a recomputed report
+- [ ] 2428 Ops shift 379: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2429 Ops shift 379: confirm the scheduler fired on time and log the tick latency
+- [ ] 2430 Ops shift 379: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2431 Ops shift 380: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2432 Ops shift 380: verify one random attestation digest against a recomputed report
+- [ ] 2433 Ops shift 380: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2434 Ops shift 380: confirm the scheduler fired on time and log the tick latency
+- [ ] 2435 Ops shift 380: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2436 Ops shift 381: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2437 Ops shift 381: verify one random attestation digest against a recomputed report
+- [ ] 2438 Ops shift 381: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2439 Ops shift 381: confirm the scheduler fired on time and log the tick latency
+- [ ] 2440 Ops shift 381: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2441 Ops shift 382: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2442 Ops shift 382: verify one random attestation digest against a recomputed report
+- [ ] 2443 Ops shift 382: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2444 Ops shift 382: confirm the scheduler fired on time and log the tick latency
+- [ ] 2445 Ops shift 382: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2446 Ops shift 383: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2447 Ops shift 383: verify one random attestation digest against a recomputed report
+- [ ] 2448 Ops shift 383: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2449 Ops shift 383: confirm the scheduler fired on time and log the tick latency
+- [ ] 2450 Ops shift 383: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2451 Ops shift 384: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2452 Ops shift 384: verify one random attestation digest against a recomputed report
+- [ ] 2453 Ops shift 384: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2454 Ops shift 384: confirm the scheduler fired on time and log the tick latency
+- [ ] 2455 Ops shift 384: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2456 Ops shift 385: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2457 Ops shift 385: verify one random attestation digest against a recomputed report
+- [ ] 2458 Ops shift 385: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2459 Ops shift 385: confirm the scheduler fired on time and log the tick latency
+- [ ] 2460 Ops shift 385: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2461 Ops shift 386: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2462 Ops shift 386: verify one random attestation digest against a recomputed report
+- [ ] 2463 Ops shift 386: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2464 Ops shift 386: confirm the scheduler fired on time and log the tick latency
+- [ ] 2465 Ops shift 386: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2466 Ops shift 387: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2467 Ops shift 387: verify one random attestation digest against a recomputed report
+- [ ] 2468 Ops shift 387: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2469 Ops shift 387: confirm the scheduler fired on time and log the tick latency
+- [ ] 2470 Ops shift 387: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2471 Ops shift 388: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2472 Ops shift 388: verify one random attestation digest against a recomputed report
+- [ ] 2473 Ops shift 388: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2474 Ops shift 388: confirm the scheduler fired on time and log the tick latency
+- [ ] 2475 Ops shift 388: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2476 Ops shift 389: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2477 Ops shift 389: verify one random attestation digest against a recomputed report
+- [ ] 2478 Ops shift 389: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2479 Ops shift 389: confirm the scheduler fired on time and log the tick latency
+- [ ] 2480 Ops shift 389: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2481 Ops shift 390: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2482 Ops shift 390: verify one random attestation digest against a recomputed report
+- [ ] 2483 Ops shift 390: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2484 Ops shift 390: confirm the scheduler fired on time and log the tick latency
+- [ ] 2485 Ops shift 390: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2486 Ops shift 391: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2487 Ops shift 391: verify one random attestation digest against a recomputed report
+- [ ] 2488 Ops shift 391: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2489 Ops shift 391: confirm the scheduler fired on time and log the tick latency
+- [ ] 2490 Ops shift 391: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2491 Ops shift 392: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2492 Ops shift 392: verify one random attestation digest against a recomputed report
+- [ ] 2493 Ops shift 392: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2494 Ops shift 392: confirm the scheduler fired on time and log the tick latency
+- [ ] 2495 Ops shift 392: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2496 Ops shift 393: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2497 Ops shift 393: verify one random attestation digest against a recomputed report
+- [ ] 2498 Ops shift 393: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2499 Ops shift 393: confirm the scheduler fired on time and log the tick latency
+- [ ] 2500 Ops shift 393: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2501 Ops shift 394: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2502 Ops shift 394: verify one random attestation digest against a recomputed report
+- [ ] 2503 Ops shift 394: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2504 Ops shift 394: confirm the scheduler fired on time and log the tick latency
+- [ ] 2505 Ops shift 394: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2506 Ops shift 395: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2507 Ops shift 395: verify one random attestation digest against a recomputed report
+- [ ] 2508 Ops shift 395: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2509 Ops shift 395: confirm the scheduler fired on time and log the tick latency
+- [ ] 2510 Ops shift 395: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2511 Ops shift 396: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2512 Ops shift 396: verify one random attestation digest against a recomputed report
+- [ ] 2513 Ops shift 396: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2514 Ops shift 396: confirm the scheduler fired on time and log the tick latency
+- [ ] 2515 Ops shift 396: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2516 Ops shift 397: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2517 Ops shift 397: verify one random attestation digest against a recomputed report
+- [ ] 2518 Ops shift 397: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2519 Ops shift 397: confirm the scheduler fired on time and log the tick latency
+- [ ] 2520 Ops shift 397: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2521 Ops shift 398: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2522 Ops shift 398: verify one random attestation digest against a recomputed report
+- [ ] 2523 Ops shift 398: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2524 Ops shift 398: confirm the scheduler fired on time and log the tick latency
+- [ ] 2525 Ops shift 398: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2526 Ops shift 399: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2527 Ops shift 399: verify one random attestation digest against a recomputed report
+- [ ] 2528 Ops shift 399: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2529 Ops shift 399: confirm the scheduler fired on time and log the tick latency
+- [ ] 2530 Ops shift 399: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2531 Ops shift 400: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2532 Ops shift 400: verify one random attestation digest against a recomputed report
+- [ ] 2533 Ops shift 400: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2534 Ops shift 400: confirm the scheduler fired on time and log the tick latency
+- [ ] 2535 Ops shift 400: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2536 Ops shift 401: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2537 Ops shift 401: verify one random attestation digest against a recomputed report
+- [ ] 2538 Ops shift 401: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2539 Ops shift 401: confirm the scheduler fired on time and log the tick latency
+- [ ] 2540 Ops shift 401: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2541 Ops shift 402: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2542 Ops shift 402: verify one random attestation digest against a recomputed report
+- [ ] 2543 Ops shift 402: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2544 Ops shift 402: confirm the scheduler fired on time and log the tick latency
+- [ ] 2545 Ops shift 402: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2546 Ops shift 403: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2547 Ops shift 403: verify one random attestation digest against a recomputed report
+- [ ] 2548 Ops shift 403: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2549 Ops shift 403: confirm the scheduler fired on time and log the tick latency
+- [ ] 2550 Ops shift 403: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2551 Ops shift 404: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2552 Ops shift 404: verify one random attestation digest against a recomputed report
+- [ ] 2553 Ops shift 404: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2554 Ops shift 404: confirm the scheduler fired on time and log the tick latency
+- [ ] 2555 Ops shift 404: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2556 Ops shift 405: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2557 Ops shift 405: verify one random attestation digest against a recomputed report
+- [ ] 2558 Ops shift 405: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2559 Ops shift 405: confirm the scheduler fired on time and log the tick latency
+- [ ] 2560 Ops shift 405: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2561 Ops shift 406: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2562 Ops shift 406: verify one random attestation digest against a recomputed report
+- [ ] 2563 Ops shift 406: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2564 Ops shift 406: confirm the scheduler fired on time and log the tick latency
+- [ ] 2565 Ops shift 406: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2566 Ops shift 407: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2567 Ops shift 407: verify one random attestation digest against a recomputed report
+- [ ] 2568 Ops shift 407: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2569 Ops shift 407: confirm the scheduler fired on time and log the tick latency
+- [ ] 2570 Ops shift 407: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2571 Ops shift 408: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2572 Ops shift 408: verify one random attestation digest against a recomputed report
+- [ ] 2573 Ops shift 408: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2574 Ops shift 408: confirm the scheduler fired on time and log the tick latency
+- [ ] 2575 Ops shift 408: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2576 Ops shift 409: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2577 Ops shift 409: verify one random attestation digest against a recomputed report
+- [ ] 2578 Ops shift 409: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2579 Ops shift 409: confirm the scheduler fired on time and log the tick latency
+- [ ] 2580 Ops shift 409: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2581 Ops shift 410: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2582 Ops shift 410: verify one random attestation digest against a recomputed report
+- [ ] 2583 Ops shift 410: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2584 Ops shift 410: confirm the scheduler fired on time and log the tick latency
+- [ ] 2585 Ops shift 410: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2586 Ops shift 411: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2587 Ops shift 411: verify one random attestation digest against a recomputed report
+- [ ] 2588 Ops shift 411: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2589 Ops shift 411: confirm the scheduler fired on time and log the tick latency
+- [ ] 2590 Ops shift 411: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2591 Ops shift 412: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2592 Ops shift 412: verify one random attestation digest against a recomputed report
+- [ ] 2593 Ops shift 412: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2594 Ops shift 412: confirm the scheduler fired on time and log the tick latency
+- [ ] 2595 Ops shift 412: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2596 Ops shift 413: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2597 Ops shift 413: verify one random attestation digest against a recomputed report
+- [ ] 2598 Ops shift 413: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2599 Ops shift 413: confirm the scheduler fired on time and log the tick latency
+- [ ] 2600 Ops shift 413: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2601 Ops shift 414: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2602 Ops shift 414: verify one random attestation digest against a recomputed report
+- [ ] 2603 Ops shift 414: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2604 Ops shift 414: confirm the scheduler fired on time and log the tick latency
+- [ ] 2605 Ops shift 414: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2606 Ops shift 415: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2607 Ops shift 415: verify one random attestation digest against a recomputed report
+- [ ] 2608 Ops shift 415: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2609 Ops shift 415: confirm the scheduler fired on time and log the tick latency
+- [ ] 2610 Ops shift 415: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2611 Ops shift 416: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2612 Ops shift 416: verify one random attestation digest against a recomputed report
+- [ ] 2613 Ops shift 416: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2614 Ops shift 416: confirm the scheduler fired on time and log the tick latency
+- [ ] 2615 Ops shift 416: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2616 Ops shift 417: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2617 Ops shift 417: verify one random attestation digest against a recomputed report
+- [ ] 2618 Ops shift 417: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2619 Ops shift 417: confirm the scheduler fired on time and log the tick latency
+- [ ] 2620 Ops shift 417: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2621 Ops shift 418: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2622 Ops shift 418: verify one random attestation digest against a recomputed report
+- [ ] 2623 Ops shift 418: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2624 Ops shift 418: confirm the scheduler fired on time and log the tick latency
+- [ ] 2625 Ops shift 418: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2626 Ops shift 419: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2627 Ops shift 419: verify one random attestation digest against a recomputed report
+- [ ] 2628 Ops shift 419: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2629 Ops shift 419: confirm the scheduler fired on time and log the tick latency
+- [ ] 2630 Ops shift 419: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2631 Ops shift 420: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2632 Ops shift 420: verify one random attestation digest against a recomputed report
+- [ ] 2633 Ops shift 420: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2634 Ops shift 420: confirm the scheduler fired on time and log the tick latency
+- [ ] 2635 Ops shift 420: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2636 Ops shift 421: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2637 Ops shift 421: verify one random attestation digest against a recomputed report
+- [ ] 2638 Ops shift 421: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2639 Ops shift 421: confirm the scheduler fired on time and log the tick latency
+- [ ] 2640 Ops shift 421: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2641 Ops shift 422: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2642 Ops shift 422: verify one random attestation digest against a recomputed report
+- [ ] 2643 Ops shift 422: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2644 Ops shift 422: confirm the scheduler fired on time and log the tick latency
+- [ ] 2645 Ops shift 422: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2646 Ops shift 423: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2647 Ops shift 423: verify one random attestation digest against a recomputed report
+- [ ] 2648 Ops shift 423: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2649 Ops shift 423: confirm the scheduler fired on time and log the tick latency
+- [ ] 2650 Ops shift 423: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2651 Ops shift 424: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2652 Ops shift 424: verify one random attestation digest against a recomputed report
+- [ ] 2653 Ops shift 424: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2654 Ops shift 424: confirm the scheduler fired on time and log the tick latency
+- [ ] 2655 Ops shift 424: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2656 Ops shift 425: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2657 Ops shift 425: verify one random attestation digest against a recomputed report
+- [ ] 2658 Ops shift 425: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2659 Ops shift 425: confirm the scheduler fired on time and log the tick latency
+- [ ] 2660 Ops shift 425: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2661 Ops shift 426: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2662 Ops shift 426: verify one random attestation digest against a recomputed report
+- [ ] 2663 Ops shift 426: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2664 Ops shift 426: confirm the scheduler fired on time and log the tick latency
+- [ ] 2665 Ops shift 426: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2666 Ops shift 427: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2667 Ops shift 427: verify one random attestation digest against a recomputed report
+- [ ] 2668 Ops shift 427: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2669 Ops shift 427: confirm the scheduler fired on time and log the tick latency
+- [ ] 2670 Ops shift 427: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2671 Ops shift 428: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2672 Ops shift 428: verify one random attestation digest against a recomputed report
+- [ ] 2673 Ops shift 428: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2674 Ops shift 428: confirm the scheduler fired on time and log the tick latency
+- [ ] 2675 Ops shift 428: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2676 Ops shift 429: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2677 Ops shift 429: verify one random attestation digest against a recomputed report
+- [ ] 2678 Ops shift 429: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2679 Ops shift 429: confirm the scheduler fired on time and log the tick latency
+- [ ] 2680 Ops shift 429: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2681 Ops shift 430: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2682 Ops shift 430: verify one random attestation digest against a recomputed report
+- [ ] 2683 Ops shift 430: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2684 Ops shift 430: confirm the scheduler fired on time and log the tick latency
+- [ ] 2685 Ops shift 430: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2686 Ops shift 431: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2687 Ops shift 431: verify one random attestation digest against a recomputed report
+- [ ] 2688 Ops shift 431: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2689 Ops shift 431: confirm the scheduler fired on time and log the tick latency
+- [ ] 2690 Ops shift 431: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2691 Ops shift 432: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2692 Ops shift 432: verify one random attestation digest against a recomputed report
+- [ ] 2693 Ops shift 432: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2694 Ops shift 432: confirm the scheduler fired on time and log the tick latency
+- [ ] 2695 Ops shift 432: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2696 Ops shift 433: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2697 Ops shift 433: verify one random attestation digest against a recomputed report
+- [ ] 2698 Ops shift 433: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2699 Ops shift 433: confirm the scheduler fired on time and log the tick latency
+- [ ] 2700 Ops shift 433: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2701 Ops shift 434: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2702 Ops shift 434: verify one random attestation digest against a recomputed report
+- [ ] 2703 Ops shift 434: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2704 Ops shift 434: confirm the scheduler fired on time and log the tick latency
+- [ ] 2705 Ops shift 434: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2706 Ops shift 435: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2707 Ops shift 435: verify one random attestation digest against a recomputed report
+- [ ] 2708 Ops shift 435: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2709 Ops shift 435: confirm the scheduler fired on time and log the tick latency
+- [ ] 2710 Ops shift 435: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2711 Ops shift 436: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2712 Ops shift 436: verify one random attestation digest against a recomputed report
+- [ ] 2713 Ops shift 436: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2714 Ops shift 436: confirm the scheduler fired on time and log the tick latency
+- [ ] 2715 Ops shift 436: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2716 Ops shift 437: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2717 Ops shift 437: verify one random attestation digest against a recomputed report
+- [ ] 2718 Ops shift 437: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2719 Ops shift 437: confirm the scheduler fired on time and log the tick latency
+- [ ] 2720 Ops shift 437: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2721 Ops shift 438: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2722 Ops shift 438: verify one random attestation digest against a recomputed report
+- [ ] 2723 Ops shift 438: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2724 Ops shift 438: confirm the scheduler fired on time and log the tick latency
+- [ ] 2725 Ops shift 438: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2726 Ops shift 439: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2727 Ops shift 439: verify one random attestation digest against a recomputed report
+- [ ] 2728 Ops shift 439: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2729 Ops shift 439: confirm the scheduler fired on time and log the tick latency
+- [ ] 2730 Ops shift 439: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2731 Ops shift 440: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2732 Ops shift 440: verify one random attestation digest against a recomputed report
+- [ ] 2733 Ops shift 440: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2734 Ops shift 440: confirm the scheduler fired on time and log the tick latency
+- [ ] 2735 Ops shift 440: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2736 Ops shift 441: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2737 Ops shift 441: verify one random attestation digest against a recomputed report
+- [ ] 2738 Ops shift 441: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2739 Ops shift 441: confirm the scheduler fired on time and log the tick latency
+- [ ] 2740 Ops shift 441: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2741 Ops shift 442: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2742 Ops shift 442: verify one random attestation digest against a recomputed report
+- [ ] 2743 Ops shift 442: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2744 Ops shift 442: confirm the scheduler fired on time and log the tick latency
+- [ ] 2745 Ops shift 442: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2746 Ops shift 443: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2747 Ops shift 443: verify one random attestation digest against a recomputed report
+- [ ] 2748 Ops shift 443: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2749 Ops shift 443: confirm the scheduler fired on time and log the tick latency
+- [ ] 2750 Ops shift 443: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2751 Ops shift 444: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2752 Ops shift 444: verify one random attestation digest against a recomputed report
+- [ ] 2753 Ops shift 444: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2754 Ops shift 444: confirm the scheduler fired on time and log the tick latency
+- [ ] 2755 Ops shift 444: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2756 Ops shift 445: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2757 Ops shift 445: verify one random attestation digest against a recomputed report
+- [ ] 2758 Ops shift 445: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2759 Ops shift 445: confirm the scheduler fired on time and log the tick latency
+- [ ] 2760 Ops shift 445: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2761 Ops shift 446: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2762 Ops shift 446: verify one random attestation digest against a recomputed report
+- [ ] 2763 Ops shift 446: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2764 Ops shift 446: confirm the scheduler fired on time and log the tick latency
+- [ ] 2765 Ops shift 446: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2766 Ops shift 447: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2767 Ops shift 447: verify one random attestation digest against a recomputed report
+- [ ] 2768 Ops shift 447: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2769 Ops shift 447: confirm the scheduler fired on time and log the tick latency
+- [ ] 2770 Ops shift 447: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2771 Ops shift 448: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2772 Ops shift 448: verify one random attestation digest against a recomputed report
+- [ ] 2773 Ops shift 448: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2774 Ops shift 448: confirm the scheduler fired on time and log the tick latency
+- [ ] 2775 Ops shift 448: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2776 Ops shift 449: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2777 Ops shift 449: verify one random attestation digest against a recomputed report
+- [ ] 2778 Ops shift 449: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2779 Ops shift 449: confirm the scheduler fired on time and log the tick latency
+- [ ] 2780 Ops shift 449: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2781 Ops shift 450: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2782 Ops shift 450: verify one random attestation digest against a recomputed report
+- [ ] 2783 Ops shift 450: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2784 Ops shift 450: confirm the scheduler fired on time and log the tick latency
+- [ ] 2785 Ops shift 450: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2786 Ops shift 451: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2787 Ops shift 451: verify one random attestation digest against a recomputed report
+- [ ] 2788 Ops shift 451: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2789 Ops shift 451: confirm the scheduler fired on time and log the tick latency
+- [ ] 2790 Ops shift 451: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2791 Ops shift 452: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2792 Ops shift 452: verify one random attestation digest against a recomputed report
+- [ ] 2793 Ops shift 452: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2794 Ops shift 452: confirm the scheduler fired on time and log the tick latency
+- [ ] 2795 Ops shift 452: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2796 Ops shift 453: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2797 Ops shift 453: verify one random attestation digest against a recomputed report
+- [ ] 2798 Ops shift 453: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2799 Ops shift 453: confirm the scheduler fired on time and log the tick latency
+- [ ] 2800 Ops shift 453: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2801 Ops shift 454: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2802 Ops shift 454: verify one random attestation digest against a recomputed report
+- [ ] 2803 Ops shift 454: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2804 Ops shift 454: confirm the scheduler fired on time and log the tick latency
+- [ ] 2805 Ops shift 454: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2806 Ops shift 455: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2807 Ops shift 455: verify one random attestation digest against a recomputed report
+- [ ] 2808 Ops shift 455: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2809 Ops shift 455: confirm the scheduler fired on time and log the tick latency
+- [ ] 2810 Ops shift 455: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2811 Ops shift 456: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2812 Ops shift 456: verify one random attestation digest against a recomputed report
+- [ ] 2813 Ops shift 456: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2814 Ops shift 456: confirm the scheduler fired on time and log the tick latency
+- [ ] 2815 Ops shift 456: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2816 Ops shift 457: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2817 Ops shift 457: verify one random attestation digest against a recomputed report
+- [ ] 2818 Ops shift 457: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2819 Ops shift 457: confirm the scheduler fired on time and log the tick latency
+- [ ] 2820 Ops shift 457: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2821 Ops shift 458: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2822 Ops shift 458: verify one random attestation digest against a recomputed report
+- [ ] 2823 Ops shift 458: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2824 Ops shift 458: confirm the scheduler fired on time and log the tick latency
+- [ ] 2825 Ops shift 458: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2826 Ops shift 459: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2827 Ops shift 459: verify one random attestation digest against a recomputed report
+- [ ] 2828 Ops shift 459: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2829 Ops shift 459: confirm the scheduler fired on time and log the tick latency
+- [ ] 2830 Ops shift 459: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2831 Ops shift 460: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2832 Ops shift 460: verify one random attestation digest against a recomputed report
+- [ ] 2833 Ops shift 460: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2834 Ops shift 460: confirm the scheduler fired on time and log the tick latency
+- [ ] 2835 Ops shift 460: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2836 Ops shift 461: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2837 Ops shift 461: verify one random attestation digest against a recomputed report
+- [ ] 2838 Ops shift 461: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2839 Ops shift 461: confirm the scheduler fired on time and log the tick latency
+- [ ] 2840 Ops shift 461: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2841 Ops shift 462: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2842 Ops shift 462: verify one random attestation digest against a recomputed report
+- [ ] 2843 Ops shift 462: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2844 Ops shift 462: confirm the scheduler fired on time and log the tick latency
+- [ ] 2845 Ops shift 462: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2846 Ops shift 463: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2847 Ops shift 463: verify one random attestation digest against a recomputed report
+- [ ] 2848 Ops shift 463: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2849 Ops shift 463: confirm the scheduler fired on time and log the tick latency
+- [ ] 2850 Ops shift 463: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2851 Ops shift 464: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2852 Ops shift 464: verify one random attestation digest against a recomputed report
+- [ ] 2853 Ops shift 464: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2854 Ops shift 464: confirm the scheduler fired on time and log the tick latency
+- [ ] 2855 Ops shift 464: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2856 Ops shift 465: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2857 Ops shift 465: verify one random attestation digest against a recomputed report
+- [ ] 2858 Ops shift 465: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2859 Ops shift 465: confirm the scheduler fired on time and log the tick latency
+- [ ] 2860 Ops shift 465: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2861 Ops shift 466: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2862 Ops shift 466: verify one random attestation digest against a recomputed report
+- [ ] 2863 Ops shift 466: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2864 Ops shift 466: confirm the scheduler fired on time and log the tick latency
+- [ ] 2865 Ops shift 466: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2866 Ops shift 467: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2867 Ops shift 467: verify one random attestation digest against a recomputed report
+- [ ] 2868 Ops shift 467: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2869 Ops shift 467: confirm the scheduler fired on time and log the tick latency
+- [ ] 2870 Ops shift 467: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2871 Ops shift 468: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2872 Ops shift 468: verify one random attestation digest against a recomputed report
+- [ ] 2873 Ops shift 468: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2874 Ops shift 468: confirm the scheduler fired on time and log the tick latency
+- [ ] 2875 Ops shift 468: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2876 Ops shift 469: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2877 Ops shift 469: verify one random attestation digest against a recomputed report
+- [ ] 2878 Ops shift 469: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2879 Ops shift 469: confirm the scheduler fired on time and log the tick latency
+- [ ] 2880 Ops shift 469: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2881 Ops shift 470: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2882 Ops shift 470: verify one random attestation digest against a recomputed report
+- [ ] 2883 Ops shift 470: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2884 Ops shift 470: confirm the scheduler fired on time and log the tick latency
+- [ ] 2885 Ops shift 470: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2886 Ops shift 471: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2887 Ops shift 471: verify one random attestation digest against a recomputed report
+- [ ] 2888 Ops shift 471: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2889 Ops shift 471: confirm the scheduler fired on time and log the tick latency
+- [ ] 2890 Ops shift 471: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2891 Ops shift 472: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2892 Ops shift 472: verify one random attestation digest against a recomputed report
+- [ ] 2893 Ops shift 472: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2894 Ops shift 472: confirm the scheduler fired on time and log the tick latency
+- [ ] 2895 Ops shift 472: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2896 Ops shift 473: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2897 Ops shift 473: verify one random attestation digest against a recomputed report
+- [ ] 2898 Ops shift 473: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2899 Ops shift 473: confirm the scheduler fired on time and log the tick latency
+- [ ] 2900 Ops shift 473: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2901 Ops shift 474: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2902 Ops shift 474: verify one random attestation digest against a recomputed report
+- [ ] 2903 Ops shift 474: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2904 Ops shift 474: confirm the scheduler fired on time and log the tick latency
+- [ ] 2905 Ops shift 474: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2906 Ops shift 475: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2907 Ops shift 475: verify one random attestation digest against a recomputed report
+- [ ] 2908 Ops shift 475: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2909 Ops shift 475: confirm the scheduler fired on time and log the tick latency
+- [ ] 2910 Ops shift 475: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2911 Ops shift 476: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2912 Ops shift 476: verify one random attestation digest against a recomputed report
+- [ ] 2913 Ops shift 476: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2914 Ops shift 476: confirm the scheduler fired on time and log the tick latency
+- [ ] 2915 Ops shift 476: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2916 Ops shift 477: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2917 Ops shift 477: verify one random attestation digest against a recomputed report
+- [ ] 2918 Ops shift 477: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2919 Ops shift 477: confirm the scheduler fired on time and log the tick latency
+- [ ] 2920 Ops shift 477: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2921 Ops shift 478: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2922 Ops shift 478: verify one random attestation digest against a recomputed report
+- [ ] 2923 Ops shift 478: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2924 Ops shift 478: confirm the scheduler fired on time and log the tick latency
+- [ ] 2925 Ops shift 478: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2926 Ops shift 479: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2927 Ops shift 479: verify one random attestation digest against a recomputed report
+- [ ] 2928 Ops shift 479: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2929 Ops shift 479: confirm the scheduler fired on time and log the tick latency
+- [ ] 2930 Ops shift 479: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2931 Ops shift 480: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2932 Ops shift 480: verify one random attestation digest against a recomputed report
+- [ ] 2933 Ops shift 480: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2934 Ops shift 480: confirm the scheduler fired on time and log the tick latency
+- [ ] 2935 Ops shift 480: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2936 Ops shift 481: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2937 Ops shift 481: verify one random attestation digest against a recomputed report
+- [ ] 2938 Ops shift 481: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2939 Ops shift 481: confirm the scheduler fired on time and log the tick latency
+- [ ] 2940 Ops shift 481: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2941 Ops shift 482: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2942 Ops shift 482: verify one random attestation digest against a recomputed report
+- [ ] 2943 Ops shift 482: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2944 Ops shift 482: confirm the scheduler fired on time and log the tick latency
+- [ ] 2945 Ops shift 482: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2946 Ops shift 483: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2947 Ops shift 483: verify one random attestation digest against a recomputed report
+- [ ] 2948 Ops shift 483: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2949 Ops shift 483: confirm the scheduler fired on time and log the tick latency
+- [ ] 2950 Ops shift 483: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2951 Ops shift 484: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2952 Ops shift 484: verify one random attestation digest against a recomputed report
+- [ ] 2953 Ops shift 484: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2954 Ops shift 484: confirm the scheduler fired on time and log the tick latency
+- [ ] 2955 Ops shift 484: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2956 Ops shift 485: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2957 Ops shift 485: verify one random attestation digest against a recomputed report
+- [ ] 2958 Ops shift 485: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2959 Ops shift 485: confirm the scheduler fired on time and log the tick latency
+- [ ] 2960 Ops shift 485: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2961 Ops shift 486: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2962 Ops shift 486: verify one random attestation digest against a recomputed report
+- [ ] 2963 Ops shift 486: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2964 Ops shift 486: confirm the scheduler fired on time and log the tick latency
+- [ ] 2965 Ops shift 486: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2966 Ops shift 487: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2967 Ops shift 487: verify one random attestation digest against a recomputed report
+- [ ] 2968 Ops shift 487: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2969 Ops shift 487: confirm the scheduler fired on time and log the tick latency
+- [ ] 2970 Ops shift 487: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2971 Ops shift 488: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2972 Ops shift 488: verify one random attestation digest against a recomputed report
+- [ ] 2973 Ops shift 488: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2974 Ops shift 488: confirm the scheduler fired on time and log the tick latency
+- [ ] 2975 Ops shift 488: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2976 Ops shift 489: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2977 Ops shift 489: verify one random attestation digest against a recomputed report
+- [ ] 2978 Ops shift 489: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2979 Ops shift 489: confirm the scheduler fired on time and log the tick latency
+- [ ] 2980 Ops shift 489: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2981 Ops shift 490: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2982 Ops shift 490: verify one random attestation digest against a recomputed report
+- [ ] 2983 Ops shift 490: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2984 Ops shift 490: confirm the scheduler fired on time and log the tick latency
+- [ ] 2985 Ops shift 490: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2986 Ops shift 491: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2987 Ops shift 491: verify one random attestation digest against a recomputed report
+- [ ] 2988 Ops shift 491: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2989 Ops shift 491: confirm the scheduler fired on time and log the tick latency
+- [ ] 2990 Ops shift 491: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2991 Ops shift 492: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2992 Ops shift 492: verify one random attestation digest against a recomputed report
+- [ ] 2993 Ops shift 492: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2994 Ops shift 492: confirm the scheduler fired on time and log the tick latency
+- [ ] 2995 Ops shift 492: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 2996 Ops shift 493: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 2997 Ops shift 493: verify one random attestation digest against a recomputed report
+- [ ] 2998 Ops shift 493: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 2999 Ops shift 493: confirm the scheduler fired on time and log the tick latency
+- [ ] 3000 Ops shift 493: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3001 Ops shift 494: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3002 Ops shift 494: verify one random attestation digest against a recomputed report
+- [ ] 3003 Ops shift 494: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3004 Ops shift 494: confirm the scheduler fired on time and log the tick latency
+- [ ] 3005 Ops shift 494: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3006 Ops shift 495: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3007 Ops shift 495: verify one random attestation digest against a recomputed report
+- [ ] 3008 Ops shift 495: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3009 Ops shift 495: confirm the scheduler fired on time and log the tick latency
+- [ ] 3010 Ops shift 495: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3011 Ops shift 496: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3012 Ops shift 496: verify one random attestation digest against a recomputed report
+- [ ] 3013 Ops shift 496: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3014 Ops shift 496: confirm the scheduler fired on time and log the tick latency
+- [ ] 3015 Ops shift 496: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3016 Ops shift 497: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3017 Ops shift 497: verify one random attestation digest against a recomputed report
+- [ ] 3018 Ops shift 497: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3019 Ops shift 497: confirm the scheduler fired on time and log the tick latency
+- [ ] 3020 Ops shift 497: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3021 Ops shift 498: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3022 Ops shift 498: verify one random attestation digest against a recomputed report
+- [ ] 3023 Ops shift 498: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3024 Ops shift 498: confirm the scheduler fired on time and log the tick latency
+- [ ] 3025 Ops shift 498: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3026 Ops shift 499: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3027 Ops shift 499: verify one random attestation digest against a recomputed report
+- [ ] 3028 Ops shift 499: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3029 Ops shift 499: confirm the scheduler fired on time and log the tick latency
+- [ ] 3030 Ops shift 499: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3031 Ops shift 500: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3032 Ops shift 500: verify one random attestation digest against a recomputed report
+- [ ] 3033 Ops shift 500: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3034 Ops shift 500: confirm the scheduler fired on time and log the tick latency
+- [ ] 3035 Ops shift 500: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3036 Ops shift 501: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3037 Ops shift 501: verify one random attestation digest against a recomputed report
+- [ ] 3038 Ops shift 501: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3039 Ops shift 501: confirm the scheduler fired on time and log the tick latency
+- [ ] 3040 Ops shift 501: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3041 Ops shift 502: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3042 Ops shift 502: verify one random attestation digest against a recomputed report
+- [ ] 3043 Ops shift 502: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3044 Ops shift 502: confirm the scheduler fired on time and log the tick latency
+- [ ] 3045 Ops shift 502: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3046 Ops shift 503: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3047 Ops shift 503: verify one random attestation digest against a recomputed report
+- [ ] 3048 Ops shift 503: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3049 Ops shift 503: confirm the scheduler fired on time and log the tick latency
+- [ ] 3050 Ops shift 503: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3051 Ops shift 504: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3052 Ops shift 504: verify one random attestation digest against a recomputed report
+- [ ] 3053 Ops shift 504: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3054 Ops shift 504: confirm the scheduler fired on time and log the tick latency
+- [ ] 3055 Ops shift 504: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3056 Ops shift 505: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3057 Ops shift 505: verify one random attestation digest against a recomputed report
+- [ ] 3058 Ops shift 505: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3059 Ops shift 505: confirm the scheduler fired on time and log the tick latency
+- [ ] 3060 Ops shift 505: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3061 Ops shift 506: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3062 Ops shift 506: verify one random attestation digest against a recomputed report
+- [ ] 3063 Ops shift 506: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3064 Ops shift 506: confirm the scheduler fired on time and log the tick latency
+- [ ] 3065 Ops shift 506: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3066 Ops shift 507: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3067 Ops shift 507: verify one random attestation digest against a recomputed report
+- [ ] 3068 Ops shift 507: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3069 Ops shift 507: confirm the scheduler fired on time and log the tick latency
+- [ ] 3070 Ops shift 507: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3071 Ops shift 508: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3072 Ops shift 508: verify one random attestation digest against a recomputed report
+- [ ] 3073 Ops shift 508: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3074 Ops shift 508: confirm the scheduler fired on time and log the tick latency
+- [ ] 3075 Ops shift 508: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3076 Ops shift 509: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3077 Ops shift 509: verify one random attestation digest against a recomputed report
+- [ ] 3078 Ops shift 509: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3079 Ops shift 509: confirm the scheduler fired on time and log the tick latency
+- [ ] 3080 Ops shift 509: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3081 Ops shift 510: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3082 Ops shift 510: verify one random attestation digest against a recomputed report
+- [ ] 3083 Ops shift 510: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3084 Ops shift 510: confirm the scheduler fired on time and log the tick latency
+- [ ] 3085 Ops shift 510: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3086 Ops shift 511: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3087 Ops shift 511: verify one random attestation digest against a recomputed report
+- [ ] 3088 Ops shift 511: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3089 Ops shift 511: confirm the scheduler fired on time and log the tick latency
+- [ ] 3090 Ops shift 511: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3091 Ops shift 512: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3092 Ops shift 512: verify one random attestation digest against a recomputed report
+- [ ] 3093 Ops shift 512: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3094 Ops shift 512: confirm the scheduler fired on time and log the tick latency
+- [ ] 3095 Ops shift 512: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3096 Ops shift 513: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3097 Ops shift 513: verify one random attestation digest against a recomputed report
+- [ ] 3098 Ops shift 513: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3099 Ops shift 513: confirm the scheduler fired on time and log the tick latency
+- [ ] 3100 Ops shift 513: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3101 Ops shift 514: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3102 Ops shift 514: verify one random attestation digest against a recomputed report
+- [ ] 3103 Ops shift 514: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3104 Ops shift 514: confirm the scheduler fired on time and log the tick latency
+- [ ] 3105 Ops shift 514: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3106 Ops shift 515: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3107 Ops shift 515: verify one random attestation digest against a recomputed report
+- [ ] 3108 Ops shift 515: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3109 Ops shift 515: confirm the scheduler fired on time and log the tick latency
+- [ ] 3110 Ops shift 515: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3111 Ops shift 516: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3112 Ops shift 516: verify one random attestation digest against a recomputed report
+- [ ] 3113 Ops shift 516: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3114 Ops shift 516: confirm the scheduler fired on time and log the tick latency
+- [ ] 3115 Ops shift 516: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3116 Ops shift 517: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3117 Ops shift 517: verify one random attestation digest against a recomputed report
+- [ ] 3118 Ops shift 517: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3119 Ops shift 517: confirm the scheduler fired on time and log the tick latency
+- [ ] 3120 Ops shift 517: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3121 Ops shift 518: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3122 Ops shift 518: verify one random attestation digest against a recomputed report
+- [ ] 3123 Ops shift 518: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3124 Ops shift 518: confirm the scheduler fired on time and log the tick latency
+- [ ] 3125 Ops shift 518: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3126 Ops shift 519: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3127 Ops shift 519: verify one random attestation digest against a recomputed report
+- [ ] 3128 Ops shift 519: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3129 Ops shift 519: confirm the scheduler fired on time and log the tick latency
+- [ ] 3130 Ops shift 519: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3131 Ops shift 520: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3132 Ops shift 520: verify one random attestation digest against a recomputed report
+- [ ] 3133 Ops shift 520: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3134 Ops shift 520: confirm the scheduler fired on time and log the tick latency
+- [ ] 3135 Ops shift 520: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3136 Ops shift 521: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3137 Ops shift 521: verify one random attestation digest against a recomputed report
+- [ ] 3138 Ops shift 521: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3139 Ops shift 521: confirm the scheduler fired on time and log the tick latency
+- [ ] 3140 Ops shift 521: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3141 Ops shift 522: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3142 Ops shift 522: verify one random attestation digest against a recomputed report
+- [ ] 3143 Ops shift 522: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3144 Ops shift 522: confirm the scheduler fired on time and log the tick latency
+- [ ] 3145 Ops shift 522: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3146 Ops shift 523: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3147 Ops shift 523: verify one random attestation digest against a recomputed report
+- [ ] 3148 Ops shift 523: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3149 Ops shift 523: confirm the scheduler fired on time and log the tick latency
+- [ ] 3150 Ops shift 523: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3151 Ops shift 524: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3152 Ops shift 524: verify one random attestation digest against a recomputed report
+- [ ] 3153 Ops shift 524: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3154 Ops shift 524: confirm the scheduler fired on time and log the tick latency
+- [ ] 3155 Ops shift 524: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3156 Ops shift 525: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3157 Ops shift 525: verify one random attestation digest against a recomputed report
+- [ ] 3158 Ops shift 525: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3159 Ops shift 525: confirm the scheduler fired on time and log the tick latency
+- [ ] 3160 Ops shift 525: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3161 Ops shift 526: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3162 Ops shift 526: verify one random attestation digest against a recomputed report
+- [ ] 3163 Ops shift 526: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3164 Ops shift 526: confirm the scheduler fired on time and log the tick latency
+- [ ] 3165 Ops shift 526: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3166 Ops shift 527: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3167 Ops shift 527: verify one random attestation digest against a recomputed report
+- [ ] 3168 Ops shift 527: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3169 Ops shift 527: confirm the scheduler fired on time and log the tick latency
+- [ ] 3170 Ops shift 527: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3171 Ops shift 528: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3172 Ops shift 528: verify one random attestation digest against a recomputed report
+- [ ] 3173 Ops shift 528: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3174 Ops shift 528: confirm the scheduler fired on time and log the tick latency
+- [ ] 3175 Ops shift 528: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3176 Ops shift 529: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3177 Ops shift 529: verify one random attestation digest against a recomputed report
+- [ ] 3178 Ops shift 529: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3179 Ops shift 529: confirm the scheduler fired on time and log the tick latency
+- [ ] 3180 Ops shift 529: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3181 Ops shift 530: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3182 Ops shift 530: verify one random attestation digest against a recomputed report
+- [ ] 3183 Ops shift 530: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3184 Ops shift 530: confirm the scheduler fired on time and log the tick latency
+- [ ] 3185 Ops shift 530: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3186 Ops shift 531: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3187 Ops shift 531: verify one random attestation digest against a recomputed report
+- [ ] 3188 Ops shift 531: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3189 Ops shift 531: confirm the scheduler fired on time and log the tick latency
+- [ ] 3190 Ops shift 531: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3191 Ops shift 532: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3192 Ops shift 532: verify one random attestation digest against a recomputed report
+- [ ] 3193 Ops shift 532: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3194 Ops shift 532: confirm the scheduler fired on time and log the tick latency
+- [ ] 3195 Ops shift 532: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3196 Ops shift 533: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3197 Ops shift 533: verify one random attestation digest against a recomputed report
+- [ ] 3198 Ops shift 533: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3199 Ops shift 533: confirm the scheduler fired on time and log the tick latency
+- [ ] 3200 Ops shift 533: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3201 Ops shift 534: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3202 Ops shift 534: verify one random attestation digest against a recomputed report
+- [ ] 3203 Ops shift 534: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3204 Ops shift 534: confirm the scheduler fired on time and log the tick latency
+- [ ] 3205 Ops shift 534: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3206 Ops shift 535: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3207 Ops shift 535: verify one random attestation digest against a recomputed report
+- [ ] 3208 Ops shift 535: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3209 Ops shift 535: confirm the scheduler fired on time and log the tick latency
+- [ ] 3210 Ops shift 535: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3211 Ops shift 536: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3212 Ops shift 536: verify one random attestation digest against a recomputed report
+- [ ] 3213 Ops shift 536: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3214 Ops shift 536: confirm the scheduler fired on time and log the tick latency
+- [ ] 3215 Ops shift 536: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3216 Ops shift 537: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3217 Ops shift 537: verify one random attestation digest against a recomputed report
+- [ ] 3218 Ops shift 537: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3219 Ops shift 537: confirm the scheduler fired on time and log the tick latency
+- [ ] 3220 Ops shift 537: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3221 Ops shift 538: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3222 Ops shift 538: verify one random attestation digest against a recomputed report
+- [ ] 3223 Ops shift 538: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3224 Ops shift 538: confirm the scheduler fired on time and log the tick latency
+- [ ] 3225 Ops shift 538: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3226 Ops shift 539: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3227 Ops shift 539: verify one random attestation digest against a recomputed report
+- [ ] 3228 Ops shift 539: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3229 Ops shift 539: confirm the scheduler fired on time and log the tick latency
+- [ ] 3230 Ops shift 539: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3231 Ops shift 540: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3232 Ops shift 540: verify one random attestation digest against a recomputed report
+- [ ] 3233 Ops shift 540: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3234 Ops shift 540: confirm the scheduler fired on time and log the tick latency
+- [ ] 3235 Ops shift 540: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3236 Ops shift 541: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3237 Ops shift 541: verify one random attestation digest against a recomputed report
+- [ ] 3238 Ops shift 541: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3239 Ops shift 541: confirm the scheduler fired on time and log the tick latency
+- [ ] 3240 Ops shift 541: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3241 Ops shift 542: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3242 Ops shift 542: verify one random attestation digest against a recomputed report
+- [ ] 3243 Ops shift 542: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3244 Ops shift 542: confirm the scheduler fired on time and log the tick latency
+- [ ] 3245 Ops shift 542: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3246 Ops shift 543: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3247 Ops shift 543: verify one random attestation digest against a recomputed report
+- [ ] 3248 Ops shift 543: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3249 Ops shift 543: confirm the scheduler fired on time and log the tick latency
+- [ ] 3250 Ops shift 543: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3251 Ops shift 544: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3252 Ops shift 544: verify one random attestation digest against a recomputed report
+- [ ] 3253 Ops shift 544: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3254 Ops shift 544: confirm the scheduler fired on time and log the tick latency
+- [ ] 3255 Ops shift 544: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3256 Ops shift 545: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3257 Ops shift 545: verify one random attestation digest against a recomputed report
+- [ ] 3258 Ops shift 545: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3259 Ops shift 545: confirm the scheduler fired on time and log the tick latency
+- [ ] 3260 Ops shift 545: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3261 Ops shift 546: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3262 Ops shift 546: verify one random attestation digest against a recomputed report
+- [ ] 3263 Ops shift 546: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3264 Ops shift 546: confirm the scheduler fired on time and log the tick latency
+- [ ] 3265 Ops shift 546: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3266 Ops shift 547: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3267 Ops shift 547: verify one random attestation digest against a recomputed report
+- [ ] 3268 Ops shift 547: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3269 Ops shift 547: confirm the scheduler fired on time and log the tick latency
+- [ ] 3270 Ops shift 547: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3271 Ops shift 548: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3272 Ops shift 548: verify one random attestation digest against a recomputed report
+- [ ] 3273 Ops shift 548: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3274 Ops shift 548: confirm the scheduler fired on time and log the tick latency
+- [ ] 3275 Ops shift 548: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3276 Ops shift 549: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3277 Ops shift 549: verify one random attestation digest against a recomputed report
+- [ ] 3278 Ops shift 549: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3279 Ops shift 549: confirm the scheduler fired on time and log the tick latency
+- [ ] 3280 Ops shift 549: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3281 Ops shift 550: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3282 Ops shift 550: verify one random attestation digest against a recomputed report
+- [ ] 3283 Ops shift 550: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3284 Ops shift 550: confirm the scheduler fired on time and log the tick latency
+- [ ] 3285 Ops shift 550: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3286 Ops shift 551: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3287 Ops shift 551: verify one random attestation digest against a recomputed report
+- [ ] 3288 Ops shift 551: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3289 Ops shift 551: confirm the scheduler fired on time and log the tick latency
+- [ ] 3290 Ops shift 551: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3291 Ops shift 552: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3292 Ops shift 552: verify one random attestation digest against a recomputed report
+- [ ] 3293 Ops shift 552: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3294 Ops shift 552: confirm the scheduler fired on time and log the tick latency
+- [ ] 3295 Ops shift 552: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3296 Ops shift 553: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3297 Ops shift 553: verify one random attestation digest against a recomputed report
+- [ ] 3298 Ops shift 553: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3299 Ops shift 553: confirm the scheduler fired on time and log the tick latency
+- [ ] 3300 Ops shift 553: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3301 Ops shift 554: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3302 Ops shift 554: verify one random attestation digest against a recomputed report
+- [ ] 3303 Ops shift 554: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3304 Ops shift 554: confirm the scheduler fired on time and log the tick latency
+- [ ] 3305 Ops shift 554: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3306 Ops shift 555: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3307 Ops shift 555: verify one random attestation digest against a recomputed report
+- [ ] 3308 Ops shift 555: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3309 Ops shift 555: confirm the scheduler fired on time and log the tick latency
+- [ ] 3310 Ops shift 555: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3311 Ops shift 556: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3312 Ops shift 556: verify one random attestation digest against a recomputed report
+- [ ] 3313 Ops shift 556: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3314 Ops shift 556: confirm the scheduler fired on time and log the tick latency
+- [ ] 3315 Ops shift 556: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3316 Ops shift 557: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3317 Ops shift 557: verify one random attestation digest against a recomputed report
+- [ ] 3318 Ops shift 557: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3319 Ops shift 557: confirm the scheduler fired on time and log the tick latency
+- [ ] 3320 Ops shift 557: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3321 Ops shift 558: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3322 Ops shift 558: verify one random attestation digest against a recomputed report
+- [ ] 3323 Ops shift 558: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3324 Ops shift 558: confirm the scheduler fired on time and log the tick latency
+- [ ] 3325 Ops shift 558: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3326 Ops shift 559: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3327 Ops shift 559: verify one random attestation digest against a recomputed report
+- [ ] 3328 Ops shift 559: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3329 Ops shift 559: confirm the scheduler fired on time and log the tick latency
+- [ ] 3330 Ops shift 559: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3331 Ops shift 560: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3332 Ops shift 560: verify one random attestation digest against a recomputed report
+- [ ] 3333 Ops shift 560: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3334 Ops shift 560: confirm the scheduler fired on time and log the tick latency
+- [ ] 3335 Ops shift 560: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3336 Ops shift 561: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3337 Ops shift 561: verify one random attestation digest against a recomputed report
+- [ ] 3338 Ops shift 561: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3339 Ops shift 561: confirm the scheduler fired on time and log the tick latency
+- [ ] 3340 Ops shift 561: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3341 Ops shift 562: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3342 Ops shift 562: verify one random attestation digest against a recomputed report
+- [ ] 3343 Ops shift 562: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3344 Ops shift 562: confirm the scheduler fired on time and log the tick latency
+- [ ] 3345 Ops shift 562: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3346 Ops shift 563: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3347 Ops shift 563: verify one random attestation digest against a recomputed report
+- [ ] 3348 Ops shift 563: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3349 Ops shift 563: confirm the scheduler fired on time and log the tick latency
+- [ ] 3350 Ops shift 563: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3351 Ops shift 564: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3352 Ops shift 564: verify one random attestation digest against a recomputed report
+- [ ] 3353 Ops shift 564: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3354 Ops shift 564: confirm the scheduler fired on time and log the tick latency
+- [ ] 3355 Ops shift 564: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3356 Ops shift 565: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3357 Ops shift 565: verify one random attestation digest against a recomputed report
+- [ ] 3358 Ops shift 565: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3359 Ops shift 565: confirm the scheduler fired on time and log the tick latency
+- [ ] 3360 Ops shift 565: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3361 Ops shift 566: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3362 Ops shift 566: verify one random attestation digest against a recomputed report
+- [ ] 3363 Ops shift 566: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3364 Ops shift 566: confirm the scheduler fired on time and log the tick latency
+- [ ] 3365 Ops shift 566: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3366 Ops shift 567: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3367 Ops shift 567: verify one random attestation digest against a recomputed report
+- [ ] 3368 Ops shift 567: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3369 Ops shift 567: confirm the scheduler fired on time and log the tick latency
+- [ ] 3370 Ops shift 567: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3371 Ops shift 568: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3372 Ops shift 568: verify one random attestation digest against a recomputed report
+- [ ] 3373 Ops shift 568: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3374 Ops shift 568: confirm the scheduler fired on time and log the tick latency
+- [ ] 3375 Ops shift 568: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3376 Ops shift 569: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3377 Ops shift 569: verify one random attestation digest against a recomputed report
+- [ ] 3378 Ops shift 569: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3379 Ops shift 569: confirm the scheduler fired on time and log the tick latency
+- [ ] 3380 Ops shift 569: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3381 Ops shift 570: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3382 Ops shift 570: verify one random attestation digest against a recomputed report
+- [ ] 3383 Ops shift 570: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3384 Ops shift 570: confirm the scheduler fired on time and log the tick latency
+- [ ] 3385 Ops shift 570: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3386 Ops shift 571: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3387 Ops shift 571: verify one random attestation digest against a recomputed report
+- [ ] 3388 Ops shift 571: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3389 Ops shift 571: confirm the scheduler fired on time and log the tick latency
+- [ ] 3390 Ops shift 571: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3391 Ops shift 572: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3392 Ops shift 572: verify one random attestation digest against a recomputed report
+- [ ] 3393 Ops shift 572: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3394 Ops shift 572: confirm the scheduler fired on time and log the tick latency
+- [ ] 3395 Ops shift 572: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3396 Ops shift 573: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3397 Ops shift 573: verify one random attestation digest against a recomputed report
+- [ ] 3398 Ops shift 573: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3399 Ops shift 573: confirm the scheduler fired on time and log the tick latency
+- [ ] 3400 Ops shift 573: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3401 Ops shift 574: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3402 Ops shift 574: verify one random attestation digest against a recomputed report
+- [ ] 3403 Ops shift 574: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3404 Ops shift 574: confirm the scheduler fired on time and log the tick latency
+- [ ] 3405 Ops shift 574: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3406 Ops shift 575: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3407 Ops shift 575: verify one random attestation digest against a recomputed report
+- [ ] 3408 Ops shift 575: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3409 Ops shift 575: confirm the scheduler fired on time and log the tick latency
+- [ ] 3410 Ops shift 575: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3411 Ops shift 576: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3412 Ops shift 576: verify one random attestation digest against a recomputed report
+- [ ] 3413 Ops shift 576: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3414 Ops shift 576: confirm the scheduler fired on time and log the tick latency
+- [ ] 3415 Ops shift 576: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3416 Ops shift 577: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3417 Ops shift 577: verify one random attestation digest against a recomputed report
+- [ ] 3418 Ops shift 577: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3419 Ops shift 577: confirm the scheduler fired on time and log the tick latency
+- [ ] 3420 Ops shift 577: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3421 Ops shift 578: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3422 Ops shift 578: verify one random attestation digest against a recomputed report
+- [ ] 3423 Ops shift 578: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3424 Ops shift 578: confirm the scheduler fired on time and log the tick latency
+- [ ] 3425 Ops shift 578: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3426 Ops shift 579: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3427 Ops shift 579: verify one random attestation digest against a recomputed report
+- [ ] 3428 Ops shift 579: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3429 Ops shift 579: confirm the scheduler fired on time and log the tick latency
+- [ ] 3430 Ops shift 579: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3431 Ops shift 580: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3432 Ops shift 580: verify one random attestation digest against a recomputed report
+- [ ] 3433 Ops shift 580: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3434 Ops shift 580: confirm the scheduler fired on time and log the tick latency
+- [ ] 3435 Ops shift 580: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3436 Ops shift 581: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3437 Ops shift 581: verify one random attestation digest against a recomputed report
+- [ ] 3438 Ops shift 581: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3439 Ops shift 581: confirm the scheduler fired on time and log the tick latency
+- [ ] 3440 Ops shift 581: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3441 Ops shift 582: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3442 Ops shift 582: verify one random attestation digest against a recomputed report
+- [ ] 3443 Ops shift 582: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3444 Ops shift 582: confirm the scheduler fired on time and log the tick latency
+- [ ] 3445 Ops shift 582: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3446 Ops shift 583: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3447 Ops shift 583: verify one random attestation digest against a recomputed report
+- [ ] 3448 Ops shift 583: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3449 Ops shift 583: confirm the scheduler fired on time and log the tick latency
+- [ ] 3450 Ops shift 583: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3451 Ops shift 584: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3452 Ops shift 584: verify one random attestation digest against a recomputed report
+- [ ] 3453 Ops shift 584: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3454 Ops shift 584: confirm the scheduler fired on time and log the tick latency
+- [ ] 3455 Ops shift 584: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3456 Ops shift 585: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3457 Ops shift 585: verify one random attestation digest against a recomputed report
+- [ ] 3458 Ops shift 585: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3459 Ops shift 585: confirm the scheduler fired on time and log the tick latency
+- [ ] 3460 Ops shift 585: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3461 Ops shift 586: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3462 Ops shift 586: verify one random attestation digest against a recomputed report
+- [ ] 3463 Ops shift 586: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3464 Ops shift 586: confirm the scheduler fired on time and log the tick latency
+- [ ] 3465 Ops shift 586: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3466 Ops shift 587: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3467 Ops shift 587: verify one random attestation digest against a recomputed report
+- [ ] 3468 Ops shift 587: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3469 Ops shift 587: confirm the scheduler fired on time and log the tick latency
+- [ ] 3470 Ops shift 587: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3471 Ops shift 588: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3472 Ops shift 588: verify one random attestation digest against a recomputed report
+- [ ] 3473 Ops shift 588: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3474 Ops shift 588: confirm the scheduler fired on time and log the tick latency
+- [ ] 3475 Ops shift 588: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3476 Ops shift 589: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3477 Ops shift 589: verify one random attestation digest against a recomputed report
+- [ ] 3478 Ops shift 589: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3479 Ops shift 589: confirm the scheduler fired on time and log the tick latency
+- [ ] 3480 Ops shift 589: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3481 Ops shift 590: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3482 Ops shift 590: verify one random attestation digest against a recomputed report
+- [ ] 3483 Ops shift 590: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3484 Ops shift 590: confirm the scheduler fired on time and log the tick latency
+- [ ] 3485 Ops shift 590: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3486 Ops shift 591: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3487 Ops shift 591: verify one random attestation digest against a recomputed report
+- [ ] 3488 Ops shift 591: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3489 Ops shift 591: confirm the scheduler fired on time and log the tick latency
+- [ ] 3490 Ops shift 591: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3491 Ops shift 592: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3492 Ops shift 592: verify one random attestation digest against a recomputed report
+- [ ] 3493 Ops shift 592: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3494 Ops shift 592: confirm the scheduler fired on time and log the tick latency
+- [ ] 3495 Ops shift 592: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3496 Ops shift 593: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3497 Ops shift 593: verify one random attestation digest against a recomputed report
+- [ ] 3498 Ops shift 593: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3499 Ops shift 593: confirm the scheduler fired on time and log the tick latency
+- [ ] 3500 Ops shift 593: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3501 Ops shift 594: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3502 Ops shift 594: verify one random attestation digest against a recomputed report
+- [ ] 3503 Ops shift 594: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3504 Ops shift 594: confirm the scheduler fired on time and log the tick latency
+- [ ] 3505 Ops shift 594: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3506 Ops shift 595: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3507 Ops shift 595: verify one random attestation digest against a recomputed report
+- [ ] 3508 Ops shift 595: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3509 Ops shift 595: confirm the scheduler fired on time and log the tick latency
+- [ ] 3510 Ops shift 595: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3511 Ops shift 596: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3512 Ops shift 596: verify one random attestation digest against a recomputed report
+- [ ] 3513 Ops shift 596: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3514 Ops shift 596: confirm the scheduler fired on time and log the tick latency
+- [ ] 3515 Ops shift 596: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3516 Ops shift 597: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3517 Ops shift 597: verify one random attestation digest against a recomputed report
+- [ ] 3518 Ops shift 597: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3519 Ops shift 597: confirm the scheduler fired on time and log the tick latency
+- [ ] 3520 Ops shift 597: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3521 Ops shift 598: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3522 Ops shift 598: verify one random attestation digest against a recomputed report
+- [ ] 3523 Ops shift 598: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3524 Ops shift 598: confirm the scheduler fired on time and log the tick latency
+- [ ] 3525 Ops shift 598: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3526 Ops shift 599: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3527 Ops shift 599: verify one random attestation digest against a recomputed report
+- [ ] 3528 Ops shift 599: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3529 Ops shift 599: confirm the scheduler fired on time and log the tick latency
+- [ ] 3530 Ops shift 599: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3531 Ops shift 600: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3532 Ops shift 600: verify one random attestation digest against a recomputed report
+- [ ] 3533 Ops shift 600: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3534 Ops shift 600: confirm the scheduler fired on time and log the tick latency
+- [ ] 3535 Ops shift 600: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3536 Ops shift 601: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3537 Ops shift 601: verify one random attestation digest against a recomputed report
+- [ ] 3538 Ops shift 601: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3539 Ops shift 601: confirm the scheduler fired on time and log the tick latency
+- [ ] 3540 Ops shift 601: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3541 Ops shift 602: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3542 Ops shift 602: verify one random attestation digest against a recomputed report
+- [ ] 3543 Ops shift 602: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3544 Ops shift 602: confirm the scheduler fired on time and log the tick latency
+- [ ] 3545 Ops shift 602: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3546 Ops shift 603: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3547 Ops shift 603: verify one random attestation digest against a recomputed report
+- [ ] 3548 Ops shift 603: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3549 Ops shift 603: confirm the scheduler fired on time and log the tick latency
+- [ ] 3550 Ops shift 603: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3551 Ops shift 604: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3552 Ops shift 604: verify one random attestation digest against a recomputed report
+- [ ] 3553 Ops shift 604: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3554 Ops shift 604: confirm the scheduler fired on time and log the tick latency
+- [ ] 3555 Ops shift 604: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3556 Ops shift 605: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3557 Ops shift 605: verify one random attestation digest against a recomputed report
+- [ ] 3558 Ops shift 605: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3559 Ops shift 605: confirm the scheduler fired on time and log the tick latency
+- [ ] 3560 Ops shift 605: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3561 Ops shift 606: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3562 Ops shift 606: verify one random attestation digest against a recomputed report
+- [ ] 3563 Ops shift 606: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3564 Ops shift 606: confirm the scheduler fired on time and log the tick latency
+- [ ] 3565 Ops shift 606: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3566 Ops shift 607: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3567 Ops shift 607: verify one random attestation digest against a recomputed report
+- [ ] 3568 Ops shift 607: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3569 Ops shift 607: confirm the scheduler fired on time and log the tick latency
+- [ ] 3570 Ops shift 607: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3571 Ops shift 608: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3572 Ops shift 608: verify one random attestation digest against a recomputed report
+- [ ] 3573 Ops shift 608: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3574 Ops shift 608: confirm the scheduler fired on time and log the tick latency
+- [ ] 3575 Ops shift 608: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3576 Ops shift 609: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3577 Ops shift 609: verify one random attestation digest against a recomputed report
+- [ ] 3578 Ops shift 609: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3579 Ops shift 609: confirm the scheduler fired on time and log the tick latency
+- [ ] 3580 Ops shift 609: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3581 Ops shift 610: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3582 Ops shift 610: verify one random attestation digest against a recomputed report
+- [ ] 3583 Ops shift 610: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3584 Ops shift 610: confirm the scheduler fired on time and log the tick latency
+- [ ] 3585 Ops shift 610: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3586 Ops shift 611: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3587 Ops shift 611: verify one random attestation digest against a recomputed report
+- [ ] 3588 Ops shift 611: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3589 Ops shift 611: confirm the scheduler fired on time and log the tick latency
+- [ ] 3590 Ops shift 611: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3591 Ops shift 612: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3592 Ops shift 612: verify one random attestation digest against a recomputed report
+- [ ] 3593 Ops shift 612: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3594 Ops shift 612: confirm the scheduler fired on time and log the tick latency
+- [ ] 3595 Ops shift 612: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3596 Ops shift 613: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3597 Ops shift 613: verify one random attestation digest against a recomputed report
+- [ ] 3598 Ops shift 613: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3599 Ops shift 613: confirm the scheduler fired on time and log the tick latency
+- [ ] 3600 Ops shift 613: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3601 Ops shift 614: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3602 Ops shift 614: verify one random attestation digest against a recomputed report
+- [ ] 3603 Ops shift 614: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3604 Ops shift 614: confirm the scheduler fired on time and log the tick latency
+- [ ] 3605 Ops shift 614: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3606 Ops shift 615: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3607 Ops shift 615: verify one random attestation digest against a recomputed report
+- [ ] 3608 Ops shift 615: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3609 Ops shift 615: confirm the scheduler fired on time and log the tick latency
+- [ ] 3610 Ops shift 615: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3611 Ops shift 616: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3612 Ops shift 616: verify one random attestation digest against a recomputed report
+- [ ] 3613 Ops shift 616: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3614 Ops shift 616: confirm the scheduler fired on time and log the tick latency
+- [ ] 3615 Ops shift 616: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3616 Ops shift 617: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3617 Ops shift 617: verify one random attestation digest against a recomputed report
+- [ ] 3618 Ops shift 617: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3619 Ops shift 617: confirm the scheduler fired on time and log the tick latency
+- [ ] 3620 Ops shift 617: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3621 Ops shift 618: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3622 Ops shift 618: verify one random attestation digest against a recomputed report
+- [ ] 3623 Ops shift 618: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3624 Ops shift 618: confirm the scheduler fired on time and log the tick latency
+- [ ] 3625 Ops shift 618: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3626 Ops shift 619: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3627 Ops shift 619: verify one random attestation digest against a recomputed report
+- [ ] 3628 Ops shift 619: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3629 Ops shift 619: confirm the scheduler fired on time and log the tick latency
+- [ ] 3630 Ops shift 619: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3631 Ops shift 620: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3632 Ops shift 620: verify one random attestation digest against a recomputed report
+- [ ] 3633 Ops shift 620: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3634 Ops shift 620: confirm the scheduler fired on time and log the tick latency
+- [ ] 3635 Ops shift 620: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3636 Ops shift 621: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3637 Ops shift 621: verify one random attestation digest against a recomputed report
+- [ ] 3638 Ops shift 621: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3639 Ops shift 621: confirm the scheduler fired on time and log the tick latency
+- [ ] 3640 Ops shift 621: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3641 Ops shift 622: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3642 Ops shift 622: verify one random attestation digest against a recomputed report
+- [ ] 3643 Ops shift 622: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3644 Ops shift 622: confirm the scheduler fired on time and log the tick latency
+- [ ] 3645 Ops shift 622: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3646 Ops shift 623: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3647 Ops shift 623: verify one random attestation digest against a recomputed report
+- [ ] 3648 Ops shift 623: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3649 Ops shift 623: confirm the scheduler fired on time and log the tick latency
+- [ ] 3650 Ops shift 623: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3651 Ops shift 624: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3652 Ops shift 624: verify one random attestation digest against a recomputed report
+- [ ] 3653 Ops shift 624: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3654 Ops shift 624: confirm the scheduler fired on time and log the tick latency
+- [ ] 3655 Ops shift 624: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3656 Ops shift 625: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3657 Ops shift 625: verify one random attestation digest against a recomputed report
+- [ ] 3658 Ops shift 625: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3659 Ops shift 625: confirm the scheduler fired on time and log the tick latency
+- [ ] 3660 Ops shift 625: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3661 Ops shift 626: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3662 Ops shift 626: verify one random attestation digest against a recomputed report
+- [ ] 3663 Ops shift 626: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3664 Ops shift 626: confirm the scheduler fired on time and log the tick latency
+- [ ] 3665 Ops shift 626: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3666 Ops shift 627: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3667 Ops shift 627: verify one random attestation digest against a recomputed report
+- [ ] 3668 Ops shift 627: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3669 Ops shift 627: confirm the scheduler fired on time and log the tick latency
+- [ ] 3670 Ops shift 627: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3671 Ops shift 628: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3672 Ops shift 628: verify one random attestation digest against a recomputed report
+- [ ] 3673 Ops shift 628: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3674 Ops shift 628: confirm the scheduler fired on time and log the tick latency
+- [ ] 3675 Ops shift 628: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3676 Ops shift 629: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3677 Ops shift 629: verify one random attestation digest against a recomputed report
+- [ ] 3678 Ops shift 629: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3679 Ops shift 629: confirm the scheduler fired on time and log the tick latency
+- [ ] 3680 Ops shift 629: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3681 Ops shift 630: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3682 Ops shift 630: verify one random attestation digest against a recomputed report
+- [ ] 3683 Ops shift 630: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3684 Ops shift 630: confirm the scheduler fired on time and log the tick latency
+- [ ] 3685 Ops shift 630: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3686 Ops shift 631: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3687 Ops shift 631: verify one random attestation digest against a recomputed report
+- [ ] 3688 Ops shift 631: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3689 Ops shift 631: confirm the scheduler fired on time and log the tick latency
+- [ ] 3690 Ops shift 631: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3691 Ops shift 632: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3692 Ops shift 632: verify one random attestation digest against a recomputed report
+- [ ] 3693 Ops shift 632: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3694 Ops shift 632: confirm the scheduler fired on time and log the tick latency
+- [ ] 3695 Ops shift 632: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3696 Ops shift 633: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3697 Ops shift 633: verify one random attestation digest against a recomputed report
+- [ ] 3698 Ops shift 633: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3699 Ops shift 633: confirm the scheduler fired on time and log the tick latency
+- [ ] 3700 Ops shift 633: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3701 Ops shift 634: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3702 Ops shift 634: verify one random attestation digest against a recomputed report
+- [ ] 3703 Ops shift 634: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3704 Ops shift 634: confirm the scheduler fired on time and log the tick latency
+- [ ] 3705 Ops shift 634: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3706 Ops shift 635: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3707 Ops shift 635: verify one random attestation digest against a recomputed report
+- [ ] 3708 Ops shift 635: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3709 Ops shift 635: confirm the scheduler fired on time and log the tick latency
+- [ ] 3710 Ops shift 635: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3711 Ops shift 636: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3712 Ops shift 636: verify one random attestation digest against a recomputed report
+- [ ] 3713 Ops shift 636: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3714 Ops shift 636: confirm the scheduler fired on time and log the tick latency
+- [ ] 3715 Ops shift 636: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3716 Ops shift 637: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3717 Ops shift 637: verify one random attestation digest against a recomputed report
+- [ ] 3718 Ops shift 637: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3719 Ops shift 637: confirm the scheduler fired on time and log the tick latency
+- [ ] 3720 Ops shift 637: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3721 Ops shift 638: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3722 Ops shift 638: verify one random attestation digest against a recomputed report
+- [ ] 3723 Ops shift 638: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3724 Ops shift 638: confirm the scheduler fired on time and log the tick latency
+- [ ] 3725 Ops shift 638: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3726 Ops shift 639: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3727 Ops shift 639: verify one random attestation digest against a recomputed report
+- [ ] 3728 Ops shift 639: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3729 Ops shift 639: confirm the scheduler fired on time and log the tick latency
+- [ ] 3730 Ops shift 639: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3731 Ops shift 640: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3732 Ops shift 640: verify one random attestation digest against a recomputed report
+- [ ] 3733 Ops shift 640: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3734 Ops shift 640: confirm the scheduler fired on time and log the tick latency
+- [ ] 3735 Ops shift 640: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3736 Ops shift 641: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3737 Ops shift 641: verify one random attestation digest against a recomputed report
+- [ ] 3738 Ops shift 641: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3739 Ops shift 641: confirm the scheduler fired on time and log the tick latency
+- [ ] 3740 Ops shift 641: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3741 Ops shift 642: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3742 Ops shift 642: verify one random attestation digest against a recomputed report
+- [ ] 3743 Ops shift 642: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3744 Ops shift 642: confirm the scheduler fired on time and log the tick latency
+- [ ] 3745 Ops shift 642: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3746 Ops shift 643: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3747 Ops shift 643: verify one random attestation digest against a recomputed report
+- [ ] 3748 Ops shift 643: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3749 Ops shift 643: confirm the scheduler fired on time and log the tick latency
+- [ ] 3750 Ops shift 643: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3751 Ops shift 644: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3752 Ops shift 644: verify one random attestation digest against a recomputed report
+- [ ] 3753 Ops shift 644: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3754 Ops shift 644: confirm the scheduler fired on time and log the tick latency
+- [ ] 3755 Ops shift 644: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3756 Ops shift 645: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3757 Ops shift 645: verify one random attestation digest against a recomputed report
+- [ ] 3758 Ops shift 645: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3759 Ops shift 645: confirm the scheduler fired on time and log the tick latency
+- [ ] 3760 Ops shift 645: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3761 Ops shift 646: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3762 Ops shift 646: verify one random attestation digest against a recomputed report
+- [ ] 3763 Ops shift 646: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3764 Ops shift 646: confirm the scheduler fired on time and log the tick latency
+- [ ] 3765 Ops shift 646: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3766 Ops shift 647: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3767 Ops shift 647: verify one random attestation digest against a recomputed report
+- [ ] 3768 Ops shift 647: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3769 Ops shift 647: confirm the scheduler fired on time and log the tick latency
+- [ ] 3770 Ops shift 647: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3771 Ops shift 648: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3772 Ops shift 648: verify one random attestation digest against a recomputed report
+- [ ] 3773 Ops shift 648: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3774 Ops shift 648: confirm the scheduler fired on time and log the tick latency
+- [ ] 3775 Ops shift 648: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3776 Ops shift 649: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3777 Ops shift 649: verify one random attestation digest against a recomputed report
+- [ ] 3778 Ops shift 649: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3779 Ops shift 649: confirm the scheduler fired on time and log the tick latency
+- [ ] 3780 Ops shift 649: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3781 Ops shift 650: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3782 Ops shift 650: verify one random attestation digest against a recomputed report
+- [ ] 3783 Ops shift 650: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3784 Ops shift 650: confirm the scheduler fired on time and log the tick latency
+- [ ] 3785 Ops shift 650: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3786 Ops shift 651: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3787 Ops shift 651: verify one random attestation digest against a recomputed report
+- [ ] 3788 Ops shift 651: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3789 Ops shift 651: confirm the scheduler fired on time and log the tick latency
+- [ ] 3790 Ops shift 651: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3791 Ops shift 652: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3792 Ops shift 652: verify one random attestation digest against a recomputed report
+- [ ] 3793 Ops shift 652: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3794 Ops shift 652: confirm the scheduler fired on time and log the tick latency
+- [ ] 3795 Ops shift 652: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3796 Ops shift 653: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3797 Ops shift 653: verify one random attestation digest against a recomputed report
+- [ ] 3798 Ops shift 653: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3799 Ops shift 653: confirm the scheduler fired on time and log the tick latency
+- [ ] 3800 Ops shift 653: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3801 Ops shift 654: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3802 Ops shift 654: verify one random attestation digest against a recomputed report
+- [ ] 3803 Ops shift 654: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3804 Ops shift 654: confirm the scheduler fired on time and log the tick latency
+- [ ] 3805 Ops shift 654: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3806 Ops shift 655: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3807 Ops shift 655: verify one random attestation digest against a recomputed report
+- [ ] 3808 Ops shift 655: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3809 Ops shift 655: confirm the scheduler fired on time and log the tick latency
+- [ ] 3810 Ops shift 655: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3811 Ops shift 656: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3812 Ops shift 656: verify one random attestation digest against a recomputed report
+- [ ] 3813 Ops shift 656: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3814 Ops shift 656: confirm the scheduler fired on time and log the tick latency
+- [ ] 3815 Ops shift 656: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3816 Ops shift 657: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3817 Ops shift 657: verify one random attestation digest against a recomputed report
+- [ ] 3818 Ops shift 657: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3819 Ops shift 657: confirm the scheduler fired on time and log the tick latency
+- [ ] 3820 Ops shift 657: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3821 Ops shift 658: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3822 Ops shift 658: verify one random attestation digest against a recomputed report
+- [ ] 3823 Ops shift 658: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3824 Ops shift 658: confirm the scheduler fired on time and log the tick latency
+- [ ] 3825 Ops shift 658: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3826 Ops shift 659: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3827 Ops shift 659: verify one random attestation digest against a recomputed report
+- [ ] 3828 Ops shift 659: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3829 Ops shift 659: confirm the scheduler fired on time and log the tick latency
+- [ ] 3830 Ops shift 659: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3831 Ops shift 660: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3832 Ops shift 660: verify one random attestation digest against a recomputed report
+- [ ] 3833 Ops shift 660: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3834 Ops shift 660: confirm the scheduler fired on time and log the tick latency
+- [ ] 3835 Ops shift 660: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3836 Ops shift 661: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3837 Ops shift 661: verify one random attestation digest against a recomputed report
+- [ ] 3838 Ops shift 661: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3839 Ops shift 661: confirm the scheduler fired on time and log the tick latency
+- [ ] 3840 Ops shift 661: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3841 Ops shift 662: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3842 Ops shift 662: verify one random attestation digest against a recomputed report
+- [ ] 3843 Ops shift 662: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3844 Ops shift 662: confirm the scheduler fired on time and log the tick latency
+- [ ] 3845 Ops shift 662: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3846 Ops shift 663: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3847 Ops shift 663: verify one random attestation digest against a recomputed report
+- [ ] 3848 Ops shift 663: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3849 Ops shift 663: confirm the scheduler fired on time and log the tick latency
+- [ ] 3850 Ops shift 663: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3851 Ops shift 664: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3852 Ops shift 664: verify one random attestation digest against a recomputed report
+- [ ] 3853 Ops shift 664: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3854 Ops shift 664: confirm the scheduler fired on time and log the tick latency
+- [ ] 3855 Ops shift 664: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3856 Ops shift 665: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3857 Ops shift 665: verify one random attestation digest against a recomputed report
+- [ ] 3858 Ops shift 665: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3859 Ops shift 665: confirm the scheduler fired on time and log the tick latency
+- [ ] 3860 Ops shift 665: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3861 Ops shift 666: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3862 Ops shift 666: verify one random attestation digest against a recomputed report
+- [ ] 3863 Ops shift 666: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3864 Ops shift 666: confirm the scheduler fired on time and log the tick latency
+- [ ] 3865 Ops shift 666: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3866 Ops shift 667: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3867 Ops shift 667: verify one random attestation digest against a recomputed report
+- [ ] 3868 Ops shift 667: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3869 Ops shift 667: confirm the scheduler fired on time and log the tick latency
+- [ ] 3870 Ops shift 667: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3871 Ops shift 668: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3872 Ops shift 668: verify one random attestation digest against a recomputed report
+- [ ] 3873 Ops shift 668: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3874 Ops shift 668: confirm the scheduler fired on time and log the tick latency
+- [ ] 3875 Ops shift 668: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3876 Ops shift 669: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3877 Ops shift 669: verify one random attestation digest against a recomputed report
+- [ ] 3878 Ops shift 669: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3879 Ops shift 669: confirm the scheduler fired on time and log the tick latency
+- [ ] 3880 Ops shift 669: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3881 Ops shift 670: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3882 Ops shift 670: verify one random attestation digest against a recomputed report
+- [ ] 3883 Ops shift 670: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3884 Ops shift 670: confirm the scheduler fired on time and log the tick latency
+- [ ] 3885 Ops shift 670: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3886 Ops shift 671: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3887 Ops shift 671: verify one random attestation digest against a recomputed report
+- [ ] 3888 Ops shift 671: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3889 Ops shift 671: confirm the scheduler fired on time and log the tick latency
+- [ ] 3890 Ops shift 671: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3891 Ops shift 672: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3892 Ops shift 672: verify one random attestation digest against a recomputed report
+- [ ] 3893 Ops shift 672: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3894 Ops shift 672: confirm the scheduler fired on time and log the tick latency
+- [ ] 3895 Ops shift 672: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3896 Ops shift 673: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3897 Ops shift 673: verify one random attestation digest against a recomputed report
+- [ ] 3898 Ops shift 673: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3899 Ops shift 673: confirm the scheduler fired on time and log the tick latency
+- [ ] 3900 Ops shift 673: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3901 Ops shift 674: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3902 Ops shift 674: verify one random attestation digest against a recomputed report
+- [ ] 3903 Ops shift 674: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3904 Ops shift 674: confirm the scheduler fired on time and log the tick latency
+- [ ] 3905 Ops shift 674: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3906 Ops shift 675: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3907 Ops shift 675: verify one random attestation digest against a recomputed report
+- [ ] 3908 Ops shift 675: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3909 Ops shift 675: confirm the scheduler fired on time and log the tick latency
+- [ ] 3910 Ops shift 675: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3911 Ops shift 676: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3912 Ops shift 676: verify one random attestation digest against a recomputed report
+- [ ] 3913 Ops shift 676: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3914 Ops shift 676: confirm the scheduler fired on time and log the tick latency
+- [ ] 3915 Ops shift 676: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3916 Ops shift 677: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3917 Ops shift 677: verify one random attestation digest against a recomputed report
+- [ ] 3918 Ops shift 677: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3919 Ops shift 677: confirm the scheduler fired on time and log the tick latency
+- [ ] 3920 Ops shift 677: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3921 Ops shift 678: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3922 Ops shift 678: verify one random attestation digest against a recomputed report
+- [ ] 3923 Ops shift 678: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3924 Ops shift 678: confirm the scheduler fired on time and log the tick latency
+- [ ] 3925 Ops shift 678: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3926 Ops shift 679: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3927 Ops shift 679: verify one random attestation digest against a recomputed report
+- [ ] 3928 Ops shift 679: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3929 Ops shift 679: confirm the scheduler fired on time and log the tick latency
+- [ ] 3930 Ops shift 679: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3931 Ops shift 680: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3932 Ops shift 680: verify one random attestation digest against a recomputed report
+- [ ] 3933 Ops shift 680: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3934 Ops shift 680: confirm the scheduler fired on time and log the tick latency
+- [ ] 3935 Ops shift 680: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3936 Ops shift 681: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3937 Ops shift 681: verify one random attestation digest against a recomputed report
+- [ ] 3938 Ops shift 681: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3939 Ops shift 681: confirm the scheduler fired on time and log the tick latency
+- [ ] 3940 Ops shift 681: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3941 Ops shift 682: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3942 Ops shift 682: verify one random attestation digest against a recomputed report
+- [ ] 3943 Ops shift 682: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3944 Ops shift 682: confirm the scheduler fired on time and log the tick latency
+- [ ] 3945 Ops shift 682: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3946 Ops shift 683: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3947 Ops shift 683: verify one random attestation digest against a recomputed report
+- [ ] 3948 Ops shift 683: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3949 Ops shift 683: confirm the scheduler fired on time and log the tick latency
+- [ ] 3950 Ops shift 683: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3951 Ops shift 684: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3952 Ops shift 684: verify one random attestation digest against a recomputed report
+- [ ] 3953 Ops shift 684: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3954 Ops shift 684: confirm the scheduler fired on time and log the tick latency
+- [ ] 3955 Ops shift 684: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3956 Ops shift 685: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3957 Ops shift 685: verify one random attestation digest against a recomputed report
+- [ ] 3958 Ops shift 685: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3959 Ops shift 685: confirm the scheduler fired on time and log the tick latency
+- [ ] 3960 Ops shift 685: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3961 Ops shift 686: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3962 Ops shift 686: verify one random attestation digest against a recomputed report
+- [ ] 3963 Ops shift 686: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3964 Ops shift 686: confirm the scheduler fired on time and log the tick latency
+- [ ] 3965 Ops shift 686: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3966 Ops shift 687: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3967 Ops shift 687: verify one random attestation digest against a recomputed report
+- [ ] 3968 Ops shift 687: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3969 Ops shift 687: confirm the scheduler fired on time and log the tick latency
+- [ ] 3970 Ops shift 687: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3971 Ops shift 688: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3972 Ops shift 688: verify one random attestation digest against a recomputed report
+- [ ] 3973 Ops shift 688: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3974 Ops shift 688: confirm the scheduler fired on time and log the tick latency
+- [ ] 3975 Ops shift 688: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3976 Ops shift 689: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3977 Ops shift 689: verify one random attestation digest against a recomputed report
+- [ ] 3978 Ops shift 689: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3979 Ops shift 689: confirm the scheduler fired on time and log the tick latency
+- [ ] 3980 Ops shift 689: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3981 Ops shift 690: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3982 Ops shift 690: verify one random attestation digest against a recomputed report
+- [ ] 3983 Ops shift 690: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3984 Ops shift 690: confirm the scheduler fired on time and log the tick latency
+- [ ] 3985 Ops shift 690: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3986 Ops shift 691: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3987 Ops shift 691: verify one random attestation digest against a recomputed report
+- [ ] 3988 Ops shift 691: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3989 Ops shift 691: confirm the scheduler fired on time and log the tick latency
+- [ ] 3990 Ops shift 691: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3991 Ops shift 692: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3992 Ops shift 692: verify one random attestation digest against a recomputed report
+- [ ] 3993 Ops shift 692: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3994 Ops shift 692: confirm the scheduler fired on time and log the tick latency
+- [ ] 3995 Ops shift 692: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 3996 Ops shift 693: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 3997 Ops shift 693: verify one random attestation digest against a recomputed report
+- [ ] 3998 Ops shift 693: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 3999 Ops shift 693: confirm the scheduler fired on time and log the tick latency
+- [ ] 4000 Ops shift 693: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4001 Ops shift 694: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4002 Ops shift 694: verify one random attestation digest against a recomputed report
+- [ ] 4003 Ops shift 694: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4004 Ops shift 694: confirm the scheduler fired on time and log the tick latency
+- [ ] 4005 Ops shift 694: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4006 Ops shift 695: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4007 Ops shift 695: verify one random attestation digest against a recomputed report
+- [ ] 4008 Ops shift 695: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4009 Ops shift 695: confirm the scheduler fired on time and log the tick latency
+- [ ] 4010 Ops shift 695: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4011 Ops shift 696: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4012 Ops shift 696: verify one random attestation digest against a recomputed report
+- [ ] 4013 Ops shift 696: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4014 Ops shift 696: confirm the scheduler fired on time and log the tick latency
+- [ ] 4015 Ops shift 696: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4016 Ops shift 697: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4017 Ops shift 697: verify one random attestation digest against a recomputed report
+- [ ] 4018 Ops shift 697: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4019 Ops shift 697: confirm the scheduler fired on time and log the tick latency
+- [ ] 4020 Ops shift 697: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4021 Ops shift 698: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4022 Ops shift 698: verify one random attestation digest against a recomputed report
+- [ ] 4023 Ops shift 698: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4024 Ops shift 698: confirm the scheduler fired on time and log the tick latency
+- [ ] 4025 Ops shift 698: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4026 Ops shift 699: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4027 Ops shift 699: verify one random attestation digest against a recomputed report
+- [ ] 4028 Ops shift 699: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4029 Ops shift 699: confirm the scheduler fired on time and log the tick latency
+- [ ] 4030 Ops shift 699: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4031 Ops shift 700: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4032 Ops shift 700: verify one random attestation digest against a recomputed report
+- [ ] 4033 Ops shift 700: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4034 Ops shift 700: confirm the scheduler fired on time and log the tick latency
+- [ ] 4035 Ops shift 700: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4036 Ops shift 701: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4037 Ops shift 701: verify one random attestation digest against a recomputed report
+- [ ] 4038 Ops shift 701: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4039 Ops shift 701: confirm the scheduler fired on time and log the tick latency
+- [ ] 4040 Ops shift 701: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4041 Ops shift 702: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4042 Ops shift 702: verify one random attestation digest against a recomputed report
+- [ ] 4043 Ops shift 702: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4044 Ops shift 702: confirm the scheduler fired on time and log the tick latency
+- [ ] 4045 Ops shift 702: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4046 Ops shift 703: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4047 Ops shift 703: verify one random attestation digest against a recomputed report
+- [ ] 4048 Ops shift 703: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4049 Ops shift 703: confirm the scheduler fired on time and log the tick latency
+- [ ] 4050 Ops shift 703: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4051 Ops shift 704: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4052 Ops shift 704: verify one random attestation digest against a recomputed report
+- [ ] 4053 Ops shift 704: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4054 Ops shift 704: confirm the scheduler fired on time and log the tick latency
+- [ ] 4055 Ops shift 704: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4056 Ops shift 705: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4057 Ops shift 705: verify one random attestation digest against a recomputed report
+- [ ] 4058 Ops shift 705: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4059 Ops shift 705: confirm the scheduler fired on time and log the tick latency
+- [ ] 4060 Ops shift 705: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4061 Ops shift 706: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4062 Ops shift 706: verify one random attestation digest against a recomputed report
+- [ ] 4063 Ops shift 706: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4064 Ops shift 706: confirm the scheduler fired on time and log the tick latency
+- [ ] 4065 Ops shift 706: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4066 Ops shift 707: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4067 Ops shift 707: verify one random attestation digest against a recomputed report
+- [ ] 4068 Ops shift 707: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4069 Ops shift 707: confirm the scheduler fired on time and log the tick latency
+- [ ] 4070 Ops shift 707: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4071 Ops shift 708: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4072 Ops shift 708: verify one random attestation digest against a recomputed report
+- [ ] 4073 Ops shift 708: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4074 Ops shift 708: confirm the scheduler fired on time and log the tick latency
+- [ ] 4075 Ops shift 708: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4076 Ops shift 709: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4077 Ops shift 709: verify one random attestation digest against a recomputed report
+- [ ] 4078 Ops shift 709: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4079 Ops shift 709: confirm the scheduler fired on time and log the tick latency
+- [ ] 4080 Ops shift 709: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4081 Ops shift 710: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4082 Ops shift 710: verify one random attestation digest against a recomputed report
+- [ ] 4083 Ops shift 710: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4084 Ops shift 710: confirm the scheduler fired on time and log the tick latency
+- [ ] 4085 Ops shift 710: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4086 Ops shift 711: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4087 Ops shift 711: verify one random attestation digest against a recomputed report
+- [ ] 4088 Ops shift 711: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4089 Ops shift 711: confirm the scheduler fired on time and log the tick latency
+- [ ] 4090 Ops shift 711: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4091 Ops shift 712: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4092 Ops shift 712: verify one random attestation digest against a recomputed report
+- [ ] 4093 Ops shift 712: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4094 Ops shift 712: confirm the scheduler fired on time and log the tick latency
+- [ ] 4095 Ops shift 712: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4096 Ops shift 713: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4097 Ops shift 713: verify one random attestation digest against a recomputed report
+- [ ] 4098 Ops shift 713: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4099 Ops shift 713: confirm the scheduler fired on time and log the tick latency
+- [ ] 4100 Ops shift 713: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4101 Ops shift 714: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4102 Ops shift 714: verify one random attestation digest against a recomputed report
+- [ ] 4103 Ops shift 714: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4104 Ops shift 714: confirm the scheduler fired on time and log the tick latency
+- [ ] 4105 Ops shift 714: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4106 Ops shift 715: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4107 Ops shift 715: verify one random attestation digest against a recomputed report
+- [ ] 4108 Ops shift 715: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4109 Ops shift 715: confirm the scheduler fired on time and log the tick latency
+- [ ] 4110 Ops shift 715: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4111 Ops shift 716: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4112 Ops shift 716: verify one random attestation digest against a recomputed report
+- [ ] 4113 Ops shift 716: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4114 Ops shift 716: confirm the scheduler fired on time and log the tick latency
+- [ ] 4115 Ops shift 716: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4116 Ops shift 717: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4117 Ops shift 717: verify one random attestation digest against a recomputed report
+- [ ] 4118 Ops shift 717: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4119 Ops shift 717: confirm the scheduler fired on time and log the tick latency
+- [ ] 4120 Ops shift 717: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4121 Ops shift 718: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4122 Ops shift 718: verify one random attestation digest against a recomputed report
+- [ ] 4123 Ops shift 718: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4124 Ops shift 718: confirm the scheduler fired on time and log the tick latency
+- [ ] 4125 Ops shift 718: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4126 Ops shift 719: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4127 Ops shift 719: verify one random attestation digest against a recomputed report
+- [ ] 4128 Ops shift 719: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4129 Ops shift 719: confirm the scheduler fired on time and log the tick latency
+- [ ] 4130 Ops shift 719: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4131 Ops shift 720: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4132 Ops shift 720: verify one random attestation digest against a recomputed report
+- [ ] 4133 Ops shift 720: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4134 Ops shift 720: confirm the scheduler fired on time and log the tick latency
+- [ ] 4135 Ops shift 720: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4136 Ops shift 721: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4137 Ops shift 721: verify one random attestation digest against a recomputed report
+- [ ] 4138 Ops shift 721: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4139 Ops shift 721: confirm the scheduler fired on time and log the tick latency
+- [ ] 4140 Ops shift 721: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4141 Ops shift 722: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4142 Ops shift 722: verify one random attestation digest against a recomputed report
+- [ ] 4143 Ops shift 722: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4144 Ops shift 722: confirm the scheduler fired on time and log the tick latency
+- [ ] 4145 Ops shift 722: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4146 Ops shift 723: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4147 Ops shift 723: verify one random attestation digest against a recomputed report
+- [ ] 4148 Ops shift 723: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4149 Ops shift 723: confirm the scheduler fired on time and log the tick latency
+- [ ] 4150 Ops shift 723: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4151 Ops shift 724: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4152 Ops shift 724: verify one random attestation digest against a recomputed report
+- [ ] 4153 Ops shift 724: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4154 Ops shift 724: confirm the scheduler fired on time and log the tick latency
+- [ ] 4155 Ops shift 724: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4156 Ops shift 725: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4157 Ops shift 725: verify one random attestation digest against a recomputed report
+- [ ] 4158 Ops shift 725: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4159 Ops shift 725: confirm the scheduler fired on time and log the tick latency
+- [ ] 4160 Ops shift 725: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4161 Ops shift 726: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4162 Ops shift 726: verify one random attestation digest against a recomputed report
+- [ ] 4163 Ops shift 726: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4164 Ops shift 726: confirm the scheduler fired on time and log the tick latency
+- [ ] 4165 Ops shift 726: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4166 Ops shift 727: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4167 Ops shift 727: verify one random attestation digest against a recomputed report
+- [ ] 4168 Ops shift 727: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4169 Ops shift 727: confirm the scheduler fired on time and log the tick latency
+- [ ] 4170 Ops shift 727: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4171 Ops shift 728: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4172 Ops shift 728: verify one random attestation digest against a recomputed report
+- [ ] 4173 Ops shift 728: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4174 Ops shift 728: confirm the scheduler fired on time and log the tick latency
+- [ ] 4175 Ops shift 728: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4176 Ops shift 729: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4177 Ops shift 729: verify one random attestation digest against a recomputed report
+- [ ] 4178 Ops shift 729: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4179 Ops shift 729: confirm the scheduler fired on time and log the tick latency
+- [ ] 4180 Ops shift 729: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4181 Ops shift 730: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4182 Ops shift 730: verify one random attestation digest against a recomputed report
+- [ ] 4183 Ops shift 730: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4184 Ops shift 730: confirm the scheduler fired on time and log the tick latency
+- [ ] 4185 Ops shift 730: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4186 Ops shift 731: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4187 Ops shift 731: verify one random attestation digest against a recomputed report
+- [ ] 4188 Ops shift 731: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4189 Ops shift 731: confirm the scheduler fired on time and log the tick latency
+- [ ] 4190 Ops shift 731: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4191 Ops shift 732: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4192 Ops shift 732: verify one random attestation digest against a recomputed report
+- [ ] 4193 Ops shift 732: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4194 Ops shift 732: confirm the scheduler fired on time and log the tick latency
+- [ ] 4195 Ops shift 732: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4196 Ops shift 733: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4197 Ops shift 733: verify one random attestation digest against a recomputed report
+- [ ] 4198 Ops shift 733: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4199 Ops shift 733: confirm the scheduler fired on time and log the tick latency
+- [ ] 4200 Ops shift 733: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4201 Ops shift 734: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4202 Ops shift 734: verify one random attestation digest against a recomputed report
+- [ ] 4203 Ops shift 734: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4204 Ops shift 734: confirm the scheduler fired on time and log the tick latency
+- [ ] 4205 Ops shift 734: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4206 Ops shift 735: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4207 Ops shift 735: verify one random attestation digest against a recomputed report
+- [ ] 4208 Ops shift 735: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4209 Ops shift 735: confirm the scheduler fired on time and log the tick latency
+- [ ] 4210 Ops shift 735: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4211 Ops shift 736: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4212 Ops shift 736: verify one random attestation digest against a recomputed report
+- [ ] 4213 Ops shift 736: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4214 Ops shift 736: confirm the scheduler fired on time and log the tick latency
+- [ ] 4215 Ops shift 736: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4216 Ops shift 737: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4217 Ops shift 737: verify one random attestation digest against a recomputed report
+- [ ] 4218 Ops shift 737: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4219 Ops shift 737: confirm the scheduler fired on time and log the tick latency
+- [ ] 4220 Ops shift 737: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4221 Ops shift 738: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4222 Ops shift 738: verify one random attestation digest against a recomputed report
+- [ ] 4223 Ops shift 738: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4224 Ops shift 738: confirm the scheduler fired on time and log the tick latency
+- [ ] 4225 Ops shift 738: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4226 Ops shift 739: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4227 Ops shift 739: verify one random attestation digest against a recomputed report
+- [ ] 4228 Ops shift 739: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4229 Ops shift 739: confirm the scheduler fired on time and log the tick latency
+- [ ] 4230 Ops shift 739: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4231 Ops shift 740: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4232 Ops shift 740: verify one random attestation digest against a recomputed report
+- [ ] 4233 Ops shift 740: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4234 Ops shift 740: confirm the scheduler fired on time and log the tick latency
+- [ ] 4235 Ops shift 740: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4236 Ops shift 741: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4237 Ops shift 741: verify one random attestation digest against a recomputed report
+- [ ] 4238 Ops shift 741: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4239 Ops shift 741: confirm the scheduler fired on time and log the tick latency
+- [ ] 4240 Ops shift 741: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4241 Ops shift 742: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4242 Ops shift 742: verify one random attestation digest against a recomputed report
+- [ ] 4243 Ops shift 742: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4244 Ops shift 742: confirm the scheduler fired on time and log the tick latency
+- [ ] 4245 Ops shift 742: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4246 Ops shift 743: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4247 Ops shift 743: verify one random attestation digest against a recomputed report
+- [ ] 4248 Ops shift 743: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4249 Ops shift 743: confirm the scheduler fired on time and log the tick latency
+- [ ] 4250 Ops shift 743: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4251 Ops shift 744: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4252 Ops shift 744: verify one random attestation digest against a recomputed report
+- [ ] 4253 Ops shift 744: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4254 Ops shift 744: confirm the scheduler fired on time and log the tick latency
+- [ ] 4255 Ops shift 744: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4256 Ops shift 745: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4257 Ops shift 745: verify one random attestation digest against a recomputed report
+- [ ] 4258 Ops shift 745: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4259 Ops shift 745: confirm the scheduler fired on time and log the tick latency
+- [ ] 4260 Ops shift 745: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4261 Ops shift 746: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4262 Ops shift 746: verify one random attestation digest against a recomputed report
+- [ ] 4263 Ops shift 746: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4264 Ops shift 746: confirm the scheduler fired on time and log the tick latency
+- [ ] 4265 Ops shift 746: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4266 Ops shift 747: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4267 Ops shift 747: verify one random attestation digest against a recomputed report
+- [ ] 4268 Ops shift 747: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4269 Ops shift 747: confirm the scheduler fired on time and log the tick latency
+- [ ] 4270 Ops shift 747: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4271 Ops shift 748: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4272 Ops shift 748: verify one random attestation digest against a recomputed report
+- [ ] 4273 Ops shift 748: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4274 Ops shift 748: confirm the scheduler fired on time and log the tick latency
+- [ ] 4275 Ops shift 748: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4276 Ops shift 749: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4277 Ops shift 749: verify one random attestation digest against a recomputed report
+- [ ] 4278 Ops shift 749: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4279 Ops shift 749: confirm the scheduler fired on time and log the tick latency
+- [ ] 4280 Ops shift 749: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4281 Ops shift 750: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4282 Ops shift 750: verify one random attestation digest against a recomputed report
+- [ ] 4283 Ops shift 750: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4284 Ops shift 750: confirm the scheduler fired on time and log the tick latency
+- [ ] 4285 Ops shift 750: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4286 Ops shift 751: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4287 Ops shift 751: verify one random attestation digest against a recomputed report
+- [ ] 4288 Ops shift 751: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4289 Ops shift 751: confirm the scheduler fired on time and log the tick latency
+- [ ] 4290 Ops shift 751: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4291 Ops shift 752: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4292 Ops shift 752: verify one random attestation digest against a recomputed report
+- [ ] 4293 Ops shift 752: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4294 Ops shift 752: confirm the scheduler fired on time and log the tick latency
+- [ ] 4295 Ops shift 752: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4296 Ops shift 753: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4297 Ops shift 753: verify one random attestation digest against a recomputed report
+- [ ] 4298 Ops shift 753: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4299 Ops shift 753: confirm the scheduler fired on time and log the tick latency
+- [ ] 4300 Ops shift 753: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4301 Ops shift 754: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4302 Ops shift 754: verify one random attestation digest against a recomputed report
+- [ ] 4303 Ops shift 754: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4304 Ops shift 754: confirm the scheduler fired on time and log the tick latency
+- [ ] 4305 Ops shift 754: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4306 Ops shift 755: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4307 Ops shift 755: verify one random attestation digest against a recomputed report
+- [ ] 4308 Ops shift 755: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4309 Ops shift 755: confirm the scheduler fired on time and log the tick latency
+- [ ] 4310 Ops shift 755: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4311 Ops shift 756: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4312 Ops shift 756: verify one random attestation digest against a recomputed report
+- [ ] 4313 Ops shift 756: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4314 Ops shift 756: confirm the scheduler fired on time and log the tick latency
+- [ ] 4315 Ops shift 756: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4316 Ops shift 757: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4317 Ops shift 757: verify one random attestation digest against a recomputed report
+- [ ] 4318 Ops shift 757: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4319 Ops shift 757: confirm the scheduler fired on time and log the tick latency
+- [ ] 4320 Ops shift 757: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4321 Ops shift 758: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4322 Ops shift 758: verify one random attestation digest against a recomputed report
+- [ ] 4323 Ops shift 758: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4324 Ops shift 758: confirm the scheduler fired on time and log the tick latency
+- [ ] 4325 Ops shift 758: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4326 Ops shift 759: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4327 Ops shift 759: verify one random attestation digest against a recomputed report
+- [ ] 4328 Ops shift 759: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4329 Ops shift 759: confirm the scheduler fired on time and log the tick latency
+- [ ] 4330 Ops shift 759: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4331 Ops shift 760: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4332 Ops shift 760: verify one random attestation digest against a recomputed report
+- [ ] 4333 Ops shift 760: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4334 Ops shift 760: confirm the scheduler fired on time and log the tick latency
+- [ ] 4335 Ops shift 760: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4336 Ops shift 761: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4337 Ops shift 761: verify one random attestation digest against a recomputed report
+- [ ] 4338 Ops shift 761: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4339 Ops shift 761: confirm the scheduler fired on time and log the tick latency
+- [ ] 4340 Ops shift 761: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4341 Ops shift 762: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4342 Ops shift 762: verify one random attestation digest against a recomputed report
+- [ ] 4343 Ops shift 762: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4344 Ops shift 762: confirm the scheduler fired on time and log the tick latency
+- [ ] 4345 Ops shift 762: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4346 Ops shift 763: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4347 Ops shift 763: verify one random attestation digest against a recomputed report
+- [ ] 4348 Ops shift 763: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4349 Ops shift 763: confirm the scheduler fired on time and log the tick latency
+- [ ] 4350 Ops shift 763: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4351 Ops shift 764: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4352 Ops shift 764: verify one random attestation digest against a recomputed report
+- [ ] 4353 Ops shift 764: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4354 Ops shift 764: confirm the scheduler fired on time and log the tick latency
+- [ ] 4355 Ops shift 764: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4356 Ops shift 765: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4357 Ops shift 765: verify one random attestation digest against a recomputed report
+- [ ] 4358 Ops shift 765: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4359 Ops shift 765: confirm the scheduler fired on time and log the tick latency
+- [ ] 4360 Ops shift 765: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4361 Ops shift 766: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4362 Ops shift 766: verify one random attestation digest against a recomputed report
+- [ ] 4363 Ops shift 766: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4364 Ops shift 766: confirm the scheduler fired on time and log the tick latency
+- [ ] 4365 Ops shift 766: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4366 Ops shift 767: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4367 Ops shift 767: verify one random attestation digest against a recomputed report
+- [ ] 4368 Ops shift 767: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4369 Ops shift 767: confirm the scheduler fired on time and log the tick latency
+- [ ] 4370 Ops shift 767: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4371 Ops shift 768: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4372 Ops shift 768: verify one random attestation digest against a recomputed report
+- [ ] 4373 Ops shift 768: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4374 Ops shift 768: confirm the scheduler fired on time and log the tick latency
+- [ ] 4375 Ops shift 768: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4376 Ops shift 769: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4377 Ops shift 769: verify one random attestation digest against a recomputed report
+- [ ] 4378 Ops shift 769: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4379 Ops shift 769: confirm the scheduler fired on time and log the tick latency
+- [ ] 4380 Ops shift 769: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4381 Ops shift 770: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4382 Ops shift 770: verify one random attestation digest against a recomputed report
+- [ ] 4383 Ops shift 770: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4384 Ops shift 770: confirm the scheduler fired on time and log the tick latency
+- [ ] 4385 Ops shift 770: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4386 Ops shift 771: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4387 Ops shift 771: verify one random attestation digest against a recomputed report
+- [ ] 4388 Ops shift 771: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4389 Ops shift 771: confirm the scheduler fired on time and log the tick latency
+- [ ] 4390 Ops shift 771: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4391 Ops shift 772: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4392 Ops shift 772: verify one random attestation digest against a recomputed report
+- [ ] 4393 Ops shift 772: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4394 Ops shift 772: confirm the scheduler fired on time and log the tick latency
+- [ ] 4395 Ops shift 772: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4396 Ops shift 773: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4397 Ops shift 773: verify one random attestation digest against a recomputed report
+- [ ] 4398 Ops shift 773: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4399 Ops shift 773: confirm the scheduler fired on time and log the tick latency
+- [ ] 4400 Ops shift 773: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4401 Ops shift 774: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4402 Ops shift 774: verify one random attestation digest against a recomputed report
+- [ ] 4403 Ops shift 774: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4404 Ops shift 774: confirm the scheduler fired on time and log the tick latency
+- [ ] 4405 Ops shift 774: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4406 Ops shift 775: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4407 Ops shift 775: verify one random attestation digest against a recomputed report
+- [ ] 4408 Ops shift 775: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4409 Ops shift 775: confirm the scheduler fired on time and log the tick latency
+- [ ] 4410 Ops shift 775: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4411 Ops shift 776: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4412 Ops shift 776: verify one random attestation digest against a recomputed report
+- [ ] 4413 Ops shift 776: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4414 Ops shift 776: confirm the scheduler fired on time and log the tick latency
+- [ ] 4415 Ops shift 776: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4416 Ops shift 777: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4417 Ops shift 777: verify one random attestation digest against a recomputed report
+- [ ] 4418 Ops shift 777: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4419 Ops shift 777: confirm the scheduler fired on time and log the tick latency
+- [ ] 4420 Ops shift 777: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4421 Ops shift 778: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4422 Ops shift 778: verify one random attestation digest against a recomputed report
+- [ ] 4423 Ops shift 778: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4424 Ops shift 778: confirm the scheduler fired on time and log the tick latency
+- [ ] 4425 Ops shift 778: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4426 Ops shift 779: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4427 Ops shift 779: verify one random attestation digest against a recomputed report
+- [ ] 4428 Ops shift 779: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4429 Ops shift 779: confirm the scheduler fired on time and log the tick latency
+- [ ] 4430 Ops shift 779: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4431 Ops shift 780: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4432 Ops shift 780: verify one random attestation digest against a recomputed report
+- [ ] 4433 Ops shift 780: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4434 Ops shift 780: confirm the scheduler fired on time and log the tick latency
+- [ ] 4435 Ops shift 780: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4436 Ops shift 781: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4437 Ops shift 781: verify one random attestation digest against a recomputed report
+- [ ] 4438 Ops shift 781: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4439 Ops shift 781: confirm the scheduler fired on time and log the tick latency
+- [ ] 4440 Ops shift 781: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4441 Ops shift 782: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4442 Ops shift 782: verify one random attestation digest against a recomputed report
+- [ ] 4443 Ops shift 782: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4444 Ops shift 782: confirm the scheduler fired on time and log the tick latency
+- [ ] 4445 Ops shift 782: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4446 Ops shift 783: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4447 Ops shift 783: verify one random attestation digest against a recomputed report
+- [ ] 4448 Ops shift 783: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4449 Ops shift 783: confirm the scheduler fired on time and log the tick latency
+- [ ] 4450 Ops shift 783: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4451 Ops shift 784: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4452 Ops shift 784: verify one random attestation digest against a recomputed report
+- [ ] 4453 Ops shift 784: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4454 Ops shift 784: confirm the scheduler fired on time and log the tick latency
+- [ ] 4455 Ops shift 784: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4456 Ops shift 785: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4457 Ops shift 785: verify one random attestation digest against a recomputed report
+- [ ] 4458 Ops shift 785: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4459 Ops shift 785: confirm the scheduler fired on time and log the tick latency
+- [ ] 4460 Ops shift 785: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4461 Ops shift 786: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4462 Ops shift 786: verify one random attestation digest against a recomputed report
+- [ ] 4463 Ops shift 786: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4464 Ops shift 786: confirm the scheduler fired on time and log the tick latency
+- [ ] 4465 Ops shift 786: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4466 Ops shift 787: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4467 Ops shift 787: verify one random attestation digest against a recomputed report
+- [ ] 4468 Ops shift 787: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4469 Ops shift 787: confirm the scheduler fired on time and log the tick latency
+- [ ] 4470 Ops shift 787: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4471 Ops shift 788: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4472 Ops shift 788: verify one random attestation digest against a recomputed report
+- [ ] 4473 Ops shift 788: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4474 Ops shift 788: confirm the scheduler fired on time and log the tick latency
+- [ ] 4475 Ops shift 788: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4476 Ops shift 789: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4477 Ops shift 789: verify one random attestation digest against a recomputed report
+- [ ] 4478 Ops shift 789: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4479 Ops shift 789: confirm the scheduler fired on time and log the tick latency
+- [ ] 4480 Ops shift 789: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4481 Ops shift 790: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4482 Ops shift 790: verify one random attestation digest against a recomputed report
+- [ ] 4483 Ops shift 790: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4484 Ops shift 790: confirm the scheduler fired on time and log the tick latency
+- [ ] 4485 Ops shift 790: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4486 Ops shift 791: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4487 Ops shift 791: verify one random attestation digest against a recomputed report
+- [ ] 4488 Ops shift 791: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4489 Ops shift 791: confirm the scheduler fired on time and log the tick latency
+- [ ] 4490 Ops shift 791: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4491 Ops shift 792: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4492 Ops shift 792: verify one random attestation digest against a recomputed report
+- [ ] 4493 Ops shift 792: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4494 Ops shift 792: confirm the scheduler fired on time and log the tick latency
+- [ ] 4495 Ops shift 792: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4496 Ops shift 793: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4497 Ops shift 793: verify one random attestation digest against a recomputed report
+- [ ] 4498 Ops shift 793: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4499 Ops shift 793: confirm the scheduler fired on time and log the tick latency
+- [ ] 4500 Ops shift 793: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4501 Ops shift 794: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4502 Ops shift 794: verify one random attestation digest against a recomputed report
+- [ ] 4503 Ops shift 794: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4504 Ops shift 794: confirm the scheduler fired on time and log the tick latency
+- [ ] 4505 Ops shift 794: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4506 Ops shift 795: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4507 Ops shift 795: verify one random attestation digest against a recomputed report
+- [ ] 4508 Ops shift 795: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4509 Ops shift 795: confirm the scheduler fired on time and log the tick latency
+- [ ] 4510 Ops shift 795: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4511 Ops shift 796: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4512 Ops shift 796: verify one random attestation digest against a recomputed report
+- [ ] 4513 Ops shift 796: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4514 Ops shift 796: confirm the scheduler fired on time and log the tick latency
+- [ ] 4515 Ops shift 796: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4516 Ops shift 797: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4517 Ops shift 797: verify one random attestation digest against a recomputed report
+- [ ] 4518 Ops shift 797: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4519 Ops shift 797: confirm the scheduler fired on time and log the tick latency
+- [ ] 4520 Ops shift 797: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4521 Ops shift 798: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4522 Ops shift 798: verify one random attestation digest against a recomputed report
+- [ ] 4523 Ops shift 798: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4524 Ops shift 798: confirm the scheduler fired on time and log the tick latency
+- [ ] 4525 Ops shift 798: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4526 Ops shift 799: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4527 Ops shift 799: verify one random attestation digest against a recomputed report
+- [ ] 4528 Ops shift 799: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4529 Ops shift 799: confirm the scheduler fired on time and log the tick latency
+- [ ] 4530 Ops shift 799: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4531 Ops shift 800: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4532 Ops shift 800: verify one random attestation digest against a recomputed report
+- [ ] 4533 Ops shift 800: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4534 Ops shift 800: confirm the scheduler fired on time and log the tick latency
+- [ ] 4535 Ops shift 800: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4536 Ops shift 801: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4537 Ops shift 801: verify one random attestation digest against a recomputed report
+- [ ] 4538 Ops shift 801: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4539 Ops shift 801: confirm the scheduler fired on time and log the tick latency
+- [ ] 4540 Ops shift 801: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4541 Ops shift 802: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4542 Ops shift 802: verify one random attestation digest against a recomputed report
+- [ ] 4543 Ops shift 802: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4544 Ops shift 802: confirm the scheduler fired on time and log the tick latency
+- [ ] 4545 Ops shift 802: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4546 Ops shift 803: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4547 Ops shift 803: verify one random attestation digest against a recomputed report
+- [ ] 4548 Ops shift 803: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4549 Ops shift 803: confirm the scheduler fired on time and log the tick latency
+- [ ] 4550 Ops shift 803: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4551 Ops shift 804: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4552 Ops shift 804: verify one random attestation digest against a recomputed report
+- [ ] 4553 Ops shift 804: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4554 Ops shift 804: confirm the scheduler fired on time and log the tick latency
+- [ ] 4555 Ops shift 804: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4556 Ops shift 805: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4557 Ops shift 805: verify one random attestation digest against a recomputed report
+- [ ] 4558 Ops shift 805: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4559 Ops shift 805: confirm the scheduler fired on time and log the tick latency
+- [ ] 4560 Ops shift 805: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4561 Ops shift 806: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4562 Ops shift 806: verify one random attestation digest against a recomputed report
+- [ ] 4563 Ops shift 806: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4564 Ops shift 806: confirm the scheduler fired on time and log the tick latency
+- [ ] 4565 Ops shift 806: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4566 Ops shift 807: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4567 Ops shift 807: verify one random attestation digest against a recomputed report
+- [ ] 4568 Ops shift 807: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4569 Ops shift 807: confirm the scheduler fired on time and log the tick latency
+- [ ] 4570 Ops shift 807: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4571 Ops shift 808: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4572 Ops shift 808: verify one random attestation digest against a recomputed report
+- [ ] 4573 Ops shift 808: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4574 Ops shift 808: confirm the scheduler fired on time and log the tick latency
+- [ ] 4575 Ops shift 808: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4576 Ops shift 809: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4577 Ops shift 809: verify one random attestation digest against a recomputed report
+- [ ] 4578 Ops shift 809: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4579 Ops shift 809: confirm the scheduler fired on time and log the tick latency
+- [ ] 4580 Ops shift 809: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4581 Ops shift 810: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4582 Ops shift 810: verify one random attestation digest against a recomputed report
+- [ ] 4583 Ops shift 810: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4584 Ops shift 810: confirm the scheduler fired on time and log the tick latency
+- [ ] 4585 Ops shift 810: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4586 Ops shift 811: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4587 Ops shift 811: verify one random attestation digest against a recomputed report
+- [ ] 4588 Ops shift 811: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4589 Ops shift 811: confirm the scheduler fired on time and log the tick latency
+- [ ] 4590 Ops shift 811: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4591 Ops shift 812: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4592 Ops shift 812: verify one random attestation digest against a recomputed report
+- [ ] 4593 Ops shift 812: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4594 Ops shift 812: confirm the scheduler fired on time and log the tick latency
+- [ ] 4595 Ops shift 812: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4596 Ops shift 813: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4597 Ops shift 813: verify one random attestation digest against a recomputed report
+- [ ] 4598 Ops shift 813: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4599 Ops shift 813: confirm the scheduler fired on time and log the tick latency
+- [ ] 4600 Ops shift 813: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4601 Ops shift 814: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4602 Ops shift 814: verify one random attestation digest against a recomputed report
+- [ ] 4603 Ops shift 814: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4604 Ops shift 814: confirm the scheduler fired on time and log the tick latency
+- [ ] 4605 Ops shift 814: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4606 Ops shift 815: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4607 Ops shift 815: verify one random attestation digest against a recomputed report
+- [ ] 4608 Ops shift 815: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4609 Ops shift 815: confirm the scheduler fired on time and log the tick latency
+- [ ] 4610 Ops shift 815: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4611 Ops shift 816: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4612 Ops shift 816: verify one random attestation digest against a recomputed report
+- [ ] 4613 Ops shift 816: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4614 Ops shift 816: confirm the scheduler fired on time and log the tick latency
+- [ ] 4615 Ops shift 816: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4616 Ops shift 817: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4617 Ops shift 817: verify one random attestation digest against a recomputed report
+- [ ] 4618 Ops shift 817: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4619 Ops shift 817: confirm the scheduler fired on time and log the tick latency
+- [ ] 4620 Ops shift 817: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4621 Ops shift 818: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4622 Ops shift 818: verify one random attestation digest against a recomputed report
+- [ ] 4623 Ops shift 818: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4624 Ops shift 818: confirm the scheduler fired on time and log the tick latency
+- [ ] 4625 Ops shift 818: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4626 Ops shift 819: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4627 Ops shift 819: verify one random attestation digest against a recomputed report
+- [ ] 4628 Ops shift 819: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4629 Ops shift 819: confirm the scheduler fired on time and log the tick latency
+- [ ] 4630 Ops shift 819: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4631 Ops shift 820: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4632 Ops shift 820: verify one random attestation digest against a recomputed report
+- [ ] 4633 Ops shift 820: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4634 Ops shift 820: confirm the scheduler fired on time and log the tick latency
+- [ ] 4635 Ops shift 820: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4636 Ops shift 821: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4637 Ops shift 821: verify one random attestation digest against a recomputed report
+- [ ] 4638 Ops shift 821: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4639 Ops shift 821: confirm the scheduler fired on time and log the tick latency
+- [ ] 4640 Ops shift 821: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4641 Ops shift 822: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4642 Ops shift 822: verify one random attestation digest against a recomputed report
+- [ ] 4643 Ops shift 822: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4644 Ops shift 822: confirm the scheduler fired on time and log the tick latency
+- [ ] 4645 Ops shift 822: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4646 Ops shift 823: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4647 Ops shift 823: verify one random attestation digest against a recomputed report
+- [ ] 4648 Ops shift 823: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4649 Ops shift 823: confirm the scheduler fired on time and log the tick latency
+- [ ] 4650 Ops shift 823: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4651 Ops shift 824: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4652 Ops shift 824: verify one random attestation digest against a recomputed report
+- [ ] 4653 Ops shift 824: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4654 Ops shift 824: confirm the scheduler fired on time and log the tick latency
+- [ ] 4655 Ops shift 824: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4656 Ops shift 825: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4657 Ops shift 825: verify one random attestation digest against a recomputed report
+- [ ] 4658 Ops shift 825: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4659 Ops shift 825: confirm the scheduler fired on time and log the tick latency
+- [ ] 4660 Ops shift 825: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4661 Ops shift 826: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4662 Ops shift 826: verify one random attestation digest against a recomputed report
+- [ ] 4663 Ops shift 826: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4664 Ops shift 826: confirm the scheduler fired on time and log the tick latency
+- [ ] 4665 Ops shift 826: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4666 Ops shift 827: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4667 Ops shift 827: verify one random attestation digest against a recomputed report
+- [ ] 4668 Ops shift 827: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4669 Ops shift 827: confirm the scheduler fired on time and log the tick latency
+- [ ] 4670 Ops shift 827: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4671 Ops shift 828: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4672 Ops shift 828: verify one random attestation digest against a recomputed report
+- [ ] 4673 Ops shift 828: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4674 Ops shift 828: confirm the scheduler fired on time and log the tick latency
+- [ ] 4675 Ops shift 828: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4676 Ops shift 829: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4677 Ops shift 829: verify one random attestation digest against a recomputed report
+- [ ] 4678 Ops shift 829: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4679 Ops shift 829: confirm the scheduler fired on time and log the tick latency
+- [ ] 4680 Ops shift 829: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4681 Ops shift 830: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4682 Ops shift 830: verify one random attestation digest against a recomputed report
+- [ ] 4683 Ops shift 830: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4684 Ops shift 830: confirm the scheduler fired on time and log the tick latency
+- [ ] 4685 Ops shift 830: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4686 Ops shift 831: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4687 Ops shift 831: verify one random attestation digest against a recomputed report
+- [ ] 4688 Ops shift 831: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4689 Ops shift 831: confirm the scheduler fired on time and log the tick latency
+- [ ] 4690 Ops shift 831: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4691 Ops shift 832: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4692 Ops shift 832: verify one random attestation digest against a recomputed report
+- [ ] 4693 Ops shift 832: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4694 Ops shift 832: confirm the scheduler fired on time and log the tick latency
+- [ ] 4695 Ops shift 832: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4696 Ops shift 833: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4697 Ops shift 833: verify one random attestation digest against a recomputed report
+- [ ] 4698 Ops shift 833: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4699 Ops shift 833: confirm the scheduler fired on time and log the tick latency
+- [ ] 4700 Ops shift 833: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4701 Ops shift 834: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4702 Ops shift 834: verify one random attestation digest against a recomputed report
+- [ ] 4703 Ops shift 834: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4704 Ops shift 834: confirm the scheduler fired on time and log the tick latency
+- [ ] 4705 Ops shift 834: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4706 Ops shift 835: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4707 Ops shift 835: verify one random attestation digest against a recomputed report
+- [ ] 4708 Ops shift 835: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4709 Ops shift 835: confirm the scheduler fired on time and log the tick latency
+- [ ] 4710 Ops shift 835: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4711 Ops shift 836: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4712 Ops shift 836: verify one random attestation digest against a recomputed report
+- [ ] 4713 Ops shift 836: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4714 Ops shift 836: confirm the scheduler fired on time and log the tick latency
+- [ ] 4715 Ops shift 836: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4716 Ops shift 837: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4717 Ops shift 837: verify one random attestation digest against a recomputed report
+- [ ] 4718 Ops shift 837: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4719 Ops shift 837: confirm the scheduler fired on time and log the tick latency
+- [ ] 4720 Ops shift 837: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4721 Ops shift 838: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4722 Ops shift 838: verify one random attestation digest against a recomputed report
+- [ ] 4723 Ops shift 838: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4724 Ops shift 838: confirm the scheduler fired on time and log the tick latency
+- [ ] 4725 Ops shift 838: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4726 Ops shift 839: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4727 Ops shift 839: verify one random attestation digest against a recomputed report
+- [ ] 4728 Ops shift 839: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4729 Ops shift 839: confirm the scheduler fired on time and log the tick latency
+- [ ] 4730 Ops shift 839: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4731 Ops shift 840: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4732 Ops shift 840: verify one random attestation digest against a recomputed report
+- [ ] 4733 Ops shift 840: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4734 Ops shift 840: confirm the scheduler fired on time and log the tick latency
+- [ ] 4735 Ops shift 840: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4736 Ops shift 841: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4737 Ops shift 841: verify one random attestation digest against a recomputed report
+- [ ] 4738 Ops shift 841: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4739 Ops shift 841: confirm the scheduler fired on time and log the tick latency
+- [ ] 4740 Ops shift 841: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4741 Ops shift 842: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4742 Ops shift 842: verify one random attestation digest against a recomputed report
+- [ ] 4743 Ops shift 842: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4744 Ops shift 842: confirm the scheduler fired on time and log the tick latency
+- [ ] 4745 Ops shift 842: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4746 Ops shift 843: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4747 Ops shift 843: verify one random attestation digest against a recomputed report
+- [ ] 4748 Ops shift 843: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4749 Ops shift 843: confirm the scheduler fired on time and log the tick latency
+- [ ] 4750 Ops shift 843: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4751 Ops shift 844: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4752 Ops shift 844: verify one random attestation digest against a recomputed report
+- [ ] 4753 Ops shift 844: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4754 Ops shift 844: confirm the scheduler fired on time and log the tick latency
+- [ ] 4755 Ops shift 844: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4756 Ops shift 845: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4757 Ops shift 845: verify one random attestation digest against a recomputed report
+- [ ] 4758 Ops shift 845: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4759 Ops shift 845: confirm the scheduler fired on time and log the tick latency
+- [ ] 4760 Ops shift 845: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4761 Ops shift 846: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4762 Ops shift 846: verify one random attestation digest against a recomputed report
+- [ ] 4763 Ops shift 846: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4764 Ops shift 846: confirm the scheduler fired on time and log the tick latency
+- [ ] 4765 Ops shift 846: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4766 Ops shift 847: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4767 Ops shift 847: verify one random attestation digest against a recomputed report
+- [ ] 4768 Ops shift 847: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4769 Ops shift 847: confirm the scheduler fired on time and log the tick latency
+- [ ] 4770 Ops shift 847: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4771 Ops shift 848: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4772 Ops shift 848: verify one random attestation digest against a recomputed report
+- [ ] 4773 Ops shift 848: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4774 Ops shift 848: confirm the scheduler fired on time and log the tick latency
+- [ ] 4775 Ops shift 848: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4776 Ops shift 849: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4777 Ops shift 849: verify one random attestation digest against a recomputed report
+- [ ] 4778 Ops shift 849: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4779 Ops shift 849: confirm the scheduler fired on time and log the tick latency
+- [ ] 4780 Ops shift 849: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4781 Ops shift 850: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4782 Ops shift 850: verify one random attestation digest against a recomputed report
+- [ ] 4783 Ops shift 850: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4784 Ops shift 850: confirm the scheduler fired on time and log the tick latency
+- [ ] 4785 Ops shift 850: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4786 Ops shift 851: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4787 Ops shift 851: verify one random attestation digest against a recomputed report
+- [ ] 4788 Ops shift 851: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4789 Ops shift 851: confirm the scheduler fired on time and log the tick latency
+- [ ] 4790 Ops shift 851: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4791 Ops shift 852: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4792 Ops shift 852: verify one random attestation digest against a recomputed report
+- [ ] 4793 Ops shift 852: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4794 Ops shift 852: confirm the scheduler fired on time and log the tick latency
+- [ ] 4795 Ops shift 852: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4796 Ops shift 853: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4797 Ops shift 853: verify one random attestation digest against a recomputed report
+- [ ] 4798 Ops shift 853: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4799 Ops shift 853: confirm the scheduler fired on time and log the tick latency
+- [ ] 4800 Ops shift 853: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4801 Ops shift 854: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4802 Ops shift 854: verify one random attestation digest against a recomputed report
+- [ ] 4803 Ops shift 854: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4804 Ops shift 854: confirm the scheduler fired on time and log the tick latency
+- [ ] 4805 Ops shift 854: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4806 Ops shift 855: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4807 Ops shift 855: verify one random attestation digest against a recomputed report
+- [ ] 4808 Ops shift 855: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4809 Ops shift 855: confirm the scheduler fired on time and log the tick latency
+- [ ] 4810 Ops shift 855: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4811 Ops shift 856: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4812 Ops shift 856: verify one random attestation digest against a recomputed report
+- [ ] 4813 Ops shift 856: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4814 Ops shift 856: confirm the scheduler fired on time and log the tick latency
+- [ ] 4815 Ops shift 856: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4816 Ops shift 857: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4817 Ops shift 857: verify one random attestation digest against a recomputed report
+- [ ] 4818 Ops shift 857: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4819 Ops shift 857: confirm the scheduler fired on time and log the tick latency
+- [ ] 4820 Ops shift 857: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4821 Ops shift 858: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4822 Ops shift 858: verify one random attestation digest against a recomputed report
+- [ ] 4823 Ops shift 858: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4824 Ops shift 858: confirm the scheduler fired on time and log the tick latency
+- [ ] 4825 Ops shift 858: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4826 Ops shift 859: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4827 Ops shift 859: verify one random attestation digest against a recomputed report
+- [ ] 4828 Ops shift 859: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4829 Ops shift 859: confirm the scheduler fired on time and log the tick latency
+- [ ] 4830 Ops shift 859: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4831 Ops shift 860: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4832 Ops shift 860: verify one random attestation digest against a recomputed report
+- [ ] 4833 Ops shift 860: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4834 Ops shift 860: confirm the scheduler fired on time and log the tick latency
+- [ ] 4835 Ops shift 860: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4836 Ops shift 861: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4837 Ops shift 861: verify one random attestation digest against a recomputed report
+- [ ] 4838 Ops shift 861: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4839 Ops shift 861: confirm the scheduler fired on time and log the tick latency
+- [ ] 4840 Ops shift 861: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4841 Ops shift 862: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4842 Ops shift 862: verify one random attestation digest against a recomputed report
+- [ ] 4843 Ops shift 862: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4844 Ops shift 862: confirm the scheduler fired on time and log the tick latency
+- [ ] 4845 Ops shift 862: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4846 Ops shift 863: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4847 Ops shift 863: verify one random attestation digest against a recomputed report
+- [ ] 4848 Ops shift 863: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4849 Ops shift 863: confirm the scheduler fired on time and log the tick latency
+- [ ] 4850 Ops shift 863: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4851 Ops shift 864: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4852 Ops shift 864: verify one random attestation digest against a recomputed report
+- [ ] 4853 Ops shift 864: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4854 Ops shift 864: confirm the scheduler fired on time and log the tick latency
+- [ ] 4855 Ops shift 864: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4856 Ops shift 865: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4857 Ops shift 865: verify one random attestation digest against a recomputed report
+- [ ] 4858 Ops shift 865: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4859 Ops shift 865: confirm the scheduler fired on time and log the tick latency
+- [ ] 4860 Ops shift 865: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4861 Ops shift 866: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4862 Ops shift 866: verify one random attestation digest against a recomputed report
+- [ ] 4863 Ops shift 866: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4864 Ops shift 866: confirm the scheduler fired on time and log the tick latency
+- [ ] 4865 Ops shift 866: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4866 Ops shift 867: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4867 Ops shift 867: verify one random attestation digest against a recomputed report
+- [ ] 4868 Ops shift 867: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4869 Ops shift 867: confirm the scheduler fired on time and log the tick latency
+- [ ] 4870 Ops shift 867: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4871 Ops shift 868: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4872 Ops shift 868: verify one random attestation digest against a recomputed report
+- [ ] 4873 Ops shift 868: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4874 Ops shift 868: confirm the scheduler fired on time and log the tick latency
+- [ ] 4875 Ops shift 868: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4876 Ops shift 869: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4877 Ops shift 869: verify one random attestation digest against a recomputed report
+- [ ] 4878 Ops shift 869: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4879 Ops shift 869: confirm the scheduler fired on time and log the tick latency
+- [ ] 4880 Ops shift 869: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4881 Ops shift 870: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4882 Ops shift 870: verify one random attestation digest against a recomputed report
+- [ ] 4883 Ops shift 870: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4884 Ops shift 870: confirm the scheduler fired on time and log the tick latency
+- [ ] 4885 Ops shift 870: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4886 Ops shift 871: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4887 Ops shift 871: verify one random attestation digest against a recomputed report
+- [ ] 4888 Ops shift 871: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4889 Ops shift 871: confirm the scheduler fired on time and log the tick latency
+- [ ] 4890 Ops shift 871: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4891 Ops shift 872: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4892 Ops shift 872: verify one random attestation digest against a recomputed report
+- [ ] 4893 Ops shift 872: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4894 Ops shift 872: confirm the scheduler fired on time and log the tick latency
+- [ ] 4895 Ops shift 872: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4896 Ops shift 873: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4897 Ops shift 873: verify one random attestation digest against a recomputed report
+- [ ] 4898 Ops shift 873: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4899 Ops shift 873: confirm the scheduler fired on time and log the tick latency
+- [ ] 4900 Ops shift 873: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4901 Ops shift 874: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4902 Ops shift 874: verify one random attestation digest against a recomputed report
+- [ ] 4903 Ops shift 874: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4904 Ops shift 874: confirm the scheduler fired on time and log the tick latency
+- [ ] 4905 Ops shift 874: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4906 Ops shift 875: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4907 Ops shift 875: verify one random attestation digest against a recomputed report
+- [ ] 4908 Ops shift 875: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4909 Ops shift 875: confirm the scheduler fired on time and log the tick latency
+- [ ] 4910 Ops shift 875: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4911 Ops shift 876: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4912 Ops shift 876: verify one random attestation digest against a recomputed report
+- [ ] 4913 Ops shift 876: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4914 Ops shift 876: confirm the scheduler fired on time and log the tick latency
+- [ ] 4915 Ops shift 876: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4916 Ops shift 877: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4917 Ops shift 877: verify one random attestation digest against a recomputed report
+- [ ] 4918 Ops shift 877: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4919 Ops shift 877: confirm the scheduler fired on time and log the tick latency
+- [ ] 4920 Ops shift 877: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4921 Ops shift 878: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4922 Ops shift 878: verify one random attestation digest against a recomputed report
+- [ ] 4923 Ops shift 878: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4924 Ops shift 878: confirm the scheduler fired on time and log the tick latency
+- [ ] 4925 Ops shift 878: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4926 Ops shift 879: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4927 Ops shift 879: verify one random attestation digest against a recomputed report
+- [ ] 4928 Ops shift 879: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4929 Ops shift 879: confirm the scheduler fired on time and log the tick latency
+- [ ] 4930 Ops shift 879: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4931 Ops shift 880: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4932 Ops shift 880: verify one random attestation digest against a recomputed report
+- [ ] 4933 Ops shift 880: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4934 Ops shift 880: confirm the scheduler fired on time and log the tick latency
+- [ ] 4935 Ops shift 880: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4936 Ops shift 881: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4937 Ops shift 881: verify one random attestation digest against a recomputed report
+- [ ] 4938 Ops shift 881: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4939 Ops shift 881: confirm the scheduler fired on time and log the tick latency
+- [ ] 4940 Ops shift 881: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4941 Ops shift 882: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4942 Ops shift 882: verify one random attestation digest against a recomputed report
+- [ ] 4943 Ops shift 882: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4944 Ops shift 882: confirm the scheduler fired on time and log the tick latency
+- [ ] 4945 Ops shift 882: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4946 Ops shift 883: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4947 Ops shift 883: verify one random attestation digest against a recomputed report
+- [ ] 4948 Ops shift 883: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4949 Ops shift 883: confirm the scheduler fired on time and log the tick latency
+- [ ] 4950 Ops shift 883: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4951 Ops shift 884: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4952 Ops shift 884: verify one random attestation digest against a recomputed report
+- [ ] 4953 Ops shift 884: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4954 Ops shift 884: confirm the scheduler fired on time and log the tick latency
+- [ ] 4955 Ops shift 884: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4956 Ops shift 885: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4957 Ops shift 885: verify one random attestation digest against a recomputed report
+- [ ] 4958 Ops shift 885: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4959 Ops shift 885: confirm the scheduler fired on time and log the tick latency
+- [ ] 4960 Ops shift 885: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4961 Ops shift 886: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4962 Ops shift 886: verify one random attestation digest against a recomputed report
+- [ ] 4963 Ops shift 886: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4964 Ops shift 886: confirm the scheduler fired on time and log the tick latency
+- [ ] 4965 Ops shift 886: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4966 Ops shift 887: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4967 Ops shift 887: verify one random attestation digest against a recomputed report
+- [ ] 4968 Ops shift 887: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4969 Ops shift 887: confirm the scheduler fired on time and log the tick latency
+- [ ] 4970 Ops shift 887: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4971 Ops shift 888: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4972 Ops shift 888: verify one random attestation digest against a recomputed report
+- [ ] 4973 Ops shift 888: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4974 Ops shift 888: confirm the scheduler fired on time and log the tick latency
+- [ ] 4975 Ops shift 888: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4976 Ops shift 889: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4977 Ops shift 889: verify one random attestation digest against a recomputed report
+- [ ] 4978 Ops shift 889: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4979 Ops shift 889: confirm the scheduler fired on time and log the tick latency
+- [ ] 4980 Ops shift 889: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4981 Ops shift 890: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4982 Ops shift 890: verify one random attestation digest against a recomputed report
+- [ ] 4983 Ops shift 890: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4984 Ops shift 890: confirm the scheduler fired on time and log the tick latency
+- [ ] 4985 Ops shift 890: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4986 Ops shift 891: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4987 Ops shift 891: verify one random attestation digest against a recomputed report
+- [ ] 4988 Ops shift 891: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4989 Ops shift 891: confirm the scheduler fired on time and log the tick latency
+- [ ] 4990 Ops shift 891: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4991 Ops shift 892: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4992 Ops shift 892: verify one random attestation digest against a recomputed report
+- [ ] 4993 Ops shift 892: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4994 Ops shift 892: confirm the scheduler fired on time and log the tick latency
+- [ ] 4995 Ops shift 892: check agent wallet balance and top up devnet SOL if below fee floor
+- [ ] 4996 Ops shift 893: review every fixture flagged in the last six hours and classify true or false positive
+- [ ] 4997 Ops shift 893: verify one random attestation digest against a recomputed report
+- [ ] 4998 Ops shift 893: record TxLINE feed friction notes for the sponsor feedback log
+- [ ] 4999 Ops shift 893: confirm the scheduler fired on time and log the tick latency
+- [ ] 5000 Ops shift 893: check agent wallet balance and top up devnet SOL if below fee floor

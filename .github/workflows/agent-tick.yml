@@ -1,0 +1,15 @@
+# Primary scheduler for the LineProof agent. Fires a scan every five minutes
+# for the duration of the tournament; the Vercel cron is a coarse fallback.
+name: agent-tick
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch: {}
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger scan
+        run: |
+          curl -sf --max-time 60 "https://lineproof.vercel.app/api/scan" -o scan.json
+          cat scan.json | head -c 800
