@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Trigger scan
         run: |
-          curl -sf --max-time 60 "https://lineproof.vercel.app/api/scan" -o scan.json
+          curl -sf --max-time 60 "https://lineproof-rho.vercel.app/api/scan" -o scan.json
           cat scan.json | head -c 800
