@@ -109,7 +109,9 @@ friendlies to World Cup fixtures without a line of special-casing.
 3. Hit https://lineproof-rho.vercel.app/api/scan — triggers an agent tick and returns the anchored Solana signature.
 4. Hit https://lineproof-rho.vercel.app/api/attestations — the on-chain trail with explorer links.
 
-## Demo video script (≈2:15, matches video/out/lineproof-demo.mp4)
+## Demo video script (~51s, matches video/out/lineproof-demo.mp4 — a tight sizzle explainer)
+> Tip: for the "live app walkthrough" the brief asks for, screen-record one pass through
+> https://lineproof-rho.vercel.app + /api/report + an explorer tx, and stitch it after this reel.
 1. **Hook** — 104 matches, millions in odds moving; who catches a bad line and who can *prove* it?
 2. **The turn** — most agents trade the odds; LineProof audits the market itself.
 3. **How it works** — ingest → de-vig → detect → notarize (four deterministic stages).
