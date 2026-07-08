@@ -4,13 +4,16 @@
   "private": true,
   "description": "Autonomous odds-integrity agent. Reads TxLINE World Cup feeds, computes de-vigged fair lines, flags market anomalies, and notarizes verifiable attestations on Solana.",
   "type": "commonjs",
-  "engines": { "node": "22.x" },
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "tick": "node scripts/local-tick.js",
     "checklist": "node scripts/gen-checklist.js"
   },
   "dependencies": {
-    "@solana/web3.js": "^1.95.0",
-    "bs58": "^5.0.0"
+    "@solana/web3.js": "^1.87.6",
+    "bs58": "^5.0.0",
+    "rpc-websockets": "^7.11.0"
   }
 }
