@@ -4,7 +4,8 @@
 const { Connection, Keypair, PublicKey, Transaction, TransactionInstruction } = require("@solana/web3.js");
 const bs58 = require("bs58");
 
-const MEMO_PROGRAM = new PublicKey("MemoSq4gqABAXKb96qnH8TySNcWxMyWCqXgDLGmfcHr");
+// Memo v1 — the current devnet genesis carries v1 but not v2.
+const MEMO_PROGRAM = new PublicKey("Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo");
 const RPC = process.env.SOLANA_RPC_URL || "https://api.devnet.solana.com";
 
 function agentKeypair() {
@@ -20,7 +21,7 @@ async function anchorScan(scanDigest, meta) {
   const conn = new Connection(RPC, "confirmed");
   const memo = `lineproof:v1:${meta.scanId}:${scanDigest}:matches=${meta.matches}:flagged=${meta.flagged}`;
   const ix = new TransactionInstruction({
-    keys: [{ pubkey: kp.publicKey, isSigner: true, isWritable: false }],
+    keys: [],
     programId: MEMO_PROGRAM,
     data: Buffer.from(memo, "utf8"),
   });
