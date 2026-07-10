@@ -195,7 +195,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <h2>Built to be integrated</h2>
   <p class="lead">Two endpoints, plain JSON, no auth for the read side. A trading desk, a sportsbook risk team or a settlement layer can consume this today.</p>
   <div class="grid2">
-    <div class="code"><span class="c"># current integrity report (deterministic digest included)</span><br/><span class="g">GET</span> /api/report<br/><br/><span class="c"># trigger an agent tick — scans the feed, anchors on Solana</span><br/><span class="g">GET</span> /api/scan<br/><br/><span class="c"># on-chain attestation history with explorer links</span><br/><span class="g">GET</span> /api/attestations</div>
+    <div class="code"><span class="c"># current integrity report (deterministic digest included)</span><br/><span class="g">GET</span> /api/report<br/><br/><span class="c"># trigger an agent tick — scans the feed, anchors on Solana</span><br/><span class="g">GET</span> /api/scan<br/><br/><span class="c"># on-chain attestation history with explorer links</span><br/><span class="g">GET</span> /api/attestations<br/><br/><span class="c"># forensic timeline · closed-loop verification · ops heartbeat</span><br/><span class="g">GET</span> /api/replay&nbsp;&nbsp;<span class="g">GET</span> /api/verify&nbsp;&nbsp;<span class="g">GET</span> /api/health</div>
     <div class="code"><span class="c">// verify any verdict yourself</span><br/><span class="b">const</span> r = <span class="b">await</span> fetch(<span class="g">"/api/report"</span>).then(x =&gt; x.json());<br/><span class="b">const</span> h = sha256(canonical(r.report));<br/><span class="c">// h === r.scanDigest === the hash inside the</span><br/><span class="c">// memo of the matching devnet transaction</span></div>
   </div>
 </div></section>
@@ -260,7 +260,7 @@ async function loadReplay(){
   try{
     const r=await fetch("/api/replay").then(x=>x.json());
     if(!r.ok)throw new Error(r.error);
-    $("#replay-meta").textContent=r.ticksAudited+" ticks audited across "+r.fixturesAudited+" fixtures · "+r.anomalies+" anomalies";
+    $("#replay-meta").textContent=r.ticksAudited+" feed ticks + "+(r.archiveScansCompared||0)+" archived scans audited · "+r.anomalies+" anomalies";
     if(!r.timeline.length){$("#timeline").innerHTML='<div class="skeleton">no anomalies in the recorded history yet — the detectors stay armed on every tick</div>';return;}
     $("#timeline").innerHTML=r.timeline.slice(0,14).map((e,i)=>`<div class="att-row" style="animation-delay:${i*35}ms">
       <span style="color:${sevCol[e.severity]||"#8b97a8"};min-width:120px">${e.code}</span>

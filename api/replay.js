@@ -4,6 +4,7 @@
 // the agent's tournament track record, not a simulation.
 const { fixturesSnapshot, oddsSnapshot } = require("./_lib/txline");
 const { replayFixture } = require("./_lib/engine");
+const { recentReports, crossScanEvents } = require("./_lib/archive");
 
 const MAX_FIXTURES = 48;
 
@@ -35,21 +36,36 @@ module.exports = async (req, res) => {
     }
 
     const audited = replays.filter((r) => r.ticksAudited > 0);
-    const timeline = audited
-      .flatMap((r) =>
-        r.events.map((e) => ({
-          ...e,
-          fixtureId: r.fixtureId,
-          fixture: `${r.home} vs ${r.away}`,
-          competition: r.competition,
-        }))
-      )
-      .sort((a, b) => b.ts - a.ts);
+    const feedEvents = audited.flatMap((r) =>
+      r.events.map((e) => ({
+        ...e,
+        source: "feed-history",
+        fixtureId: r.fixtureId,
+        fixture: `${r.home} vs ${r.away}`,
+        competition: r.competition,
+      }))
+    );
+
+    // The upstream dev feed prunes tick history, so the agent also audits its
+    // own archive: fair-line drift between consecutive anchored scans. This
+    // record grows every scheduler tick and is hosted in the public repo.
+    let archiveScans = 0;
+    let archiveEvents = [];
+    try {
+      const reports = await recentReports(12);
+      archiveScans = reports.length;
+      archiveEvents = crossScanEvents(reports).map((e) => ({ ...e, source: "scan-archive" }));
+    } catch {
+      archiveEvents = [];
+    }
+
+    const timeline = [...feedEvents, ...archiveEvents].sort((a, b) => b.ts - a.ts);
 
     res.status(200).json({
       ok: true,
       fixturesAudited: audited.length,
       ticksAudited: audited.reduce((a, r) => a + r.ticksAudited, 0),
+      archiveScansCompared: archiveScans,
       anomalies: timeline.length,
       timeline: timeline.slice(0, 60),
     });
