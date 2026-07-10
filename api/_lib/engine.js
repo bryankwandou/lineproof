@@ -155,6 +155,67 @@ function auditFixture(fixture, oddsRecords, scoreUpdates, nowMs) {
   };
 }
 
+// Forensic replay: walk a fixture's full tick history and record every
+// anomaly that ever fired, using only information available at that moment
+// (no look-ahead). This is what turns the engine from "current snapshot
+// says CLEAN" into a tournament-long track record.
+function replayFixture(fixture, oddsRecords) {
+  const ticks = ticksFor(oddsRecords);
+  const seq = ticks
+    .map((t) => ({ ts: t.Ts, p: impliedProbs(t.Prices || []) }))
+    .filter((x) => x.p);
+  const events = [];
+  const deltas = [];
+  for (let i = 1; i < seq.length; i++) {
+    const d = seq[i].p.fair[0] - seq[i - 1].p.fair[0];
+    if (deltas.length >= 3) {
+      const sigma = std(deltas);
+      const m = mean(deltas);
+      if (sigma > 1e-6) {
+        const z = Math.abs(d - m) / sigma;
+        if (z > Z_FLAG) {
+          events.push({
+            code: "SHARP_MOVE",
+            ts: seq[i].ts,
+            detail: `home probability jumped ${(d * 100).toFixed(2)} pts in one tick, z=${z.toFixed(2)} vs prior history`,
+            severity: z > 5 ? "high" : "medium",
+          });
+        }
+      }
+    }
+    deltas.push(d);
+    const oPrev = seq[i - 1].p.overround;
+    const oCur = seq[i].p.overround;
+    if (oCur < -0.001 && oPrev >= -0.001) {
+      events.push({
+        code: "ARB_WINDOW",
+        ts: seq[i].ts,
+        detail: `booksum crossed below 1 (${(1 + oCur).toFixed(4)}) — riskless surface opened`,
+        severity: "high",
+      });
+    }
+    if (oPrev - oCur > OVERROUND_COLLAPSE) {
+      events.push({
+        code: "VIG_COLLAPSE",
+        ts: seq[i].ts,
+        detail: `margin fell ${((oPrev - oCur) * 100).toFixed(2)} pts tick-to-tick`,
+        severity: "medium",
+      });
+    }
+  }
+  const home = fixture.Participant1IsHome ? fixture.Participant1 : fixture.Participant2;
+  const away = fixture.Participant1IsHome ? fixture.Participant2 : fixture.Participant1;
+  return {
+    fixtureId: fixture.FixtureId,
+    competition: fixture.Competition,
+    home,
+    away,
+    kickoff: fixture.StartTime,
+    ticksAudited: seq.length,
+    events,
+  };
+}
+
 // Canonical digest of a report — sorted keys, no whitespace — so any third
 // party can recompute it and compare against the on-chain attestation.
 function canonical(value) {
@@ -169,4 +230,4 @@ function digest(report) {
   return crypto.createHash("sha256").update(canonical(report)).digest("hex");
 }
 
-module.exports = { auditFixture, digest, canonical };
+module.exports = { auditFixture, replayFixture, digest, canonical };

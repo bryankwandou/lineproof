@@ -127,15 +127,15 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     LineProof
   </div>
   <div class="navlinks">
-    <a href="#live">Live audit</a><a href="#chain">On-chain trail</a><a href="#api">API</a>
+    <a href="#live">Live audit</a><a href="#forensics">Forensics</a><a href="#chain">On-chain trail</a><a href="#api">API</a>
     <span class="pulse"><i></i>agent running</span>
   </div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="kicker">Autonomous market surveillance on Solana</div>
+  <div class="kicker">TxLINE anchors the data. LineProof anchors the judgment.</div>
   <h1>Every World Cup betting line, audited by a machine that <em>signs its verdicts</em>.</h1>
-  <p class="sub">LineProof watches the TxLINE consensus feed around the clock. It strips the bookmaker margin, recomputes the fair line, hunts for stale quotes, arbitrage surfaces and abnormal moves — then notarizes a hash of each verdict on Solana so nobody, including us, can rewrite the record.</p>
+  <p class="sub">The feed already proves what the odds were. Nothing proves whether those odds were healthy — that call still lives in private logs the operator can edit. LineProof closes that gap: it strips the bookmaker margin, recomputes the fair line, replays every tick for stale quotes, arbitrage surfaces and abnormal moves, then notarizes each verdict on Solana and archives the exact report it hashed, in public, so the audit itself is auditable.</p>
   <div class="cta">
     <a class="btn primary" href="#live">See the live audit</a>
     <a class="btn" href="/api/report" target="_blank">Raw integrity feed</a>
@@ -169,9 +169,22 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </div></section>
 
+<section id="forensics"><div class="wrap reveal">
+  <h2>What the agent caught this tournament</h2>
+  <p class="lead">Not a simulation. The agent replays the full tick history of every fixture on the feed — using only what was knowable at each moment — and lists every anomaly its detectors fired on.</p>
+  <div class="panel">
+    <div class="panel-head"><span class="t">Forensic timeline</span><span class="m" id="replay-meta">replaying tick history…</span></div>
+    <div class="att" id="timeline"><div class="skeleton"><i></i>auditing every recorded tick…</div></div>
+  </div>
+</div></section>
+
 <section id="chain"><div class="wrap reveal">
   <h2>On-chain audit trail</h2>
-  <p class="lead">Each row is a real devnet transaction from the agent wallet. Open any of them and read the memo: scan id, report hash, match count, flags.</p>
+  <p class="lead">Each row is a real devnet transaction from the agent wallet. Open any of them and read the memo: scan id, report hash, match count, flags. Every anchored report is also committed to the public repo, so the loop below closes without trusting this site.</p>
+  <div class="panel" style="margin-bottom:20px">
+    <div class="panel-head"><span class="t">Independent verification, run live</span><span class="m" id="verify-meta">checking…</span></div>
+    <div id="verifybox" class="skeleton"><i></i>recomputing digest from the public archive…</div>
+  </div>
   <div class="panel">
     <div class="panel-head"><span class="t">Recent attestations</span><span class="m" id="agent-key">—</span></div>
     <div class="att" id="attlist"><div class="skeleton"><i></i>loading signatures…</div></div>
@@ -242,8 +255,40 @@ async function loadAtt(){
     $("#attlist").innerHTML=`<div class="skeleton">${e.message}</div>`;
   }
 }
-loadReport();loadAtt();
-setInterval(loadReport,45000);setInterval(loadAtt,60000);
+const sevCol={high:"#f05a5a",medium:"#f0b23e"};
+async function loadReplay(){
+  try{
+    const r=await fetch("/api/replay").then(x=>x.json());
+    if(!r.ok)throw new Error(r.error);
+    $("#replay-meta").textContent=r.ticksAudited+" ticks audited across "+r.fixturesAudited+" fixtures · "+r.anomalies+" anomalies";
+    if(!r.timeline.length){$("#timeline").innerHTML='<div class="skeleton">no anomalies in the recorded history yet — the detectors stay armed on every tick</div>';return;}
+    $("#timeline").innerHTML=r.timeline.slice(0,14).map((e,i)=>`<div class="att-row" style="animation-delay:${i*35}ms">
+      <span style="color:${sevCol[e.severity]||"#8b97a8"};min-width:120px">${e.code}</span>
+      <span class="hash" style="flex:1">${e.fixture} — ${e.detail}</span>
+      <span class="when">${new Date(e.ts).toLocaleString()}</span>
+    </div>`).join("");
+  }catch(e){$("#timeline").innerHTML=`<div class="skeleton">${e.message}</div>`;}
+}
+async function loadVerify(){
+  try{
+    const r=await fetch("/api/verify").then(x=>x.json());
+    if(!r.ok)throw new Error(r.error);
+    if(r.verified){
+      $("#verify-meta").textContent=r.scanId;
+      $("#verifybox").className="";
+      $("#verifybox").style.cssText="padding:22px 20px;font-family:var(--mono);font-size:12.5px;line-height:2";
+      $("#verifybox").innerHTML=`<span style="color:var(--green);font-weight:700">MATCH — report is untampered</span><br/>
+      archived report → sha256 → <span class="hash">${r.recomputedDigest}</span><br/>
+      on-chain memo digest&nbsp;→ <span class="hash">${r.onchainDigest}</span><br/>
+      <a href="${r.explorer}" target="_blank">transaction</a> · <a href="${r.archivedReport}" target="_blank">archived report</a>`;
+    }else{
+      $("#verify-meta").textContent="pending";
+      $("#verifybox").innerHTML='<div class="skeleton">'+(r.reason||"waiting for the next archived scan")+"</div>";
+    }
+  }catch(e){$("#verifybox").innerHTML=`<div class="skeleton">${e.message}</div>`;}
+}
+loadReport();loadAtt();loadReplay();loadVerify();
+setInterval(loadReport,45000);setInterval(loadAtt,60000);setInterval(loadReplay,120000);setInterval(loadVerify,90000);
 </script>
 </body>
 </html>

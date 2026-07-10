@@ -10,12 +10,21 @@ A production-grade surveillance layer for sports betting markets. The agent cont
 - Wedge: sold as a read-only JSON feed plus the on-chain trail — zero integration risk for the customer.
 - Moat over time: the longer the agent runs, the more valuable the immutable history becomes; it cannot be backfilled by a latecomer.
 
+## Positioning against the feed's own anchoring
+
+TxLINE already anchors feed updates on Solana — that proves *what the odds were*. LineProof proves *what the audit concluded about them*. The two are complementary layers: data provenance (theirs) and judgment provenance (ours). A dispute needs both: the anchored price and the anchored verdict that the price was, or was not, healthy at that moment.
+
 ## Determinism contract
 
 1. `canonical(report)` serializes with sorted keys and no whitespace.
 2. `digest = sha256(canonical(report))`.
 3. The agent writes `lineproof:v1:<scanId>:<digest>:matches=<n>:flagged=<m>` as a Solana memo, signed by the agent wallet.
-4. A verifier fetches `/api/report`, recomputes the digest, and compares it with the memo of the matching transaction.
+4. The scheduler commits the exact hashed report to `history/<scanId>.json` in the public repo.
+5. `GET /api/verify?scanId=...` re-derives the digest from the archive and compares it to the on-chain memo. Anyone can repeat this offline: fetch the archived JSON, canonicalize, hash, read the memo on the explorer.
+
+## Forensic replay
+
+`GET /api/replay` re-runs the detectors over each fixture's full tick history with no look-ahead (movement z-scores use only prior deltas). Output: a chronological timeline of every SHARP_MOVE, ARB_WINDOW and VIG_COLLAPSE that occurred in the recorded data — the agent's tournament track record.
 
 ## Detector specification
 

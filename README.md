@@ -21,9 +21,15 @@ Every fixture starts at 100. The remaining score is its integrity rating; below 
 - Movement detection compares a tick only against the same fixture's own tick history (mean and sample deviation of probability deltas), so quiet friendlies and volatile knockouts are judged on their own baseline.
 - The whole pipeline is pure: the same TxLINE snapshot always yields byte-identical output and the same SHA-256 digest. That determinism is what makes the on-chain attestation checkable by a third party.
 
-## Why Solana
+## Why Solana — and why this isn't what TxLINE already does
 
-The verdicts only matter if they cannot be edited after the fact. Each scan produces a canonical digest that the agent wallet writes into a Solana memo transaction on devnet. Anyone can pull `/api/report`, recompute the hash with the documented canonicalization, and compare it against the memo on the explorer. Disputes settle against the chain, not against our database.
+TxLINE anchors its *data* on Solana: the feed can prove what the odds were at any moment. What nothing proves is whether those odds were *healthy* — that judgment lives in private risk-desk logs the operator can edit. LineProof anchors the *judgment*: the audit verdict on top of the anchored data.
+
+The loop is fully closed. Each scan produces a canonical digest; the agent wallet writes it into a Solana memo on devnet; the scheduler commits the exact report that was hashed into the public `history/` folder of this repo. `GET /api/verify` re-derives the digest from the archived report and compares it to the on-chain memo live — and you can do the same by hand without trusting this deployment. Disputes settle against the chain, not against our database.
+
+## Forensic replay
+
+`GET /api/replay` walks the full recorded tick history of every fixture — using only information available at each moment, no look-ahead — and returns every anomaly the detectors would have fired on across the tournament. This is the agent's public track record, derived entirely from real TxLINE data.
 
 ## Architecture
 

@@ -1,15 +1,36 @@
-# Primary scheduler for the LineProof agent. Fires a scan every five minutes
-# for the duration of the tournament; the Vercel cron is a coarse fallback.
+# Scheduler + public archive. Every run triggers a scan (which anchors the
+# digest on Solana) and commits the exact report that was hashed into
+# history/, so any third party can re-derive the digest and check the chain.
+# The archive is what makes the attestations independently verifiable.
 name: agent-tick
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: agent-tick
+  cancel-in-progress: false
 jobs:
   tick:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger scan
+      - uses: actions/checkout@v4
+      - name: Run scan
         run: |
-          curl -sf --max-time 60 "https://lineproof-rho.vercel.app/api/scan" -o scan.json
-          cat scan.json | head -c 800
+          curl -sf --max-time 120 "https://lineproof-rho.vercel.app/api/scan" -o scan.json
+          head -c 400 scan.json; echo
+      - name: Archive anchored report
+        run: |
+          ok=$(python3 -c "import json;d=json.load(open('scan.json'));print(d.get('ok'))")
+          if [ "$ok" != "True" ]; then echo "scan failed, nothing to archive"; exit 0; fi
+          scan_id=$(python3 -c "import json;print(json.load(open('scan.json'))['report']['scanId'])")
+          mkdir -p history
+          python3 -c "import json;d=json.load(open('scan.json'));json.dump(d['report'],open('history/'+d['report']['scanId']+'.json','w'),separators=(',',':'))"
+          python3 -c "import json,os; idx=json.load(open('history/index.json')) if os.path.exists('history/index.json') else []; d=json.load(open('scan.json')); r=d['report']; a=d.get('anchor',{}); idx.insert(0,{'scanId':r['scanId'],'digest':d['scanDigest'],'matches':r['matches'],'flagged':r['flagged'],'anchored':a.get('anchored',False),'signature':a.get('signature','')}); json.dump(idx[:2000],open('history/index.json','w'),indent=0)"
+          git config user.name "lineproof-agent"
+          git config user.email "agent@lineproof.dev"
+          git add history/
+          git diff --cached --quiet || git commit -m "archive: $scan_id"
+          git push
