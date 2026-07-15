@@ -7,7 +7,7 @@ const { recentAttestations } = require("./_lib/solana");
 
 const ARCHIVE_BASE =
   process.env.ARCHIVE_BASE ||
-  "https://raw.githubusercontent.com/nayrbryanGaming/lineproof/main/history";
+  "https://raw.githubusercontent.com/bryankwandou/lineproof/main/history";
 
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

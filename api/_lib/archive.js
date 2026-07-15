@@ -4,7 +4,7 @@
 // independently hosted record to audit against.
 const ARCHIVE_BASE =
   process.env.ARCHIVE_BASE ||
-  "https://raw.githubusercontent.com/nayrbryanGaming/lineproof/main/history";
+  "https://raw.githubusercontent.com/bryankwandou/lineproof/main/history";
 
 async function archiveIndex() {
   const r = await fetch(`${ARCHIVE_BASE}/index.json`, { cache: "no-store" });
