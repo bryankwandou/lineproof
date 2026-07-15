@@ -53,12 +53,12 @@ https://lineproof-rho.vercel.app
 
 ### Project's Public Repository Link
 ```
-https://github.com/nayrbryanGaming/lineproof
+https://github.com/bryankwandou/lineproof
 ```
 
 ### Link to your Project's Technical Documentation
 ```
-https://github.com/nayrbryanGaming/lineproof/blob/main/docs/TECHNICAL.md
+https://github.com/bryankwandou/lineproof/blob/main/docs/TECHNICAL.md
 ```
 
 ### Link to your Project's X Profile or an X post

@@ -419,7 +419,7 @@ export const SceneCTA: React.FC = () => {
         <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 20, ...rise(f, fps, 24) }}>
           {[
             ["Live", "lineproof-rho.vercel.app"],
-            ["Code", "github.com/nayrbryanGaming/lineproof"],
+            ["Code", "github.com/bryankwandou/lineproof"],
             ["Feed", "/api/report · /api/scan · /api/attestations"],
           ].map(([k, v]) => (
             <div key={k} style={{ display: "flex", gap: 20, alignItems: "baseline", justifyContent: "center" }}>

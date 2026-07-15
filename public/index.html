@@ -133,13 +133,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="kicker">TxLINE anchors the data. LineProof anchors the judgment.</div>
-  <h1>Every World Cup betting line, audited by a machine that <em>signs its verdicts</em>.</h1>
-  <p class="sub">The feed already proves what the odds were. Nothing proves whether those odds were healthy — that call still lives in private logs the operator can edit. LineProof closes that gap: it strips the bookmaker margin, recomputes the fair line, replays every tick for stale quotes, arbitrage surfaces and abnormal moves, then notarizes each verdict on Solana and archives the exact report it hashed, in public, so the audit itself is auditable.</p>
+  <div class="kicker">Proof-of-Fair-Odds · an autonomous auditor whose word you never have to take</div>
+  <h1>The fair price of every World Cup line, <em>proven on Solana</em> — not promised.</h1>
+  <p class="sub">Odds feeds tell you what a bookmaker quoted. Nobody can tell you whether that quote was fair — the margin, the stale prices, the sharp moves all hide inside private logs the operator can rewrite. LineProof is a machine referee that strips the vig, recomputes the fair line for every fixture, replays each tick for anomalies, then signs a hash of the whole verdict into a Solana memo and publishes the exact report it hashed. Anyone — a rival desk, a regulator, a prediction market — can recompute the digest and check it against the chain. If the two match, the history is honest. No trust in this site required.</p>
   <div class="cta">
     <a class="btn primary" href="#live">See the live audit</a>
     <a class="btn" href="/api/report" target="_blank">Raw integrity feed</a>
-    <a class="btn" href="https://github.com/nayrbryangaming/lineproof" target="_blank">Source</a>
+    <a class="btn" href="https://github.com/bryankwandou/lineproof" target="_blank">Source</a>
   </div>
   <div class="strip">
     <div class="stat"><b id="s-matches">—</b><span>fixtures under audit</span></div>
@@ -191,9 +191,19 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
 </div></section>
 
+<section><div class="wrap reveal">
+  <h2>Why a blockchain, and not a database</h2>
+  <p class="lead">A fairness verdict is worth nothing if the party publishing it can quietly rewrite it. Databases have admins; Solana memos do not. Once the agent signs a scan digest into a transaction, the verdict is frozen at that slot forever — the operator of this site included cannot touch it. That single property turns an ordinary anomaly detector into something new: a fair-odds record that a counterparty can accept <em>without trusting the people who ran it</em>. Sub-second finality and fees measured in fractions of a cent are what make notarizing every scan economically boring — which is exactly what an audit trail should be.</p>
+  <div class="steps">
+    <div class="step"><div class="n">FOR PREDICTION MARKETS</div><h3>A fair-line reference</h3><p>On-chain sports markets settle against prices nobody can independently check. A signed, replayable fair line gives them a reference input whose history is provable.</p></div>
+    <div class="step"><div class="n">FOR RISK DESKS</div><h3>Third-party evidence</h3><p>When a desk disputes a settlement or a limit cut, "our logs say so" ends the argument for whoever owns the logs. A neutral anchored record changes who wins that conversation.</p></div>
+    <div class="step"><div class="n">FOR REGULATORS &amp; INTEGRITY UNITS</div><h3>Tamper-evident history</h3><p>Match-fixing inquiries reconstruct odds movement after the fact, from data supplied by interested parties. Here the reconstruction was signed before anyone knew it would matter.</p></div>
+  </div>
+</div></section>
+
 <section id="api"><div class="wrap reveal">
   <h2>Built to be integrated</h2>
-  <p class="lead">Two endpoints, plain JSON, no auth for the read side. A trading desk, a sportsbook risk team or a settlement layer can consume this today.</p>
+  <p class="lead">Plain JSON, no auth for the read side. A trading desk, a sportsbook risk team or a settlement layer can consume this today.</p>
   <div class="grid2">
     <div class="code"><span class="c"># current integrity report (deterministic digest included)</span><br/><span class="g">GET</span> /api/report<br/><br/><span class="c"># trigger an agent tick — scans the feed, anchors on Solana</span><br/><span class="g">GET</span> /api/scan<br/><br/><span class="c"># on-chain attestation history with explorer links</span><br/><span class="g">GET</span> /api/attestations<br/><br/><span class="c"># forensic timeline · closed-loop verification · ops heartbeat</span><br/><span class="g">GET</span> /api/replay&nbsp;&nbsp;<span class="g">GET</span> /api/verify&nbsp;&nbsp;<span class="g">GET</span> /api/health</div>
     <div class="code"><span class="c">// verify any verdict yourself</span><br/><span class="b">const</span> r = <span class="b">await</span> fetch(<span class="g">"/api/report"</span>).then(x =&gt; x.json());<br/><span class="b">const</span> h = sha256(canonical(r.report));<br/><span class="c">// h === r.scanDigest === the hash inside the</span><br/><span class="c">// memo of the matching devnet transaction</span></div>
@@ -201,7 +211,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 </div></section>
 
 <footer><div class="wrap">
-  <span>LineProof — built on TxLINE data, notarized on Solana devnet.</span>
+  <span>LineProof — proof-of-fair-odds on TxLINE data, notarized on Solana devnet.</span>
   <span>World Cup 2026 · Trading Tools and Agents</span>
 </div></footer>
 
