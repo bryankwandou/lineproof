@@ -17,12 +17,15 @@ https://lineproof-rho.vercel.app
 
 ### Project Title
 ```
-LineProof — The Odds Integrity Layer
+LineProof — Proof-of-Fair-Odds on Solana
 ```
 
 ### Briefly explain your Project
 ```
-LineProof is an autonomous market-surveillance agent for World Cup betting lines.
+LineProof turns "trust our logs" into "check the chain." It is an autonomous
+agent that computes the fair price of every World Cup betting line and proves,
+on Solana, that its verdict history was never rewritten.
+
 Most trading agents try to beat the odds; LineProof audits the market itself.
 
 Every few minutes it ingests the TxLINE consensus feed, strips the bookmaker
@@ -37,8 +40,16 @@ transaction signed by the agent wallet, so the audit trail is tamper-evident —
 not even the operator can rewrite it. Anyone can pull /api/report, recompute the
 hash, and match it against the on-chain memo.
 
-Buyers: sportsbook risk desks, prediction-market settlement layers, and integrity
-bodies who today rely on internal logs they could quietly edit themselves.
+Why the chain matters: a fairness verdict is worthless if its publisher can
+rewrite it. Databases have admins; Solana memos do not. Once signed, the call is
+frozen at that slot — the operator included cannot touch it. That turns an
+anomaly detector into a fair-odds record a counterparty can accept without
+trusting whoever ran it.
+
+Buyers: prediction markets that need a provable fair-line reference to settle
+against, sportsbook risk desks that need neutral evidence in settlement disputes,
+and integrity bodies reconstructing odds movement that was signed before anyone
+knew it would matter.
 ```
 
 ### Link to your live & working MVP
@@ -108,6 +119,27 @@ friendlies to World Cup fixtures without a line of special-casing.
 2. Hit https://lineproof-rho.vercel.app/api/report — current audit + `scanDigest`.
 3. Hit https://lineproof-rho.vercel.app/api/scan — triggers an agent tick and returns the anchored Solana signature.
 4. Hit https://lineproof-rho.vercel.app/api/attestations — the on-chain trail with explorer links.
+
+## Talking-head voice-over script (73.7 s — cut to the exact scene timings below)
+
+Read at a natural pace (~2.4 words/sec); each block is written to fit its scene
+window. Record once, straight through — the beats line up with the render.
+
+| Time | Scene | Say this |
+|---|---|---|
+| 0:00–0:05 | Hook | "A hundred and four World Cup matches. Millions moving on every line. When a price goes bad — who catches it, and who can prove it?" |
+| 0:05–0:09 | Turn | "Every other agent tries to beat the odds. Ours audits the market itself." |
+| 0:09–0:12 | Logo | "This is LineProof. Proof-of-fair-odds, on Solana." |
+| 0:12–0:19 | Stages | "Four deterministic stages: ingest the consensus feed, strip the bookmaker margin to recover the fair line, flag stale quotes, arbitrage windows and abnormal moves — then notarize the verdict." |
+| 0:19–0:25 | TxLINE | "It runs on the TxLINE feed. Same snapshot in, same verdict out, byte for byte — that's what makes the hash meaningful." |
+| 0:25–0:30 | Walk: hero | "Here's the live product. Not a mockup — every frame you're seeing is the production deployment." |
+| 0:30–0:36 | Walk: board | "The integrity board: quoted price against the fair line, the margin, and a score out of a hundred. Clean plays on. Suspect gets flagged." |
+| 0:36–0:41 | Walk: forensics | "The forensic timeline replays every recorded tick and every archived scan — these anomalies were caught with only what was knowable at the time." |
+| 0:41–0:49 | Walk: verify | "And here's the part nobody else does. The site pulls its own archived report, recomputes the SHA-256, and checks it against the memo the agent signed on Solana. Digest matches digest. Verified." |
+| 0:49–0:55 | Walk: explorer | "That's a real transaction on the explorer. Scan ID, report hash, verdict counts — frozen at that slot. Nobody can quietly rewrite this history. Including us." |
+| 0:55–1:02 | Proof | "That single property is the product: a fair-odds record a counterparty can accept without trusting whoever ran it." |
+| 1:02–1:08 | Why | "Prediction markets get a provable settlement reference. Risk desks get neutral evidence. Regulators get history that was signed before anyone knew it would matter." |
+| 1:08–1:14 | CTA | "LineProof is live right now — the link's on screen. Pull the report, recompute the hash, check the chain. You don't have to take our word for it. That's the point." |
 
 ## Demo video (~1:14, video/out/lineproof-demo.mp4)
 Includes a live app walkthrough built from real frames captured headlessly off the
