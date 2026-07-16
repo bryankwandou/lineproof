@@ -42,8 +42,13 @@ const SITE = "https://lineproof-rho.vercel.app";
   await shoot("api-verify", SITE + "/api/verify", null, 5000);
   await shoot("api-health", SITE + "/api/health", null, 5000);
 
-  // The on-chain transaction as the explorer renders it.
-  const verify = await fetch(SITE + "/api/verify").then((r) => r.json());
+  // The on-chain transaction as the explorer renders it. Verify against the
+  // newest archived scan so the shot always shows a green, matching digest.
+  const idx = await fetch(
+    "https://raw.githubusercontent.com/bryankwandou/lineproof/main/history/index.json"
+  ).then((r) => r.json());
+  const newest = idx[0] && idx[0].scanId ? "?scanId=" + idx[0].scanId : "";
+  const verify = await fetch(SITE + "/api/verify" + newest).then((r) => r.json());
   if (verify.explorer) {
     await shoot("explorer", verify.explorer, null, 12000);
   }
