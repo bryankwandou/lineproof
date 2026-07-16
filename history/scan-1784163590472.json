@@ -1,0 +1,70 @@
+{
+  "scanId": "scan-1784163590472",
+  "generatedAt": "2026-07-16T00:59:50.472Z",
+  "source": "txline-dev",
+  "market": "1X2 full match",
+  "matches": 2,
+  "flagged": 0,
+  "audits": [
+    {
+      "fixtureId": 18257865,
+      "competition": "World Cup",
+      "home": "France",
+      "away": "England",
+      "status": "pre",
+      "kickoff": 1784408400000,
+      "quoted": [
+        2.07,
+        3.98,
+        3.76
+      ],
+      "fairProb": [
+        0.4829,
+        0.251,
+        0.2661
+      ],
+      "fairLine": [
+        2.07,
+        3.98,
+        3.76
+      ],
+      "overround": -0.0001,
+      "ticks": 1,
+      "lastTickTs": 1784163343354,
+      "moveZ": 0,
+      "integrity": 100,
+      "verdict": "CLEAN",
+      "anomalies": []
+    },
+    {
+      "fixtureId": 18257739,
+      "competition": "World Cup",
+      "home": "Spain",
+      "away": "Argentina",
+      "status": "pre",
+      "kickoff": 1784487600000,
+      "quoted": [
+        3.33,
+        2.05,
+        4.75
+      ],
+      "fairProb": [
+        0.3005,
+        0.4889,
+        0.2106
+      ],
+      "fairLine": [
+        3.33,
+        2.05,
+        4.75
+      ],
+      "overround": 0.0002,
+      "ticks": 1,
+      "lastTickTs": 1784163433353,
+      "moveZ": 0,
+      "integrity": 100,
+      "verdict": "CLEAN",
+      "anomalies": []
+    }
+  ]
+}
