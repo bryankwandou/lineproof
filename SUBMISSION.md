@@ -102,6 +102,11 @@ friendlies to World Cup fixtures without a line of special-casing.
 
 ### Anything Else?
 ```
+- Track record so far (all independently checkable): 73+ scans hashed, anchored
+  on Solana and committed to the public archive; 8 distinct World Cup fixtures
+  audited across the window; SCAN_DRIFT anomalies caught on Spain vs Argentina
+  with only what was knowable at each tick. Count them yourself:
+  https://raw.githubusercontent.com/bryankwandou/lineproof/main/history/index.json
 - Autonomy: the agent scans and anchors unattended on a 15-minute GitHub Actions
   schedule; a second 30-minute job commits every anchored report to the public
   archive (Vercel cron as a daily fallback). No human input once deployed.

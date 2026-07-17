@@ -143,7 +143,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   </div>
   <div class="strip">
     <div class="stat"><b id="s-matches">—</b><span>fixtures under audit</span></div>
-    <div class="stat"><b id="s-flagged">—</b><span>currently flagged</span></div>
+    <div class="stat"><b id="s-archived">—</b><span>scans anchored &amp; archived</span></div>
     <div class="stat"><b id="s-att">—</b><span>attestations on devnet</span></div>
     <div class="stat"><b id="s-scan">—</b><span>last scan</span></div>
   </div>
@@ -233,7 +233,6 @@ async function loadReport(){
     if(!r.ok)throw new Error(r.error);
     const rep=r.report;
     $("#s-matches").textContent=rep.matches;
-    $("#s-flagged").textContent=rep.flagged;
     $("#s-scan").textContent=new Date(rep.generatedAt).toLocaleTimeString();
     $("#scan-meta").textContent="digest "+r.scanDigest.slice(0,16)+"… · "+rep.matches+" fixtures";
     const rows=rep.audits.slice(0,18).map((a,i)=>`<tr class="row" style="animation-delay:${i*45}ms">
@@ -248,6 +247,14 @@ async function loadReport(){
   }catch(e){
     $("#board").innerHTML=`<div class="skeleton">feed unavailable — ${e.message}</div>`;
   }
+}
+async function loadArchiveStat(){
+  // Cumulative proof-of-work: every entry in the public archive index is one
+  // scan that was hashed, anchored on Solana, and committed to the repo.
+  try{
+    const idx=await fetch("https://raw.githubusercontent.com/bryankwandou/lineproof/main/history/index.json").then(x=>x.json());
+    if(Array.isArray(idx)&&idx.length)$("#s-archived").textContent=idx.length;
+  }catch(e){}
 }
 async function loadAtt(){
   try{
@@ -297,7 +304,7 @@ async function loadVerify(){
     }
   }catch(e){$("#verifybox").innerHTML=`<div class="skeleton">${e.message}</div>`;}
 }
-loadReport();loadAtt();loadReplay();loadVerify();
+loadReport();loadAtt();loadReplay();loadVerify();loadArchiveStat();
 setInterval(loadReport,45000);setInterval(loadAtt,60000);setInterval(loadReplay,120000);setInterval(loadVerify,90000);
 </script>
 </body>
