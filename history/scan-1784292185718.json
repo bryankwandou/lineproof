@@ -1,0 +1,40 @@
+{
+  "scanId": "scan-1784292185718",
+  "generatedAt": "2026-07-17T12:43:05.718Z",
+  "source": "txline-dev",
+  "market": "1X2 full match",
+  "matches": 1,
+  "flagged": 0,
+  "audits": [
+    {
+      "fixtureId": 18143850,
+      "competition": "Friendlies",
+      "home": "Vietnam",
+      "away": "Myanmar",
+      "status": "pre",
+      "kickoff": 1784376000000,
+      "quoted": [
+        1.31,
+        6.28,
+        13.1
+      ],
+      "fairProb": [
+        0.7643,
+        0.1593,
+        0.0764
+      ],
+      "fairLine": [
+        1.31,
+        6.28,
+        13.09
+      ],
+      "overround": -0.0005,
+      "ticks": 1,
+      "lastTickTs": 1784292062961,
+      "moveZ": 0,
+      "integrity": 100,
+      "verdict": "CLEAN",
+      "anomalies": []
+    }
+  ]
+}
