@@ -84,12 +84,12 @@ tr.row{animation:rowin .5s both}
 .fix{font-weight:600}
 .fix small{display:block;color:var(--faint);font-weight:400;font-size:11.5px}
 .mono{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
-.ring{position:relative;width:44px;height:44px}
-.ring svg{transform:rotate(-90deg)}
+.ring{position:relative;display:inline-block;width:44px;height:44px}
+.ring svg{display:block;transform:rotate(-90deg)}
 .ring circle{fill:none;stroke-width:4}
 .ring .bgc{stroke:#1a222d}
 .ring .fgc{stroke-linecap:round;transition:stroke-dashoffset 1s cubic-bezier(.22,1,.36,1)}
-.ring b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px}
+.ring b{position:absolute;top:0;left:0;width:44px;height:44px;line-height:44px;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:-.5px}
 .badge{display:inline-block;padding:3px 9px;border-radius:20px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em}
 .badge.clean{background:rgba(47,213,123,.12);color:var(--green)}
 .badge.watch{background:rgba(240,178,62,.12);color:var(--amber)}

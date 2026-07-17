@@ -102,8 +102,12 @@ friendlies to World Cup fixtures without a line of special-casing.
 
 ### Anything Else?
 ```
-- Autonomy: the agent runs unattended on a 5-minute GitHub Actions schedule
-  (Vercel cron as a daily fallback). No human input once deployed.
+- Autonomy: the agent scans and anchors unattended on a 15-minute GitHub Actions
+  schedule; a second 30-minute job commits every anchored report to the public
+  archive (Vercel cron as a daily fallback). No human input once deployed.
+- Human ownership: LineProof was designed, coded and submitted by a human team.
+  "Autonomous" describes runtime operation only — the scan-and-anchor loop runs
+  without manual input — not who built or controls the entry (T&C §5.1 compliant).
 - Verify it yourself: GET https://lineproof-rho.vercel.app/api/attestations returns
   the on-chain trail with Solana explorer links. First attestation:
   https://explorer.solana.com/tx/3GiTtbRbm845YKtoY8LiStHFhZZwyFCQgBKYUYpcFyVHR5MRPtv5793EfHv1j8xiznBfq17K1hLwtYW1ou9kx4dj?cluster=devnet

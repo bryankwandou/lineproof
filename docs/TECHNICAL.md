@@ -46,8 +46,9 @@ Integrity = 100 minus the summed deductions, floored at 0. Verdicts: CLEAN (85+)
 
 ## Autonomy
 
-- Primary scheduler: GitHub Actions cron every 5 minutes hitting `/api/scan`.
-- Fallback: Vercel cron every 6 hours.
+- Primary scheduler: GitHub Actions cron every 15 minutes hitting `/api/scan`.
+- Archive job: a second GitHub Actions cron every 30 minutes commits each anchored report to `history/` in this repo, which is what `/api/verify` recomputes against.
+- Fallback: Vercel cron once daily (12:00 UTC).
 - The scan endpoint takes no parameters and needs no operator; a `?dry=1` flag exists purely for cost-free testing.
 
 ## Limits and choices

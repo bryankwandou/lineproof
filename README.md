@@ -36,7 +36,7 @@ The loop is fully closed. Each scan produces a canonical digest; the agent walle
 ```
 TxLINE snapshots ──> scanner (pure audit engine) ──> JSON report + SHA-256 digest
                                                           │
-              GitHub Actions cron (5 min) ──> /api/scan ──┴──> Solana memo attestation
+              GitHub Actions cron (15 min) ──> /api/scan ──┴──> Solana memo attestation
                                                                 (agent keypair, devnet)
 ```
 

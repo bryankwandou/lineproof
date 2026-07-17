@@ -17,23 +17,28 @@ module.exports = async (req, res) => {
     const chain = await recentAttestations(50);
     const memos = chain.attestations.filter((a) => (a.memo || "").includes("lineproof:v1:"));
 
-    // Default to the newest anchored scan that has an archived report.
+    // Default to the newest anchored scan whose report is already archived.
+    // The very latest scan may not be committed yet (the archive job runs on a
+    // schedule), so walk back through recent memos until one resolves.
+    let archived = null;
     if (!scanId) {
       for (const a of memos) {
         const m = (a.memo || "").match(/lineproof:v1:(scan-\d+):/);
-        if (m) { scanId = m[1]; break; }
+        if (!m) continue;
+        const probe = await fetch(`${ARCHIVE_BASE}/${m[1]}.json`);
+        if (probe.ok) { scanId = m[1]; archived = probe; break; }
       }
-    }
-    if (!scanId) {
-      return res.status(200).json({ ok: true, verified: false, reason: "no anchored scans found yet" });
-    }
-
-    const archived = await fetch(`${ARCHIVE_BASE}/${scanId}.json`);
-    if (!archived.ok) {
-      return res.status(200).json({
-        ok: true, verified: false, scanId,
-        reason: "no archived report for this scan id (archive commits run on the scheduler)",
-      });
+      if (!scanId) {
+        return res.status(200).json({ ok: true, verified: false, reason: "no anchored scans with an archived report yet" });
+      }
+    } else {
+      archived = await fetch(`${ARCHIVE_BASE}/${scanId}.json`);
+      if (!archived.ok) {
+        return res.status(200).json({
+          ok: true, verified: false, scanId,
+          reason: "not yet archived — the archive job commits on a 30-minute schedule; retry shortly or call /api/verify without a scanId for the newest verifiable scan",
+        });
+      }
     }
     const report = await archived.json();
     const recomputed = digest(report);

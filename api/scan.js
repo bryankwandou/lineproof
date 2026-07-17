@@ -1,4 +1,4 @@
-// Agent tick endpoint. Called by the scheduler (GitHub Actions every 5 min,
+// Agent tick endpoint. Called by the scheduler (GitHub Actions every 15 min,
 // Vercel cron as fallback) — no human input in the loop. Each run audits the
 // live feed and anchors the scan digest on Solana devnet.
 const { runScan } = require("./_lib/scanner");

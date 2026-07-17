@@ -11,7 +11,7 @@ Pure detectors: de-vig, staleness, sharp-move z-score, vig collapse. Canonical s
 Gate: same snapshot in, byte-identical report out.
 
 ## Phase 2 — Autonomy (done)
-`/api/scan` tick endpoint, GitHub Actions 5-minute scheduler, Vercel cron fallback, zero manual input.
+`/api/scan` tick endpoint, GitHub Actions 15-minute scheduler, Vercel cron fallback, zero manual input.
 Gate: two consecutive unattended scans visible in logs.
 
 ## Phase 3 — On-chain trail (done, pending wallet funding)
