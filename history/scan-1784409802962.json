@@ -1,0 +1,40 @@
+{
+  "scanId": "scan-1784409802962",
+  "generatedAt": "2026-07-18T21:23:22.962Z",
+  "source": "txline-dev",
+  "market": "1X2 full match",
+  "matches": 1,
+  "flagged": 0,
+  "audits": [
+    {
+      "fixtureId": 18257865,
+      "competition": "World Cup",
+      "home": "France",
+      "away": "England",
+      "status": "live",
+      "kickoff": 1784408400000,
+      "quoted": [
+        6.48,
+        5.3,
+        1.52
+      ],
+      "fairProb": [
+        0.1543,
+        0.1888,
+        0.6569
+      ],
+      "fairLine": [
+        6.48,
+        5.3,
+        1.52
+      ],
+      "overround": 0.0002,
+      "ticks": 1,
+      "lastTickTs": 1784409794485,
+      "moveZ": 0,
+      "integrity": 100,
+      "verdict": "CLEAN",
+      "anomalies": []
+    }
+  ]
+}
