@@ -1,0 +1,70 @@
+{
+  "scanId": "scan-1784376760834",
+  "generatedAt": "2026-07-18T12:12:40.834Z",
+  "source": "txline-dev",
+  "market": "1X2 full match",
+  "matches": 2,
+  "flagged": 0,
+  "audits": [
+    {
+      "fixtureId": 18143850,
+      "competition": "Friendlies",
+      "home": "Vietnam",
+      "away": "Myanmar",
+      "status": "live",
+      "kickoff": 1784376000000,
+      "quoted": [
+        1.05,
+        24,
+        110
+      ],
+      "fairProb": [
+        0.9492,
+        0.0417,
+        0.0091
+      ],
+      "fairLine": [
+        1.05,
+        23.99,
+        109.95
+      ],
+      "overround": -0.0005,
+      "ticks": 1,
+      "lastTickTs": 1784376720549,
+      "moveZ": 0,
+      "integrity": 100,
+      "verdict": "CLEAN",
+      "anomalies": []
+    },
+    {
+      "fixtureId": 18257865,
+      "competition": "World Cup",
+      "home": "France",
+      "away": "England",
+      "status": "pre",
+      "kickoff": 1784408400000,
+      "quoted": [
+        1.94,
+        4.3,
+        3.99
+      ],
+      "fairProb": [
+        0.5165,
+        0.2326,
+        0.2509
+      ],
+      "fairLine": [
+        1.94,
+        4.3,
+        3.99
+      ],
+      "overround": 0,
+      "ticks": 1,
+      "lastTickTs": 1784376740813,
+      "moveZ": 0,
+      "integrity": 100,
+      "verdict": "CLEAN",
+      "anomalies": []
+    }
+  ]
+}
