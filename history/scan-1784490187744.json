@@ -1,0 +1,40 @@
+{
+  "scanId": "scan-1784490187744",
+  "generatedAt": "2026-07-19T19:43:07.744Z",
+  "source": "txline-dev",
+  "market": "1X2 full match",
+  "matches": 1,
+  "flagged": 0,
+  "audits": [
+    {
+      "fixtureId": 18257739,
+      "competition": "World Cup",
+      "home": "Spain",
+      "away": "Argentina",
+      "status": "live",
+      "kickoff": 1784488200000,
+      "quoted": [
+        2.48,
+        2.77,
+        4.25
+      ],
+      "fairProb": [
+        0.4033,
+        0.3616,
+        0.2352
+      ],
+      "fairLine": [
+        2.48,
+        2.77,
+        4.25
+      ],
+      "overround": -0.0001,
+      "ticks": 1,
+      "lastTickTs": 1784490187582,
+      "moveZ": 0,
+      "integrity": 100,
+      "verdict": "CLEAN",
+      "anomalies": []
+    }
+  ]
+}
