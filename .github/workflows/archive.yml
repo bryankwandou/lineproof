@@ -25,14 +25,20 @@ jobs:
           fetch-depth: 1
 
       - name: Pull a fresh anchored scan from the live agent
+        id: pull
         env:
           SCAN_URL: ${{ vars.SCAN_URL || 'https://lineproof-rho.vercel.app/api/scan' }}
         run: |
           set -euo pipefail
-          curl -sS -m 60 "$SCAN_URL" -o scan.json
-          jq -e '.ok == true and .report.scanId' scan.json > /dev/null
+          if curl -sS -m 60 "$SCAN_URL" -o scan.json && jq -e '.ok == true and .report.scanId' scan.json > /dev/null; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::warning title=Scan not archived::$(head -c 300 scan.json 2>/dev/null)"
+          fi
 
       - name: Append the report to the archive
+        if: steps.pull.outputs.ok == 'true'
         run: |
           set -euo pipefail
           mkdir -p history
@@ -59,6 +65,7 @@ jobs:
           echo "archived $SCAN_ID"
 
       - name: Commit
+        if: steps.pull.outputs.ok == 'true'
         run: |
           set -euo pipefail
           SCAN_ID=$(jq -r '.[0].scanId' history/index.json)
